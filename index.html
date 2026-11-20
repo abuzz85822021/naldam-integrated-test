@@ -293,7 +293,7 @@ let authClient=null,authUser=null,memoRequest=0;
 const authStatus=(s)=>{$('authStatus').textContent=s};
 const memoDate=()=>`${selected.getFullYear()}-${String(selected.getMonth()+1).padStart(2,'0')}-${String(selected.getDate()).padStart(2,'0')}`;
 function memoControls(enabled){$('memo').disabled=!enabled;$('saveMemo').disabled=!enabled;$('deleteMemo').disabled=!enabled;}
-function authUi(){const ready=!!authClient,logged=!!authUser;$('login').hidden=logged;$('logout').hidden=!logged;$('login').disabled=!ready;$('login').textContent=ready?'🟡 카카오 로그인':'🔐 카카오 로그인 · 설정 필요';memoControls(logged);if(!logged){$('memo').value='';authStatus(ready?'카카오 로그인하면 기존 메모를 불러올 수 있어요.':'Supabase 설정이 필요합니다. README의 연결 안내를 확인해 주세요.');}}
+function authUi(){queueMicrotask(()=>window.dispatchEvent(new Event('naldam-auth-changed')));const ready=!!authClient,logged=!!authUser;$('login').hidden=logged;$('logout').hidden=!logged;$('login').disabled=!ready;$('login').textContent=ready?'🟡 카카오 로그인':'🔐 카카오 로그인 · 설정 필요';memoControls(logged);if(!logged){$('memo').value='';authStatus(ready?'카카오 로그인하면 기존 메모를 불러올 수 있어요.':'Supabase 설정이 필요합니다. README의 연결 안내를 확인해 주세요.');}}
 window.naldamMemoLoad=async function(){const request=++memoRequest;if(!authClient||!authUser){$('memo').value='';return;}const date=memoDate();$('memo').value='';memoControls(false);authStatus(`${date} 기록을 불러오는 중…`);try{const {data,error}=await authClient.from('memos').select('memo').eq('user_id',authUser.id).eq('date',date).limit(1);if(error)throw error;if(request!==memoRequest||date!==memoDate())return;$('memo').value=data?.[0]?.memo||'';authStatus(`${date} · ${data?.length?'기존 기록을 불러왔어요.':'새로운 기록을 남겨 보세요.'}`)}catch(e){if(request!==memoRequest)return;authStatus('기록 조회 실패: '+e.message+' · 저장은 비활성화됩니다.');return;}finally{if(request===memoRequest&&authUser)memoControls(true)}};
 $('login').onclick=async()=>{if(!authClient)return;try{authStatus('카카오 로그인 화면으로 이동합니다…');const {error}=await authClient.auth.signInWithOAuth({provider:'kakao',options:{redirectTo:location.origin+location.pathname,skipBrowserRedirect:false}});if(error)throw error;}catch(e){authStatus('로그인 시작 실패: '+e.message)}};
 $('logout').onclick=async()=>{if(!authClient)return;const {error}=await authClient.auth.signOut();if(error){authStatus('로그아웃 실패: '+error.message);return;}authUser=null;authUi()};
@@ -515,4 +515,55 @@ $('unifiedLogForm')?.addEventListener('submit',()=>setTimeout(refresh,100));
 // Refresh the journal when date changes from other app surfaces.
 const title=$('monthTitle');if(title&&typeof MutationObserver!=='undefined')new MutationObserver(refresh).observe(title,{childList:true,characterData:true,subtree:true});
 refresh();
-})();</script></body></html>
+})();</script><style id="cloud-sync-style">
+#cloudSyncStatus{font-size:12px;line-height:1.5;color:#f1d6a4;padding:8px 10px;background:#172b45;border:1px solid #ad9166;border-radius:10px;margin:10px auto;max-width:760px}
+#cloudSyncButton{margin-left:8px;border:1px solid #c3a46b;background:#ead3a8;color:#1c2d44;border-radius:8px;padding:5px 9px;font-size:11px;cursor:pointer}
+</style>
+<script id="naldam-cloud-sync-v20">
+(()=>{
+'use strict';
+const KEY='myliferpg_v03',OLD='myliferpg_v02';
+let busy=false,pending=false,lastUser=null,lastSent='',ready=false;
+const status=document.createElement('div');status.id='cloudSyncStatus';status.setAttribute('role','status');status.textContent='☁️ 기록 동기화: 로그인 상태 확인 중…';
+const btn=document.createElement('button');btn.type='button';btn.id='cloudSyncButton';btn.textContent='지금 동기화';status.append(btn);
+const target=document.querySelector('.v13-home-daily')||document.querySelector('main');if(target)target.insertAdjacentElement('beforebegin',status);
+const tell=(msg)=>{status.firstChild?.nodeType===3?status.firstChild.textContent='☁️ '+msg:status.prepend(document.createTextNode('☁️ '+msg));};
+const read=()=>{try{return JSON.parse(localStorage.getItem(KEY)||localStorage.getItem(OLD)||'{}')||{}}catch{return {}}};
+const rid=r=>String(r.id??[r.date,r.category,r.memo].join('|'));
+const normalize=a=>Array.isArray(a)?a.filter(r=>r&&typeof r.date==='string'&&typeof r.category==='string'&&typeof r.memo==='string').map(r=>({...r,id:rid(r)})):[];
+const merge=(local,remote)=>{
+  const map=new Map();for(const r of normalize(remote.records))map.set(rid(r),r);
+  for(const r of normalize(local.records))map.set(rid(r),r);
+  return {...remote,...local,records:[...map.values()].sort((a,b)=>a.date.localeCompare(b.date)),xp:Math.max(Number(local.xp)||0,Number(remote.xp)||0),points:Math.max(Number(local.points)||0,Number(remote.points)||0)};
+};
+const signature=o=>JSON.stringify({records:normalize(o.records),xp:o.xp,points:o.points,height:o.height,weight:o.weight});
+async function sync(){
+ if(busy){pending=true;return}
+ if(typeof authClient==='undefined'||!authClient||typeof authUser==='undefined'||!authUser){tell('카카오 로그인 후 PC·갤럭시 기록을 공유할 수 있어요.');return}
+ const uid=authUser.id;const ownerKey='naldam_daily_owner_v20';const previousOwner=localStorage.getItem(ownerKey);if(previousOwner&&previousOwner!==uid){tell('다른 카카오 계정의 기기 기록이 남아 있어요. 잘못된 계정으로 합쳐지지 않도록 동기화를 중단했어요.');return}busy=true;
+ try{
+  tell('기록을 안전하게 합치는 중…');
+  const {data,error}=await authClient.from('naldam_daily_state').select('state').eq('user_id',uid).maybeSingle();if(error)throw error;
+  if(!authUser||authUser.id!==uid)return;
+  const local=read(),remote=data?.state&&typeof data.state==='object'?data.state:{},combined=merge(local,remote);
+  // Save local merged copy before upload, preserving previous local records.
+  localStorage.setItem(KEY,JSON.stringify(combined));
+  const {error:saveError}=await authClient.from('naldam_daily_state').upsert({user_id:uid,state:combined,updated_at:new Date().toISOString()},{onConflict:'user_id'});if(saveError)throw saveError;
+  if(!authUser||authUser.id!==uid)return;
+  localStorage.setItem(ownerKey,uid);lastUser=uid;lastSent=signature(combined);ready=true;
+  window.dispatchEvent(new Event('naldam-cloud-refreshed'));
+  window.dispatchEvent(new Event('naldam-avatar-refresh'));
+  tell('동기화 완료 · PC와 갤럭시에서 같은 기록을 볼 수 있어요.');
+ }catch(e){tell('동기화 실패: '+(e?.message||'알 수 없는 오류')+' · 기기 기록은 보존돼요. SQL 설정과 로그인을 확인해 주세요.');}
+ finally{busy=false;if(pending){pending=false;sync()}}
+}
+btn.addEventListener('click',sync);
+window.addEventListener('naldam-auth-changed',()=>{if(typeof authUser==='undefined'||!authUser){lastUser=null;ready=false;tell('로그인하면 기록을 동기화할 수 있어요.')}else sync()});
+window.addEventListener('naldam-avatar-refresh',()=>{if(!ready||typeof authUser==='undefined'||!authUser)return;const sig=signature(read());if(sig!==lastSent)sync()});
+window.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()});
+window.addEventListener('focus',()=>{if(ready)sync()});
+// Catch auth initialization completed before this script loaded.
+if(typeof authUser!=='undefined'&&authUser)sync();else tell('카카오 로그인하면 기록이 동기화돼요.');
+})();
+</script>
+</body></html>
