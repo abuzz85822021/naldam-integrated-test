@@ -208,6 +208,23 @@ body.home-avatar .premium-actions{display:none}
 .v14-calendar-tabs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0 14px}.v14-calendar-tabs button{background:#1d304d;border:1px solid #b69b72;color:#f2d8a5;border-radius:12px;padding:12px 5px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.v14-calendar-tabs button.active{background:#ead19e;color:#172944}.v14-help{color:#e1cba8;font-size:12px;line-height:1.65;margin:9px 0 16px}.v14-week,.v14-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.v14-week span{text-align:center;color:#d4bd97;font-size:11px;padding:6px 0}.v14-grid button{min-width:0;min-height:73px;border-radius:10px;background:#1e334f;border:1px solid #56617a;color:#f4e7cf;padding:5px 1px;display:flex;align-items:center;justify-content:flex-start;flex-direction:column;gap:6px;font:inherit;cursor:pointer}.v14-grid button.has-record{border-color:#d7b374;background:#2b405b}.v14-grid button.selected{outline:2px solid #f3cf85;outline-offset:-2px}.v14-grid button:focus-visible{outline:3px solid #ffdd8f}.v14-grid button:disabled{visibility:hidden}.v14-grid .v14-icons{font-size:clamp(10px,2vw,16px);line-height:1.2;letter-spacing:-2px}.v14-grid .v14-day{font-weight:750;font-size:12px}.v14-summary{border:1px solid #c4a36e;border-radius:17px;padding:16px;margin:18px 0;background:linear-gradient(140deg,#253c59,#152741);color:#f8e7cb}.v14-summary h3{margin:0 0 12px;font-size:17px;color:#f9d99d}.v14-summary-row{padding:9px 0;border-top:1px solid #ffffff26;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.65}.v14-summary-row b{color:#f6d292}.v14-empty{font-size:12px;color:#c9c6c2}.v14-summary-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:15px}.v14-summary-actions button{border:0;border-radius:10px;background:#f2e2c8;color:#21334a;font:inherit;font-size:11px;font-weight:700;padding:11px 2px;cursor:pointer}
 body.v14-record-mode .legend,body.v14-record-mode .week,body.v14-record-mode #calendar,body.v14-record-mode #v12CalendarDaily{display:none!important}#v14RecordView[hidden]{display:none!important}
 @media(max-width:430px){.v14-grid button{min-height:57px}.v14-calendar-tabs button{font-size:12px}.v14-summary{padding:12px}}
+</style><style id="v15-one-home">
+.naldam-switch,.home-mode-picks,#avatarHome{display:none!important}
+body.home-avatar #avatarHome,body.home-naldam #avatarHome{display:none!important}
+body:not(.avatar-mode) #naldamBoard{display:block!important}
+body.avatar-mode #naldamBoard{display:none!important}
+.board-switch{font-size:11px!important;padding:7px 10px!important;max-width:120px}
+.board-scenery,.board-scenery[style]{height:230px!important;min-height:230px!important}
+.board-scenery-content{padding-top:44px!important}
+.board-date{font-size:clamp(25px,5.8vw,34px)!important}
+.board-intro{margin:18px auto 0;max-width:290px;color:#f7dca6;font-size:12px;line-height:1.7;position:relative;z-index:4}
+.board-moon{width:66px!important;height:66px!important;right:7%!important;top:26px!important}
+.board-subhead{margin-top:20px!important}
+.v13-home-daily{margin-top:16px!important}
+.premium-bottom button[data-premium="avatar"] span{font-size:22px}
+#unifiedSheep,#miniSheepImage,#v11BoardSheep,.scene-sheep{transform:none!important;scale:1!important}
+#unifiedSheep{width:auto!important;max-width:100%!important;object-fit:contain!important}
+@media(max-width:430px){.board-scenery{height:215px!important;min-height:215px!important}.board-scenery-content{padding-top:36px!important}.board-intro{font-size:11px}}
 </style></head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
 <section id="avatarHome" aria-label="날담 아바타 홈"><div class="premium-shell">
 <header class="premium-head"><div class="premium-brand"><span class="brand-crescent">☾</span><div><strong>날담</strong><small>NALDAM · 나의 하루</small></div></div><div class="head-actions"><button type="button" id="premiumTheme" aria-label="날담 모드로 전환">☾ 날담 모드</button><button type="button" data-go="avatar" aria-label="아바타 상세">✦</button></div></header>
@@ -228,17 +245,17 @@ body.v14-record-mode .legend,body.v14-record-mode .week,body.v14-record-mode #ca
 <div class="premium-section-heading"><div><span class="eyebrow">MY DAILY CALENDAR</span><h2>📅 오늘을 기록하다</h2></div><button type="button" data-go="calendar">달력 열기 ›</button></div><div class="premium-calendar-short"><div><strong id="premiumDay">20</strong><span id="premiumMonth">11월 · 금요일</span></div><p>나의 메모와 역사, 계절의 변화를<br>한 달력에서 만나보세요.</p><button type="button" data-go="calendar">달력 보기 →</button></div>
 <footer class="premium-footer">☾ 날담 · 오늘이라는 날에 담긴 이야기</footer></div></section>
 <section id="naldamBoard" aria-label="날담보드 홈"><div class="board-shell">
-<header class="board-header"><div class="board-brand"><span>☾</span><div><b>날담보드 ✨</b><small>NALDAM · 오늘의 이야기</small></div></div><button type="button" class="board-switch" id="boardAvatarSwitch">🐑 아바타 모드</button></header>
-<section class="board-scenery"><div class="board-leaves" aria-hidden="true">🍁　✦　　　　　　　　　🍂</div><div class="board-stars" aria-hidden="true">✧　·　✦　·　✧　·　✦</div><div class="board-moon" aria-hidden="true"></div><div class="board-mountains" aria-hidden="true"></div><div class="board-scenery-content"><div class="board-date" id="boardDate">오늘의 날담</div><div class="board-lunar" id="boardLunar">음력과 절기를 불러오는 중</div><div class="board-quote"><span>❝</span><p id="boardQuote">오늘의 작은 실천이<br>내일의 큰 변화를 만든다.</p><span>❞</span></div><p class="board-quote-by" id="boardQuoteBy"></p></div></section>
-<div class="v11-board-mini" role="button" tabindex="0" data-board="avatar"><img id="v11BoardSheep" src="./assets/starsheep-3.png" alt="별몽이"/><div class="v11-board-mini-text"><strong>🐑 별몽이 <span id="v11BoardLevel">Lv.1</span></strong><div class="v11-board-progress"><span id="v11BoardProgress"></span></div></div><div class="v11-board-weight"><b id="v11BoardWeight">70.0 kg</b><small>나의 성장</small></div><span>›</span></div><div class="board-subhead"><span>✦ TODAY'S DISCOVERIES</span><strong>오늘의 발견</strong><small>오늘이라는 날에 담긴 이야기를 만나보세요</small></div>
-<section class="v13-home-daily" aria-label="오늘의 하루 기록">
+<header class="board-header"><div class="board-brand"><span>☾</span><div><b>날담보드 ✨</b><small>NALDAM · 오늘의 이야기</small></div></div><button type="button" class="board-switch" id="boardAvatarSwitch">🐑 별몽이 관리</button></header>
+<section class="board-scenery"><div class="board-leaves" aria-hidden="true">🍁　✦　　　　　　　　　🍂</div><div class="board-stars" aria-hidden="true">✧　·　✦　·　✧　·　✦</div><div class="board-moon" aria-hidden="true"></div><div class="board-mountains" aria-hidden="true"></div><div class="board-scenery-content"><div class="board-date" id="boardDate">오늘의 날담</div><div class="board-lunar" id="boardLunar">음력과 절기를 불러오는 중</div><div class="board-intro">하루하루를 기록하고, 오늘의 이야기를 발견해요.</div><p id="boardQuote" hidden></p><p id="boardQuoteBy" hidden></p></div></section>
+<div class="v11-board-mini" role="button" tabindex="0" data-board="avatar"><img id="v11BoardSheep" src="./assets/starsheep-3.png" alt="별몽이"/><div class="v11-board-mini-text"><strong>🐑 별몽이 <span id="v11BoardLevel">Lv.1</span></strong><div class="v11-board-progress"><span id="v11BoardProgress"></span></div></div><div class="v11-board-weight"><b id="v11BoardWeight">70.0 kg</b><small>나의 성장</small></div><span>›</span></div><section class="v13-home-daily" aria-label="오늘의 하루 기록">
 <div class="v13-home-title"><div><small>✦ 오늘을 담는 습관</small><h2>🌙 오늘 하루, 무엇을 담으셨나요?</h2></div><strong class="v13-count">0 / 3</strong></div>
 <p class="v13-intro">식사하고, 움직이고, 마음에 남은 일을 기록해 보세요.</p>
 <div class="v13-progress"><span></span></div>
 <div class="v13-actions"><button type="button" data-v12-log="lunch">🍽️<b>식사 기록</b><small>오늘 먹은 음식</small></button><button type="button" data-v12-log="exercise">🏃<b>운동 기록</b><small>오늘의 움직임</small></button><button type="button" data-v12-log="daily">✍️<b>하루 일기</b><small>오늘의 마음</small></button></div>
 <div class="v13-today-entries">아직 오늘의 기록이 없어요. 첫 번째 기록을 남겨보세요.</div>
-</section><div class="board-grid">
-<button data-board="quote" type="button"><span>🪶</span><b>오늘의 명언</b><small>마음을 밝히는 한 줄</small></button>
+</section><div class="board-subhead"><span>✦ TODAY'S DISCOVERIES</span><strong>오늘의 발견</strong><small>오늘이라는 날에 담긴 이야기를 만나보세요</small></div>
+<div class="board-grid">
+<button data-board="quote" type="button"><span>🪶</span><b>오늘의 명언</b><small>눌러서 오늘의 명언 보기</small></button>
 <button data-board="history" type="button"><span>📖</span><b>오늘의 역사</b><small>한국사 · 세계사</small></button>
 <button data-board="nature" type="button"><span>🌿</span><b>자연의 달력</b><small>계절 · 절기 · 생태</small></button>
 <button data-board="sky" type="button"><span>🔭</span><b>오늘의 하늘</b><small>달 · 별자리 · 천문</small></button>
@@ -251,7 +268,7 @@ body.v14-record-mode .legend,body.v14-record-mode .week,body.v14-record-mode #ca
 <button class="board-all" type="button" data-board="calendar">📅 날짜를 선택해 모든 날담 콘텐츠 보기 <span>›</span></button>
 <footer class="board-footer">☾ 날담 · 오늘이라는 날에 담긴 이야기</footer></div></section>
 <section id="avatarWrap" aria-label="별몽이 성장 관리"><div class="unified-app">
-<header class="unified-heading"><span>☾ 날담 <small>MY LITTLE STAR</small></span><button type="button" id="unifiedBack">☾ 날담</button></header>
+<header class="unified-heading"><span>☾ 날담 <small>MY LITTLE STAR</small></span><button type="button" id="unifiedBack">← 날담 홈</button></header>
 <div class="unified-hero"><div class="unified-stars">✦ &nbsp; 오늘도 함께 성장해요 &nbsp; ✦</div><img id="unifiedSheep" src="./assets/starsheep-3.png" alt="별빛 양 별몽이"><div class="unified-level">🐑 별몽이 <strong id="unifiedLv">Lv.1</strong></div><p id="unifiedWeight">70.0 kg</p><div class="unified-progress"><span id="unifiedXp"></span></div><p class="unified-caption">체형 변화는 게임 연출로 과장되어 표시돼요.</p></div>
 <div class="unified-grid"><button type="button" data-weight-edit>⚖️<b>키·체중 수정</b><small>체형 변화</small></button><button type="button" id="unifiedRecordBtn">🍽️<b>식사 기록</b><small>경험치 쌓기</small></button><button type="button" id="unifiedExerciseBtn">🏃<b>운동 기록</b><small>하루 성장</small></button><button type="button" id="unifiedHistoryBtn">📒<b>나의 기록</b><small>최근 활동</small></button></div>
 <div class="unified-card"><h3>✨ 오늘의 성장</h3><div class="unified-stats"><span>🌟 <b id="unifiedPoints">0</b> 포인트</span><span>📆 오늘 기록 <b id="unifiedCount">0</b>건</span></div></div>
@@ -276,7 +293,7 @@ $('deleteMemo').onclick=async()=>{if(!authClient||!authUser)return;if(!confirm('
 (function(){
 const a=document.getElementById('navAvatar'),n=document.getElementById('navNaldam'),f=null;
 const pickA=document.getElementById('pickAvatar'),pickB=document.getElementById('pickNaldam');
-let preference='naldam';try{preference=localStorage.getItem('naldam_home_mode')==='avatar'?'avatar':'naldam'}catch(e){}
+let preference='naldam';
 function show(page,updateHash=true){
  const isAvatar=page==='avatar';
  document.body.classList.remove('avatar-mode','home-avatar','home-naldam');
@@ -289,7 +306,7 @@ function show(page,updateHash=true){
  if(updateHash)history.replaceState(null,'',isAvatar?'#avatar':'#today');
  window.scrollTo(0,0);
 }
-function choose(mode){preference=mode;try{localStorage.setItem('naldam_home_mode',mode)}catch(e){}show('today')}
+function choose(mode){preference='naldam';show('today')}
 pickA.onclick=()=>choose('avatar');pickB.onclick=()=>choose('naldam');
 a.onclick=()=>show('avatar');n.onclick=()=>show('today');
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{
@@ -299,7 +316,7 @@ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=
  requestAnimationFrame(()=>document.getElementById(dest==='memo'?'memo':'calendar')?.scrollIntoView({behavior:'smooth',block:'center'}));
 }));
 document.getElementById('avTodayDate').textContent=new Intl.DateTimeFormat('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'long'}).format(new Date());
-show(location.hash==='#avatar'?'avatar':'today',false);
+show('today',false);
 window.addEventListener('hashchange',()=>show(location.hash==='#avatar'?'avatar':'today',false));
 })();
 </script><script id="naldam-v3-mini">
@@ -337,7 +354,7 @@ document.getElementById('navNaldam')?.addEventListener('click',update);
 document.getElementById('pickNaldam')?.addEventListener('click',update);
 update();
 })();
-</script><nav class="premium-bottom" aria-label="주요 메뉴"><button type="button" data-premium="home" class="active"><span>⌂</span>홈</button><button type="button" data-premium="calendar"><span>▦</span>달력</button><button type="button" data-premium="avatar"><span>✦</span>아바타</button><button type="button" data-premium="discover"><span>✧</span>오늘의 발견</button><button type="button" data-premium="memo"><span>✎</span>기록</button></nav><script id="premium-v7-script">
+</script><nav class="premium-bottom" aria-label="주요 메뉴"><button type="button" data-premium="home" class="active"><span>⌂</span>홈</button><button type="button" data-premium="calendar"><span>▦</span>달력</button><button type="button" data-premium="avatar"><span>🐑</span>별몽이</button><button type="button" data-premium="discover"><span>✧</span>오늘의 발견</button><button type="button" data-premium="memo"><span>✎</span>기록</button></nav><script id="premium-v7-script">
 (function(){
 const $=id=>document.getElementById(id);
 const prefKey='naldam_home_mode';
