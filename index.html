@@ -604,4 +604,27 @@ window.addEventListener('focus',()=>{if(ready)sync()});
 if(typeof authUser!=='undefined'&&authUser)sync();else tell('카카오 로그인하면 기록이 동기화돼요.');
 })();
 </script>
+
+<style id="mission-journey-v23-css">
+#missionJourneyV23{position:fixed;z-index:9990;left:50%;bottom:calc(82px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(94vw,540px);display:none;align-items:center;gap:7px;padding:9px;background:#13243c;border:1px solid #d5ae6e;border-radius:18px;box-shadow:0 10px 30px #0009;color:#fff3d9;font-size:12px}
+#missionJourneyV23.visible{display:flex}#missionJourneyV23 .journey-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}#missionJourneyV23 button{border:1px solid #d7b47c;border-radius:11px;padding:9px 10px;background:#f8e7c8;color:#30271d;font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap}#missionJourneyV23 button.return{background:transparent;color:#ffdfab}#missionJourneyV23 button.close{background:transparent;color:#f8e7c8;padding:7px;border-color:transparent}
+@media(max-width:420px){#missionJourneyV23{bottom:calc(76px + env(safe-area-inset-bottom,0px));padding:7px;gap:5px}#missionJourneyV23 button{padding:8px 7px;font-size:11px}#missionJourneyV23 .journey-title{font-size:11px}}
+</style>
+<div id="missionJourneyV23" role="navigation" aria-label="미션 빠른 이동"><span class="journey-title" id="missionJourneyTitleV23">미션 탐험 중</span><button type="button" class="return" id="missionJourneyBackV23">↑ 미션 목록</button><button type="button" id="missionJourneyNextV23">다음 미션 →</button><button type="button" class="close" id="missionJourneyCloseV23" aria-label="빠른 이동 닫기">✕</button></div>
+<script id="mission-journey-v23-js">
+(()=>{'use strict';
+const order=[['quote','💬 명언'],['literature','📖 명작'],['history','🏛️ 역사'],['nature','🌿 자연'],['sky','🌙 하늘']];
+const $=id=>document.getElementById(id);const bar=$('missionJourneyV23');let active=null;
+const label=id=>order.find(x=>x[0]===id)?.[1]||'오늘의 미션';
+function show(id){active=id;bar.classList.add('visible');$('missionJourneyTitleV23').textContent='✓ '+label(id)+' 확인';const idx=order.findIndex(x=>x[0]===id);const next=order[(idx+1)%order.length];$('missionJourneyNextV23').textContent='다음: '+next[1]+' →';}
+function hide(){bar.classList.remove('visible');active=null;}
+function jump(id){const btn=document.querySelector('#missionGrid [data-mission="'+id+'"]');if(btn&&!btn.disabled){btn.click();}else{if(typeof window.naldamBoardOpen==='function')window.naldamBoardOpen(id);}show(id);}
+$('missionJourneyBackV23').addEventListener('click',()=>{document.body.classList.remove('board-detail');$('naldamMissionPanel')?.scrollIntoView({behavior:'smooth',block:'start'});hide()});
+$('missionJourneyNextV23').addEventListener('click',()=>{const idx=order.findIndex(x=>x[0]===active);jump(order[(idx+1)%order.length][0]);});
+$('missionJourneyCloseV23').addEventListener('click',hide);
+document.addEventListener('click',e=>{const b=e.target.closest('#missionGrid [data-mission]');if(!b)return;const id=b.dataset.mission;if(order.some(x=>x[0]===id))setTimeout(()=>show(id),30);},true);
+// Keep the navigation visible while reading a mission; dismiss when switching to the sheep page.
+$('navAvatar')?.addEventListener('click',hide);
+})();
+</script>
 </body></html>
