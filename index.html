@@ -130,6 +130,7 @@ function show(page,updateHash=true){
  a.setAttribute('aria-pressed',String(isAvatar));n.setAttribute('aria-pressed',String(!isAvatar));
  pickA.setAttribute('aria-pressed',String(preference==='avatar'));pickB.setAttribute('aria-pressed',String(preference==='naldam'));
  if(isAvatar&&!f.getAttribute('src'))f.setAttribute('src',f.dataset.src);
+ if(!isAvatar)window.dispatchEvent(new Event('naldam-avatar-refresh'));
  if(updateHash)history.replaceState(null,'',isAvatar?'#avatar':'#today');
  window.scrollTo(0,0);
 }
@@ -160,9 +161,20 @@ function update(){
  document.getElementById('miniProgressBar').style.width=(xp%100)+'%';
  document.getElementById('miniGreeting').textContent=state.nickname?state.nickname+' · 오늘도 조금씩 성장하는 중!':'오늘의 작은 기록이 성장으로 이어져요.';
  document.getElementById('miniWeight').textContent=w>0?w.toFixed(1)+' kg':'체중 기록 전';
- document.getElementById('miniBodyLabel').textContent=bmi>=27?'동글 체형':bmi>=24?'통통 체형':bmi>=21?'기본 체형':bmi>0?'슬림 체형':'체형 미설정';
+ const today=new Date();const dateKey=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
+ const daily=Array.isArray(state.records)?state.records.filter(r=>r&&r.date===dateKey).length:0;
+ const shape=bmi>=27?'동글 체형':bmi>=24?'통통 체형':bmi>=21?'기본 체형':bmi>0?'슬림 체형':'체형 미설정';
+ document.getElementById('miniBodyLabel').textContent=shape+(daily?' · 오늘 '+daily+'건 기록':'');
 }
 window.addEventListener('storage',e=>{if(e.key===KEY||e.key===OLD)update()});
+// The avatar runs in a same-origin iframe. The storage event does not fire
+// in the window that writes, so the child sends a narrow notification.
+window.addEventListener('message',e=>{
+ if(e.origin!==location.origin||e.source!==document.getElementById('avatarFrame')?.contentWindow)return;
+ if(e.data?.type==='naldam-avatar-updated'&&e.data.version===1)update();
+});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)update()});
+window.addEventListener('naldam-avatar-refresh',update);
 window.addEventListener('focus',update);
 document.getElementById('navNaldam')?.addEventListener('click',update);
 document.getElementById('pickNaldam')?.addEventListener('click',update);
