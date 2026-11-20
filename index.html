@@ -236,7 +236,7 @@ body.avatar-mode #naldamBoard{display:none!important}
 /* Keep legacy controls in DOM for navigation scripts, but remove duplicate visible header. */
 html body .naldam-switch,html body .mode-picker{display:none!important;height:0!important;min-height:0!important;padding:0!important;margin:0!important;border:0!important;overflow:hidden!important}
 #quoteCard,#literatureCard{scroll-margin-top:12px!important}
-</style></head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
+</style><style id="v18-anchor-fix">article.card{scroll-margin-top:12px!important}#quoteCard,#literatureCard{scroll-margin-top:12px!important}</style></head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
 <section id="avatarHome" aria-label="날담 아바타 홈"><div class="premium-shell">
 <header class="premium-head"><div class="premium-brand"><span class="brand-crescent">☾</span><div><strong>날담</strong><small>NALDAM · 나의 하루</small></div></div><div class="head-actions"><button type="button" id="premiumTheme" aria-label="날담 모드로 전환">☾ 날담 모드</button><button type="button" data-go="avatar" aria-label="아바타 상세">✦</button></div></header>
 <div class="premium-date" id="avTodayDate">오늘의 날담</div>
@@ -374,7 +374,7 @@ function go(dest){
  if(dest==='home'){$('navNaldam')?.click();window.scrollTo({top:0,behavior:'smooth'});return}
  $('pickNaldam')?.click();document.body.classList.add('board-detail');
  const targets={calendar:'calendar',discover:'korea',memo:'memo',korea:'korea',world:'world',nature:'natureTitle',sky:'skyMoon',literature:'literature'};
- requestAnimationFrame(()=>setTimeout(()=>(()=>{const el=$(targets[dest]||'calendar');if(el)window.scrollTo({top:Math.max(0,window.scrollY+el.getBoundingClientRect().top-12),behavior:'smooth'})})(),80));
+ requestAnimationFrame(()=>setTimeout(()=>(()=>{const el=$(targets[dest]||'calendar');if(el){const card=el.closest('article.card')||el.closest('section.v12-daily')||el;window.scrollTo({top:Math.max(0,window.scrollY+card.getBoundingClientRect().top-12),behavior:'smooth'})}})(),80));
 }
 $('premiumTheme')?.addEventListener('click',()=>$('pickNaldam')?.click());
 $('premiumDiscoverAll')?.addEventListener('click',()=>go('discover'));
@@ -422,7 +422,7 @@ const $=id=>document.getElementById(id);
 const main=document.querySelector('body>main');
 const targets={quote:'quoteCard',history:'korea',nature:'natureTitle',sky:'skyMoon',literature:'literatureCard',anniversaries:'anniversaries',calendar:'calendar',memo:'memo'};
 function boardHome(){document.body.classList.remove('board-detail');$('pickNaldam')?.click();window.scrollTo({top:0,behavior:'smooth'});updateBoard()}
-function openDetail(name){if(name==='avatar'){$('navAvatar')?.click();return}document.body.classList.add('board-detail');requestAnimationFrame(()=>setTimeout(()=>(()=>{const el=$(targets[name]||'calendar');if(el)window.scrollTo({top:Math.max(0,window.scrollY+el.getBoundingClientRect().top-12),behavior:'smooth'})})(),80))}
+function openDetail(name){if(name==='avatar'){$('navAvatar')?.click();return}document.body.classList.add('board-detail');requestAnimationFrame(()=>setTimeout(()=>(()=>{const el=$(targets[name]||'calendar');if(el){const card=el.closest('article.card')||el.closest('section.v12-daily')||el;window.scrollTo({top:Math.max(0,window.scrollY+card.getBoundingClientRect().top-12),behavior:'smooth'})}})(),80))}
 window.naldamBoardOpen=openDetail;
 $('boardAvatarSwitch')?.addEventListener('click',()=>{$('pickAvatar')?.click();window.scrollTo(0,0)});
 document.querySelectorAll('[data-board]').forEach(el=>el.addEventListener('click',()=>openDetail(el.dataset.board)));
