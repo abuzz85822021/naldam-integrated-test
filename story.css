@@ -183,3 +183,38 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character="penguin"]{--character-compact:url('./assets/home-compact-penguin.webp')}
 #storyApp[data-character] .st-top{background-image:var(--character-compact)!important;background-size:100% 100%!important;min-height:250px!important}
 }
+
+/* v29.5: approved seamless four-character header. Last rules intentionally override legacy mobile tiles. */
+#storyApp[data-character] .st-top {
+  background-image:var(--character-home)!important;
+  background-repeat:no-repeat!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  min-height:265px!important;
+  border-radius:0 0 26px 26px;
+  overflow:hidden;
+  isolation:isolate;
+}
+#storyApp[data-character] .st-top:before {
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--ch-dark) 30%,transparent) 0%,transparent 63%)!important;
+  pointer-events:none!important;
+  z-index:0!important;
+}
+#storyApp[data-character] .st-top:after,
+#storyApp[data-character] .st-top .st-sheep{display:none!important}
+#storyApp[data-character] .st-top > :not(.st-sheep){position:relative;z-index:1}
+#storyApp[data-character] .st-top h1{max-width:75%!important}
+#storyApp[data-character] .st-top p{max-width:66%!important}
+#storyApp[data-character] #storySheepImage{display:block!important;width:min(75vw,310px)!important;height:340px!important;object-fit:contain!important;object-position:center!important}
+@media(max-width:600px){
+ #storyApp[data-character] .st-top{background-image:var(--character-home)!important;background-size:cover!important;background-position:center center!important;min-height:245px!important}
+}
+@media(max-width:390px){
+ #storyApp[data-character] .st-top{min-height:240px!important;padding:17px 15px 21px!important}
+ #storyApp[data-character] .st-top h1{font-size:21px!important;max-width:78%!important}
+ #storyApp[data-character] .st-top p{font-size:11px!important;max-width:65%!important}
+}
