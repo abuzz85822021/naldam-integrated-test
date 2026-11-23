@@ -166,3 +166,20 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character] .st-top:after{display:none!important}
 #storyApp[data-character] .st-top .st-sheep{display:none!important}
 }
+
+/* v29.4: restore the original single-sheep layout for all four characters. */
+#storyApp[data-character] .st-top {background-image:var(--character-home)!important;background-position:center!important;background-size:100% 100%!important;min-height:245px!important}
+#storyApp[data-character] .st-top:before {background:linear-gradient(90deg,color-mix(in srgb,var(--ch-dark) 80%,transparent) 0%,color-mix(in srgb,var(--ch-dark) 32%,transparent) 43%,transparent 70%)!important}
+#storyApp[data-character] .st-top h1{max-width:75%!important}
+#storyApp[data-character] .st-top p{max-width:67%!important}
+#storyApp #storySheepImage {width:min(75vw,310px)!important;height:340px!important;object-fit:contain!important}
+#storyApp .st-character-grid img{object-fit:contain!important;aspect-ratio:1/1.15!important}
+@media(max-width:480px){#storyApp[data-character] .st-top{min-height:220px!important;background-size:100% 100%!important}#storyApp[data-character] .st-top h1{max-width:80%!important}#storyApp[data-character] .st-top p{max-width:68%!important}}
+
+@media(max-width:600px){
+#storyApp[data-character="sheep"]{--character-compact:url('./assets/home-compact-sheep.webp')}
+#storyApp[data-character="cat"]{--character-compact:url('./assets/home-compact-cat.webp')}
+#storyApp[data-character="dragon"]{--character-compact:url('./assets/home-compact-dragon.webp')}
+#storyApp[data-character="penguin"]{--character-compact:url('./assets/home-compact-penguin.webp')}
+#storyApp[data-character] .st-top{background-image:var(--character-compact)!important;background-size:100% 100%!important;min-height:250px!important}
+}
