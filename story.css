@@ -151,3 +151,18 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character] .st-top:before{background:linear-gradient(90deg,color-mix(in srgb,var(--ch-dark) 70%,transparent) 0%,color-mix(in srgb,var(--ch-dark) 25%,transparent) 43%,transparent 66%)!important}
 #storyApp[data-character] .st-top h1{max-width:68%}
 @media(max-width:480px){#storyApp[data-character] .st-top{background-position:59% center!important}#storyApp[data-character] .st-top h1{max-width:68%}#storyApp[data-character] .st-top p{max-width:61%}}
+
+/* v29.3: full-body avatars and smaller mobile illustrated home scenes */
+#storyApp .st-character-grid img{aspect-ratio:1/1.15!important;object-fit:contain!important;object-position:center!important;background:linear-gradient(160deg,var(--ch-soft),#fff)!important}
+#storyApp #storySheepImage{width:260px!important;height:310px!important;object-fit:contain!important;object-position:center!important;display:block!important}
+@media(max-width:600px){
+#storyApp[data-character="sheep"]{--character-mobile:url('./assets/home-mobile-sheep.webp')}
+#storyApp[data-character="cat"]{--character-mobile:url('./assets/home-mobile-cat.webp')}
+#storyApp[data-character="dragon"]{--character-mobile:url('./assets/home-mobile-dragon.webp')}
+#storyApp[data-character="penguin"]{--character-mobile:url('./assets/home-mobile-penguin.webp')}
+#storyApp[data-character] .st-top{background-image:var(--character-mobile)!important;background-size:100% 100%!important;background-position:center!important;min-height:270px!important}
+#storyApp[data-character] .st-top h1{max-width:82%!important}
+#storyApp[data-character] .st-top p{max-width:72%!important}
+#storyApp[data-character] .st-top:after{display:none!important}
+#storyApp[data-character] .st-top .st-sheep{display:none!important}
+}
