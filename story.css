@@ -218,3 +218,11 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
  #storyApp[data-character] .st-top h1{font-size:21px!important;max-width:78%!important}
  #storyApp[data-character] .st-top p{font-size:11px!important;max-width:65%!important}
 }
+
+/* v29.6: keep sheep choice visually consistent with the other three full-body avatars. */
+#storyApp .st-character-grid button[data-character-choice="sheep"] img {
+  width:78%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  object-fit:contain!important;
+}
