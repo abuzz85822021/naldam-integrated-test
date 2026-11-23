@@ -83,3 +83,35 @@
 body:has(#storyApp:not([hidden])) .premium-bottom,
 body:has(#storyApp:not([hidden])) .v24-bottom-nav,
 body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
+
+/* v28.2 — illustrated storybook home and individual page identities */
+#storyApp{--page-accent:#ddbd87;--page-ink:#292d50}
+#storyApp .st-top{min-height:305px;background:#1b2856 url('./assets/storybook-home.webp') center center/cover no-repeat!important;border-radius:0 0 24px 24px;isolation:isolate}
+#storyApp .st-top:before,#storyApp .st-top:after{display:none!important}
+#storyApp .st-top:before{content:'';display:block!important;position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,20,51,.80) 0%,rgba(12,20,51,.43) 47%,rgba(12,20,51,0) 82%)}
+#storyApp .st-top .st-sheep{display:none!important}
+#storyApp .st-top .st-brand,#storyApp .st-top .st-date,#storyApp .st-top h1,#storyApp .st-top p{position:relative;z-index:1}
+#storyApp .st-top .st-date{margin-top:37px}
+#storyApp .st-top h1{max-width:70%;font-size:clamp(21px,5.6vw,28px);line-height:1.24;text-wrap:balance}
+#storyApp .st-top p{max-width:56%;font-size:12px;line-height:1.65;text-shadow:0 2px 5px #12183b}
+#storyApp .st-home-cards{margin-top:-18px;position:relative;z-index:2}
+#storyApp .st-home-tile{box-shadow:0 5px 16px #23194320;border:1px solid #f2e2c9}
+#storyApp .st-tabs button.active{background:linear-gradient(180deg,#ffffff12,transparent);border-top:2px solid #f8dca6}
+/* Each bottom tab feels like opening a different chapter. */
+#storyApp[data-page='diary']{background:linear-gradient(180deg,#3a345c 0,#a99cbb 330px,#f9f0e6 580px,#f9f0e6 100%)}
+#storyApp[data-page='diary'] .st-top{background:linear-gradient(115deg,#312f58aa,#544a76aa),url('./assets/storybook-home.webp') 63% 40%/cover no-repeat!important;min-height:220px}
+#storyApp[data-page='diary'] .st-top .st-date{margin-top:16px}
+#storyApp[data-page='diary'] .st-diary-card{border-left:5px solid #b49aca}
+#storyApp[data-page='calendar']{background:linear-gradient(180deg,#343960 0,#c4b4cc 340px,#faf0e7 600px,#faf0e7 100%)}
+#storyApp[data-page='calendar'] .st-top{background:linear-gradient(100deg,#28315cbf,#57588a88),url('./assets/storybook-home.webp') 63% 48%/cover no-repeat!important;min-height:205px}
+#storyApp[data-page='calendar'] .st-top .st-date{margin-top:12px}
+#storyApp[data-page='calendar'] .st-calendar-card{border-top:5px solid #c49fb9}
+#storyApp[data-page='discover']{background:linear-gradient(180deg,#162b3d 0,#577c77 350px,#f3efe3 600px,#f3efe3 100%)}
+#storyApp[data-page='discover'] .st-top{background:linear-gradient(100deg,#0d273bd9,#27595890),url('./assets/storybook-home.webp') 65% 48%/cover no-repeat!important;min-height:220px}
+#storyApp[data-page='discover'] .st-top .st-date{margin-top:16px}
+#storyApp[data-page='discover'] .st-discover-card{border-top:5px solid #91b7a4}
+#storyApp[data-page='sheep']{background:linear-gradient(180deg,#34325e 0,#9b8bc4 340px,#f9f0eb 600px,#f9f0eb 100%)}
+#storyApp[data-page='sheep'] .st-top{background:linear-gradient(100deg,#2b2b57dd,#69579b8c),url('./assets/storybook-home.webp') 65% 48%/cover no-repeat!important;min-height:205px}
+#storyApp[data-page='sheep'] .st-top .st-date{margin-top:12px}
+#storyApp[data-page='sheep'] .st-card{border-top:5px solid #b9a2da}
+@media(max-width:400px){#storyApp .st-top{min-height:286px}#storyApp .st-top h1{max-width:72%;font-size:21px}#storyApp .st-top p{max-width:55%;font-size:11px}#storyApp .st-top .st-date{margin-top:33px}#storyApp[data-page]:not([data-page='home']) .st-top{min-height:210px}}
