@@ -1,1 +1,49 @@
 #storyApp{position:fixed;inset:0;z-index:900;overflow-y:auto;background:linear-gradient(165deg,#172744 0%,#26375d 42%,#f5eadd 42.1%,#f7eee2 100%);color:#25334b;font-family:system-ui,'Noto Sans KR',sans-serif;box-sizing:border-box;padding:0 0 88px}#storyApp *{box-sizing:border-box}#storyApp[hidden]{display:none!important}#storyApp button,#storyApp textarea,#storyApp input,#storyApp select{font:inherit}#storyApp button{cursor:pointer}#storyApp .st-top{max-width:760px;margin:auto;padding:24px 18px 26px;color:#fff4dc}#storyApp .st-brand{display:flex;align-items:center;justify-content:space-between;font-size:21px;font-weight:850}#storyApp .st-brand button{background:#ffffff22;color:white;border:1px solid #ffffff55;border-radius:20px;padding:7px 12px;font-size:12px}#storyApp .st-date{font-size:12px;color:#f1d9ae;margin-top:18px}#storyApp .st-top h1{font-size:26px;margin:8px 0}#storyApp .st-top p{font-size:13px;color:#e2d5c5;margin:0;line-height:1.7}#storyApp .st-sheep{float:right;width:98px;max-height:105px;object-fit:contain}#storyApp .st-content{max-width:760px;margin:0 auto;padding:0 14px}#storyApp .st-card{background:#fffaf3;border:1px solid #e7d9c9;border-radius:19px;padding:17px;margin:12px 0;box-shadow:0 5px 18px #4d344115}#storyApp h2{font-size:18px;margin:0 0 12px}#storyApp h3{font-size:15px;margin:0 0 8px}#storyApp .st-muted{color:#817b7b;font-size:12px;line-height:1.6}#storyApp .st-row{display:flex;align-items:center;justify-content:space-between;gap:9px}#storyApp .st-primary{background:#7772ad;color:white;border:0;border-radius:12px;padding:12px 17px;font-weight:750}#storyApp .st-soft{background:#f0e9ed;color:#4a486e;border:1px solid #ddd0df;border-radius:12px;padding:10px 12px}#storyApp .st-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}#storyApp .st-grid button{background:#f5f0ed;border:1px solid #e6d9d1;border-radius:13px;padding:13px 3px;font-size:12px}#storyApp .st-grid button span{display:block;font-size:24px;margin-bottom:5px}#storyApp textarea{width:100%;min-height:125px;resize:vertical;border:1px solid #dfd3cc;border-radius:13px;padding:13px;background:#fff;color:#293448;line-height:1.7}#storyApp .st-mood{display:flex;gap:8px;flex-wrap:wrap}#storyApp .st-mood button{border:1px solid #e5d6d0;background:#f7f0e9;border-radius:12px;padding:10px;font-size:23px}#storyApp .st-mood button.active{outline:2px solid #8880b4;background:#ebe3f4}#storyApp .st-record{padding:12px 0;border-bottom:1px solid #eee2d8;font-size:13px;line-height:1.65}#storyApp .st-record:last-child{border:0}#storyApp .st-record img{width:88px;height:75px;object-fit:cover;border-radius:9px;margin-top:6px}#storyApp .st-tabs{position:fixed;bottom:0;left:0;right:0;z-index:910;background:#fff9f2;border-top:1px solid #ddd1c8;display:flex;justify-content:center;box-shadow:0 -4px 20px #0001}#storyApp .st-tabs button{width:min(25%,180px);padding:10px 2px 13px;border:0;background:none;color:#777287;font-size:11px}#storyApp .st-tabs button span{display:block;font-size:22px;margin-bottom:3px}#storyApp .st-tabs button.active{color:#62559d;font-weight:850}#storyApp .st-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}#storyApp .st-calendar button{min-height:58px;border:1px solid #eee4da;border-radius:10px;background:#fff;color:#34374a;font-size:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}#storyApp .st-calendar button.selected{outline:2px solid #7b73b4}#storyApp .st-calendar button.marked{background:#f3e9e2}#storyApp .st-calendar button small{font-size:12px}#storyApp .st-week{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:11px;color:#938a83;margin-bottom:8px}#storyApp .st-discovery{border-left:3px solid #9e91c0;padding:11px 12px;background:#f8f2ed;border-radius:8px;margin:9px 0;font-size:13px;line-height:1.65}#storyApp .st-photo{width:100%;max-height:240px;object-fit:cover;border-radius:13px;margin-top:10px}#storyApp .st-view[hidden]{display:none}#storyApp .st-note{font-size:11px;color:#938b84;line-height:1.6}#storyApp .st-month-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}#storyApp .st-month-nav button{border:0;background:#f1e9e3;border-radius:10px;padding:8px 13px}#storyApp .st-status{font-size:12px;color:#655ca0;margin:8px 0;min-height:18px}#storyApp .st-storybook{line-height:1.85;font-size:14px;white-space:pre-wrap;background:#f8f1e7;border-radius:13px;padding:16px}#storyApp .st-highlight{font-size:12px;color:#625b81;background:#f0eaf3;border-radius:12px;padding:12px}#storyApp .st-discovery img{max-width:100%;border-radius:9px}#storyApp .st-empty{padding:16px;text-align:center;color:#958b87;font-size:13px}
+
+/* v27: Illustrated diary and memory-calendar visual redesign */
+#storyApp{background:linear-gradient(180deg,#172344 0,#2b3b6b 235px,#d6c7d9 440px,#f8f0e8 660px,#f8f0e8 100%);color:#28304c;font-family:'Noto Sans KR',system-ui,sans-serif}
+#storyApp .st-top{max-width:520px;min-height:252px;padding:23px 20px 20px;position:relative;background:radial-gradient(circle at 82% 28%,#f8dca666 0 1px,transparent 3px),radial-gradient(circle at 42% 20%,#ffe3a7 0 2px,transparent 3px),radial-gradient(circle at 70% 70%,#f8dfb7 0 1px,transparent 3px);background-size:100% 100%}
+#storyApp .st-top:after{content:'☾   ✦      ✧       ✦';position:absolute;top:65px;right:12px;font-size:24px;color:#f8d88e;letter-spacing:13px;opacity:.8;pointer-events:none}
+#storyApp .st-top h1{font-size:27px;letter-spacing:-.8px;color:#fff4df;text-shadow:0 2px 5px #121d3e66}
+#storyApp .st-top p{color:#f3e6e2;font-size:13px}
+#storyApp .st-date{color:#f7d7a0}
+#storyApp .st-sheep{width:116px;max-height:125px;filter:drop-shadow(0 6px 12px #0d153c99);position:relative;z-index:1}
+#storyApp .st-content{max-width:520px;padding:0 14px}
+#storyApp .st-card{background:#fffaf1;border:1px solid #ebdacb;border-radius:20px;padding:18px;margin:12px 0;box-shadow:0 5px 18px #34254a18}
+#storyApp .st-card h2{font-size:18px;color:#29304b}
+#storyApp .st-diary-card{margin-top:-3px}
+#storyApp .st-grid button{background:#f9f2e8;border:1px solid #e8d5c4;min-height:95px;border-radius:15px;color:#35344b}
+#storyApp .st-grid button span{font-size:29px}
+#storyApp .st-primary{background:#7764a8;color:white;border-radius:14px}
+#storyApp .st-soft{background:#f2e9f3;border-color:#ded0e6}
+#storyApp .st-calendar-card{padding:18px 13px 15px;margin-top:-4px;background:#fffaf4}
+#storyApp .st-month-nav{background:linear-gradient(100deg,#ece0f1,#faf0e7);border-radius:20px;padding:8px;margin-bottom:15px}
+#storyApp .st-month-nav h2{font-size:21px;margin:0;color:#2c304c}
+#storyApp .st-month-nav button{background:#fff8f1;border:1px solid #e7d5e3;border-radius:50%;height:34px;width:34px;padding:0;font-size:23px;color:#68598d}
+#storyApp .st-week{font-weight:750;color:#555068;margin:6px 0 9px;font-size:12px}
+#storyApp .st-week span:first-child{color:#c65e68}
+#storyApp .st-calendar{gap:3px}
+#storyApp .st-calendar button{height:67px;min-height:67px;padding:3px 1px;justify-content:flex-start;gap:3px;border:1px solid transparent;border-radius:11px;background:#fffaf4;font-size:12px;overflow:hidden}
+#storyApp .st-calendar button b{font-size:12px;font-weight:600}
+#storyApp .st-calendar button:nth-child(7n + 1){color:#ba5b64}
+#storyApp .st-calendar button.marked{background:#f6ecdc}
+#storyApp .st-calendar button.selected{outline:2px solid #cf8d9d;background:#fff0e6}
+#storyApp .st-calendar button .st-day-photo:not([hidden]){display:block;width:94%;height:41px;object-fit:cover;border-radius:7px;margin:0}
+#storyApp .st-calendar button small{font-size:17px;line-height:28px}
+#storyApp .st-month-card{background:linear-gradient(125deg,#fff8ee,#f9eee7);border-color:#e9d4c0}
+#storyApp .st-month-book{display:grid;grid-template-columns:39% 1fr;gap:13px;align-items:center;min-height:150px}
+#storyApp .st-month-photo{min-height:155px;background:linear-gradient(145deg,#e2d6bc,#b5bfa3 60%,#e7caa0);border:7px solid #fff;box-shadow:0 5px 10px #53473538;transform:rotate(-3deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#665a54;text-align:center;gap:7px}
+#storyApp .st-month-photo>span{font-size:43px}
+#storyApp .st-month-photo small{font-size:11px;line-height:1.5}
+#storyApp .st-month-photo img:not([hidden]){display:block;width:100%;height:145px;object-fit:cover}
+#storyApp .st-month-words strong{font-size:17px;color:#3d314e}
+#storyApp .st-month-words p{font-size:12px;line-height:1.8;margin:7px 0}
+#storyApp .st-month-words small{font-size:10px;color:#8b7e80}
+#storyApp .st-month-excerpt{font-size:12px;line-height:1.6;color:#7c6179;border-left:2px solid #c2a4b6;padding-left:8px;margin:8px 0}
+#storyApp .st-storybook{background:transparent;padding:0;white-space:normal}
+#storyApp .st-discovery{background:#fff9ed;border:1px solid #eadbca;border-left:4px solid #d3ac79;border-radius:15px;margin:12px 0;padding:16px;box-shadow:0 3px 9px #4c335b10}
+#storyApp .st-tabs{background:#fffaf5;border-top:1px solid #e7d7c9;box-shadow:0 -5px 20px #3c31521a;padding-bottom:env(safe-area-inset-bottom)}
+#storyApp .st-tabs button{color:#77738d;font-size:11px}
+#storyApp .st-tabs button.active{color:#6953a2}
+#storyApp .st-tabs button span{font-size:23px}
+@media(min-width:700px){#storyApp .st-top,#storyApp .st-content{max-width:560px}#storyApp{background:linear-gradient(180deg,#1b284c,#374773 410px,#f8f0e8 410px)}}
