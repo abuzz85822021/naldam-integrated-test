@@ -115,3 +115,39 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-page='sheep'] .st-top .st-date{margin-top:12px}
 #storyApp[data-page='sheep'] .st-card{border-top:5px solid #b9a2da}
 @media(max-width:400px){#storyApp .st-top{min-height:286px}#storyApp .st-top h1{max-width:72%;font-size:21px}#storyApp .st-top p{max-width:55%;font-size:11px}#storyApp .st-top .st-date{margin-top:33px}#storyApp[data-page]:not([data-page='home']) .st-top{min-height:210px}}
+
+/* v29 character selection and individual illustrated homes */
+#storyApp .st-top{background-image:var(--character-home,url('./assets/storybook-home.webp'))!important;background-position:center center!important;background-size:cover!important}
+#storyApp .st-character-dialog{width:min(94vw,530px);max-height:85vh;padding:20px}
+#storyApp .st-character-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+#storyApp .st-character-grid button{border:2px solid #e6d8ed;border-radius:15px;background:#fff9f1;padding:8px;color:#25314d;text-align:center;display:flex;flex-direction:column;gap:5px}
+#storyApp .st-character-grid button:focus-visible,#storyApp .st-character-grid button:hover{border-color:#8770ba}
+#storyApp .st-character-grid img{width:100%;aspect-ratio:1.5;object-fit:cover;object-position:right center;border-radius:10px}
+#storyApp .st-character-grid strong{font-size:13px}#storyApp .st-character-grid small{font-size:11px;color:#77718a}
+#storyApp[data-character=dragon] .st-top{background-color:#142d40}#storyApp[data-character=cat] .st-top{background-color:#1c285a}#storyApp[data-character=penguin] .st-top{background-color:#24214d}
+#storyApp[data-character=cat] .st-top:before,#storyApp[data-character=dragon] .st-top:before,#storyApp[data-character=penguin] .st-top:before{background:linear-gradient(90deg,rgba(9,16,43,.82),rgba(9,16,43,.34) 53%,transparent 86%)}
+
+
+/* v29.1: Four cohesive, character-specific storybook themes. */
+#storyApp{--ch-dark:#202b57;--ch-mid:#655d9c;--ch-soft:#f6efe9;--ch-card:#fff8f0;--ch-border:#e8d6cb;--ch-accent:#8972bb;--ch-tab:#1a2347;--ch-gold:#f8dca6}
+#storyApp[data-character="cat"]{--ch-dark:#693c66;--ch-mid:#d18aaf;--ch-soft:#fff0f5;--ch-card:#fff8fb;--ch-border:#f1cddd;--ch-accent:#b65389;--ch-tab:#663b65;--ch-gold:#ffe1ed}
+#storyApp[data-character="dragon"]{--ch-dark:#254e48;--ch-mid:#83b69a;--ch-soft:#eff9f1;--ch-card:#f8fff9;--ch-border:#c9e4d0;--ch-accent:#41856a;--ch-tab:#285449;--ch-gold:#e1f7d9}
+#storyApp[data-character="penguin"]{--ch-dark:#29476e;--ch-mid:#8eb7dd;--ch-soft:#eff7ff;--ch-card:#f8fcff;--ch-border:#cbdff2;--ch-accent:#4e83b6;--ch-tab:#28466b;--ch-gold:#e2f4ff}
+#storyApp[data-character]{background:linear-gradient(180deg,var(--ch-dark) 0,var(--ch-mid) 350px,var(--ch-soft) 600px,var(--ch-soft) 100%)!important}
+#storyApp[data-character] .st-top{background-image:var(--character-home)!important;background-color:var(--ch-dark)!important}
+#storyApp[data-character] .st-top:before{background:linear-gradient(90deg,color-mix(in srgb,var(--ch-dark) 88%,transparent),color-mix(in srgb,var(--ch-dark) 50%,transparent) 50%,transparent 85%)!important}
+#storyApp[data-character] .st-home-tile,#storyApp[data-character] .st-card{background:var(--ch-card)!important;border-color:var(--ch-border)!important}
+#storyApp[data-character] .st-home-tile{box-shadow:0 5px 16px color-mix(in srgb,var(--ch-dark) 17%,transparent)}
+#storyApp[data-character] .st-tabs{background:var(--ch-tab)!important;border-top-color:var(--ch-accent)!important}
+#storyApp[data-character] .st-tabs button.active{color:var(--ch-gold)!important;border-top-color:var(--ch-gold)!important}
+#storyApp[data-character] .st-primary{background:var(--ch-accent)!important}
+#storyApp[data-character] .st-diary-card,#storyApp[data-character] .st-calendar-card,#storyApp[data-character] .st-discover-card{border-top:5px solid var(--ch-accent)!important;border-left-color:var(--ch-accent)!important}
+#storyApp[data-character] .st-character-grid button:focus-visible,#storyApp[data-character] .st-character-grid button:hover{border-color:var(--ch-accent)!important}
+#storyApp[data-character] .st-soft{border-color:var(--ch-border)!important}
+#storyApp[data-character] .st-home-foot{color:#fff9f3!important}
+
+/* v29.2: approved four storybook home scenes; editable text is HTML, not embedded in art */
+#storyApp[data-character] .st-top{background-image:var(--character-home)!important;background-position:center center!important;background-size:cover!important}
+#storyApp[data-character] .st-top:before{background:linear-gradient(90deg,color-mix(in srgb,var(--ch-dark) 70%,transparent) 0%,color-mix(in srgb,var(--ch-dark) 25%,transparent) 43%,transparent 66%)!important}
+#storyApp[data-character] .st-top h1{max-width:68%}
+@media(max-width:480px){#storyApp[data-character] .st-top{background-position:59% center!important}#storyApp[data-character] .st-top h1{max-width:68%}#storyApp[data-character] .st-top p{max-width:61%}}

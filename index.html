@@ -699,4 +699,4 @@ $('meal25Save').onclick=async()=>{const list=names.map(s=>s.trim()).filter(Boole
 const r={id,date,category:$('meal25Category').value,memo,createdAt:Date.now(),photoLocalId:photoBlob?id:null,foodNames:list};s.records=Array.isArray(s.records)?s.records:[];s.records.push(r);localStorage.setItem(key,JSON.stringify(s));window.dispatchEvent(new Event('naldam-avatar-refresh'));window.dispatchEvent(new Event('storage'));setStatus('식사 기록을 저장했어요!');setTimeout(()=>dlg.close(),550)}catch(e){setStatus('저장하지 못했어요. 브라우저 저장 공간을 확인해 주세요.')}finally{btn.disabled=false}};
 // Reuse existing food log buttons, while leaving exercise and diary forms intact.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v12-log]');if(!b)return;const cat=b.getAttribute('data-v12-log');if(!['breakfast','lunch','dinner','snack'].includes(cat))return;e.preventDefault();e.stopImmediatePropagation();show(cat)},true);
-})();</script><link rel="stylesheet" href="./story.css?v=282"><script defer src="./story.js?v=282"></script></body></html>
+})();</script><link rel="stylesheet" href="./story.css?v=290"><script defer src="./story.js?v=290"></script></body></html>
