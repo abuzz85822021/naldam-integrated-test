@@ -76,3 +76,10 @@
 #storyApp #storyContentBody{white-space:pre-wrap;overflow:auto;max-height:50vh}
 #storyApp #storyContentClose{float:right;background:#ece4f4;border:0;border-radius:10px;padding:7px 10px}
 @media(max-width:380px){#storyApp .st-top .st-sheep{width:116px}#storyApp .st-top h1{font-size:22px}#storyApp .st-tile-icon{width:36px;font-size:26px}}
+
+/* v28.1: Keep the new navigation above ALL legacy fixed navigation bars. */
+#storyApp:not([hidden]){z-index:5000!important;isolation:isolate}
+#storyApp:not([hidden]) .st-tabs{z-index:5010!important;bottom:0!important;left:0!important;right:0!important}
+body:has(#storyApp:not([hidden])) .premium-bottom,
+body:has(#storyApp:not([hidden])) .v24-bottom-nav,
+body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
