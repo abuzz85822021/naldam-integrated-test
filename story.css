@@ -326,3 +326,27 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-page="diary"] .st-page-meal,#storyApp[data-page="diary"] .st-page-writing{background:#fffaf1!important;color:#283751!important}
 #storyApp[data-page]:not([data-page="home"]) input,#storyApp[data-page]:not([data-page="home"]) textarea{max-width:100%;color:#23344b}
 @media(max-width:480px){#storyApp[data-page]:not([data-page="home"]) .st-top{min-height:205px!important}#storyApp[data-page]:not([data-page="home"]) .st-content{padding-bottom:98px}}
+
+/* v30.4: distinct diary writing and memory-album experiences */
+#storyApp .st-fold>summary{cursor:pointer;list-style:none;color:#ffe3a4;font-size:1.13rem;font-weight:800;padding:10px 2px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+#storyApp .st-fold>summary::-webkit-details-marker{display:none}
+#storyApp .st-fold>summary span{font-size:.79rem;color:#d9c9a5;font-weight:500;text-align:right}
+#storyApp .st-fold[open]>summary{border-bottom:1px solid #bda57966;margin-bottom:14px}
+#storyApp .st-memory-card{background:linear-gradient(165deg,#192e50,#101e39);border:1px solid #e8bf7b88}
+#storyApp .st-memory-album{display:grid;gap:16px;margin:12px 0 18px}
+#storyApp .st-memory-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#storyApp .st-memory-photos figure{margin:0;min-width:0;background:#fff4dc;border:5px solid #fff4dc;border-bottom-width:9px;border-radius:8px;box-shadow:0 7px 20px #0005;transform:rotate(-1deg)}
+#storyApp .st-memory-photos figure:nth-child(even){transform:rotate(2deg)}
+#storyApp .st-memory-photos img{width:100%;height:125px;object-fit:cover;border-radius:3px;display:block}
+#storyApp .st-memory-photos img[hidden]{display:none}
+#storyApp .st-memory-photos figcaption{font-size:.78rem;color:#4c4351;padding:7px 4px 2px;overflow-wrap:anywhere}
+#storyApp .st-memory-photo-placeholder,#storyApp .st-memory-empty{padding:24px 12px;border:1px dashed #f4d39477;border-radius:16px;text-align:center;color:#f3dba9;background:#20375888}
+#storyApp .st-memory-empty small{color:#cbd7e8}
+#storyApp .st-memory-notes{border-radius:15px;background:#0d1c34a8;padding:15px;color:#f8eedb;line-height:1.65}
+#storyApp .st-memory-notes strong{color:#ffe0a2}
+#storyApp .st-memory-notes p{margin:9px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+#storyApp .st-memory-diary{margin-top:12px;border-top:1px solid #ffffff30;padding-top:12px}
+#storyApp .st-memory-diary summary{cursor:pointer;color:#ffdea1;font-weight:700}
+#storyApp .st-memory-diary p{padding:8px 0}
+
+#storyApp .st-memory-card:before{content:"";display:block;height:115px;border-radius:15px;margin-bottom:16px;background:linear-gradient(0deg,#14284422,#14284400),url("./assets/memory-night-v304.webp") center 54%/cover no-repeat}
