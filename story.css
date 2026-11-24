@@ -391,3 +391,7 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 /* Form inputs and daily-page paper remain readable. */
 #storyApp[data-page="diary"] .st-one-page,#storyApp[data-page="diary"] .st-page-meal,#storyApp[data-page="diary"] .st-page-writing{color:#29374f!important}
 @media(max-width:480px){#storyApp[data-page]:not([data-page="home"]) .st-top{min-height:245px!important}#storyApp[data-page="sheep"] #storySheepImage{height:285px!important}}
+
+/* v30.7: hide legacy-view entry on diary, calendar and discover pages.
+   Keep the underlying button for avatar weight editing compatibility. */
+#storyApp:is([data-page="diary"],[data-page="calendar"],[data-page="discover"]) #storyLegacy{display:none!important}
