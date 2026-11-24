@@ -226,3 +226,14 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
   margin-right:auto!important;
   object-fit:contain!important;
 }
+
+/* v29.7 - expandable easy reading guides for discoveries */
+#storyContentBody .st-story-intro{white-space:pre-line;line-height:1.7;overflow-wrap:anywhere}
+#storyContentBody .st-story-explain-button{display:block;width:100%;margin:16px 0 10px;padding:13px 16px;border:1px solid #d9c5e9;border-radius:14px;background:#f5ebfa;color:#40325d;font-weight:800;text-align:left;cursor:pointer}
+#storyContentBody .st-story-explain-panel{background:#fffcf7;border:1px solid #eee0d0;border-radius:16px;padding:16px;color:#2b3145;line-height:1.65}
+#storyContentBody .st-story-explain-panel[hidden]{display:none}
+#storyContentBody .st-story-explain-panel h3{font-size:17px;margin:0 0 12px}
+#storyContentBody .st-story-explain-part{padding:8px 0;border-top:1px solid #eee6dc}
+#storyContentBody .st-story-explain-part strong{display:block;margin-bottom:3px}
+#storyContentBody .st-story-explain-part p{margin:0;white-space:pre-line;overflow-wrap:anywhere}
+#storyContentBody .st-story-explain-panel small{display:block;margin-top:12px;color:#777}
