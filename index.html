@@ -271,6 +271,16 @@ body.v24-from-mission #missionJourneyV23{display:none!important}
 #taDetailOverlay.ta-open{display:flex}#taDetailOverlay .ta-detail-panel{width:min(100%,490px);max-height:85vh;overflow:auto;border:1px solid #e9bc77;border-radius:23px;background:linear-gradient(155deg,#24395c,#0c1c36);color:#f7ead5;padding:22px;box-shadow:0 15px 55px #000b,0 0 20px #d5a05a55}
 #taDetailOverlay .ta-detail-top{display:flex;align-items:center;justify-content:space-between;gap:10px}#taDetailOverlay h2{color:#ffdf97;font-size:23px;margin:0}#taDetailOverlay .ta-close{background:#142744;border:1px solid #f3cd91;color:#fff1d7;border-radius:12px;font-size:15px;padding:7px 12px;cursor:pointer}#taDetailOverlay .ta-detail-value{margin:17px 0;color:#ffe1a3;font-size:20px;font-weight:800}#taDetailOverlay .ta-detail-section{padding:15px;border:1px solid #c69d6c80;background:#ffffff0c;border-radius:15px;margin-top:12px;line-height:1.8;font-size:14px;white-space:pre-line}#taDetailOverlay .ta-detail-section b{color:#ffe2a9}#taDetailOverlay .ta-detail-note{color:#d4dcef;font-size:12px;line-height:1.6;margin-top:13px}
 @media(min-width:620px){#storyApp #todayAtlas .ta-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+</style><style id="v308-home-motto-headings">
+#storyApp #todayAtlas .ta-hero{height:410px!important}
+#storyApp #todayAtlas .ta-hero-content{max-width:72%;top:22px}
+#storyApp #todayAtlas .ta-motto{margin-top:14px;padding:11px 12px;border:1px solid #edc780b0;border-radius:13px;background:linear-gradient(115deg,#081832e8,#152747bd);box-shadow:0 0 14px #e5b55a28;max-width:310px;text-align:center!important}
+#storyApp #todayAtlas .ta-motto strong{display:block;color:#ffe3a4;font-size:clamp(12px,3.5vw,17px);line-height:1.5;letter-spacing:-.02em}
+#storyApp #todayAtlas .ta-motto span{display:block;color:#f2e5ce;font-size:10px;line-height:1.5;margin-top:5px}
+#storyApp[data-page]:is([data-page="diary"],[data-page="calendar"],[data-page="discover"]) .st-top h1:before{display:block!important;line-height:1.2!important;margin-bottom:8px!important}
+#storyApp[data-page]:is([data-page="diary"],[data-page="calendar"],[data-page="discover"]) .st-top h1:after{display:block!important;clear:both!important;line-height:1.5!important;margin-top:4px!important}
+#storyApp #todayAtlas #taSun{font-size:clamp(10px,2.9vw,14px)!important;letter-spacing:-.3px}
+@media(max-width:390px){#storyApp #todayAtlas .ta-hero{height:370px!important}#storyApp #todayAtlas .ta-motto{margin-top:10px;padding:8px}#storyApp #todayAtlas .ta-hero-content{max-width:76%}}
 </style></head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
 <section id="avatarHome" aria-label="날담 아바타 홈"><div class="premium-shell">
 <header class="premium-head"><div class="premium-brand"><span class="brand-crescent">☾</span><div><strong>날담</strong><small>NALDAM · 나의 하루</small></div></div><div class="head-actions"><button type="button" id="premiumTheme" aria-label="날담 모드로 전환">☾ 날담 모드</button><button type="button" data-go="avatar" aria-label="아바타 상세">✦</button></div></header>
@@ -294,13 +304,13 @@ body.v24-from-mission #missionJourneyV23{display:none!important}
 <footer class="premium-footer">☾ 날담 · 오늘이라는 날에 담긴 이야기</footer></div></section>
 <section id="naldamBoard" aria-label="날담보드 홈"><div class="board-shell">
 <section id="todayAtlas" class="today-atlas" aria-label="오늘이라는 날의 모든 이야기">
-<div class="ta-hero"><div class="ta-hero-content"><div class="ta-kicker">날담 ☾ · 오늘이라는 날을 담다</div><div id="taEnglish" class="ta-english"></div><h1 id="taDate"></h1><div id="taDayCount" class="ta-daycount"></div><div class="ta-progress"><span id="taYearBar"></span></div><small id="taYearRemain"></small></div></div>
+<div class="ta-hero"><div class="ta-hero-content"><div class="ta-kicker">날담 ☾ · 오늘이라는 날을 담다</div><div id="taEnglish" class="ta-english"></div><h1 id="taDate"></h1><div id="taDayCount" class="ta-daycount"></div><div class="ta-progress"><span id="taYearBar"></span></div><small id="taYearRemain"></small><div class="ta-motto"><strong>하루의 기록이 모여<br>나만의 역사가 됩니다.</strong><span>평범한 오늘이, 언젠가 소중한 추억이 되도록.</span></div></div></div>
 <div class="ta-grid">
 <article class="ta-card"><h3>🗓️ 오늘의 음력</h3><strong id="taLunar">날짜 확인 중</strong><p id="taLunarDetail">양력과 음력의 만남</p></article>
 <article class="ta-card"><h3>🌙 오늘의 달</h3><strong id="taMoon">달의 나이</strong><p id="taMoonDetail">달의 변화</p></article>
 <article class="ta-card"><h3>🍁 계절과 절기</h3><strong id="taTerm">오늘의 절기</strong><p id="taTermDetail">계절의 흐름</p></article>
 <article class="ta-card"><h3>✨ 오늘의 별자리</h3><strong id="taZodiac">별자리</strong><p>생일 별자리가 아닌 오늘의 태양 별자리예요</p></article>
-<article class="ta-card"><h3>🌅 해와 하늘</h3><strong id="taSun">일출 · 일몰</strong><p>지역별 시각은 추후 위치 설정과 연결해요</p></article>
+<article class="ta-card"><h3>🌅 해와 하늘</h3><strong id="taSun">일출·일몰 계산 중</strong><p id="taSunNote">대전 기준 · 날짜별 계산</p></article>
 <article class="ta-card"><h3>⛅ 오늘의 날씨</h3><strong>날씨 연동 준비 중</strong><p>기온 · 강수 · 미세먼지 · 체감온도</p></article>
 <article class="ta-card"><h3>🌸 오늘의 꽃</h3><strong id="taFlower">오늘의 탄생화</strong><p>꽃과 꽃말은 검증된 자료를 연결할 예정이에요</p></article>
 <article class="ta-card"><h3>🎉 오늘의 기념일</h3><strong id="taHoliday">기념일 살펴보기</strong><p>공휴일 · 국가기념일 · 세계 기념일</p></article>
@@ -736,10 +746,30 @@ $('meal25Save').onclick=async()=>{const list=names.map(s=>s.trim()).filter(Boole
 const r={id,date,category:$('meal25Category').value,memo,createdAt:Date.now(),photoLocalId:photoBlob?id:null,foodNames:list};s.records=Array.isArray(s.records)?s.records:[];s.records.push(r);localStorage.setItem(key,JSON.stringify(s));window.dispatchEvent(new Event('naldam-avatar-refresh'));window.dispatchEvent(new Event('storage'));setStatus('식사 기록을 저장했어요!');setTimeout(()=>dlg.close(),550)}catch(e){setStatus('저장하지 못했어요. 브라우저 저장 공간을 확인해 주세요.')}finally{btn.disabled=false}};
 // Reuse existing food log buttons, while leaving exercise and diary forms intact.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v12-log]');if(!b)return;const cat=b.getAttribute('data-v12-log');if(!['breakfast','lunch','dinner','snack'].includes(cat))return;e.preventDefault();e.stopImmediatePropagation();show(cat)},true);
-})();</script><link rel="stylesheet" href="./story.css?v=307"><script defer src="./story.js?v=306"></script><script id="v30-1-today-atlas-script">
+})();</script><link rel="stylesheet" href="./story.css?v=308"><script defer src="./story.js?v=306"></script><script id="v30-1-today-atlas-script">
 (()=>{'use strict';const $=id=>document.getElementById(id);const fmt=(n)=>String(n).padStart(2,'0');const d=new Date();const y=d.getFullYear(),m=d.getMonth()+1,day=d.getDate();const key=`${y}-${fmt(m)}-${fmt(day)}`;const weekday=['일','월','화','수','목','금','토'][d.getDay()];const start=new Date(y,0,1),ordinal=Math.floor((new Date(y,m-1,day)-start)/86400000)+1;const days=(new Date(y,1,29).getMonth()===1)?366:365;
 $('taEnglish').textContent=`${y} · ${d.toLocaleString('en-US',{month:'long'}).toUpperCase()} · ${d.toLocaleString('en-US',{weekday:'long'}).toUpperCase()}`;$('taDate').textContent=`${m}월 ${day}일 (${weekday})`;$('taDayCount').textContent=`${days}일 중 ${ordinal}번째 날`;$('taYearBar').style.width=(ordinal/days*100)+'%';$('taYearRemain').textContent=`올해 남은 ${days-ordinal}일`;
 const zodiac=[['염소자리',120],['물병자리',219],['물고기자리',321],['양자리',420],['황소자리',521],['쌍둥이자리',621],['게자리',723],['사자자리',823],['처녀자리',923],['천칭자리',1023],['전갈자리',1122],['사수자리',1222],['염소자리',1232]];const md=m*100+day;$('taZodiac').textContent=zodiac.find(z=>md<z[1])?.[0]||'염소자리';
+// Offline NOAA-style solar calculation: approximate sunrise/sunset for Daejeon, KST.
+function solarClock(date,lat,lon,rising){
+ const rad=Math.PI/180, N=Math.floor((Date.UTC(date.getFullYear(),date.getMonth(),date.getDate())-Date.UTC(date.getFullYear(),0,0))/86400000);
+ const lngHour=lon/15,t=N+((rising?6:18)-lngHour)/24;
+ const M=(.9856*t)-3.289;
+ const L=((M+1.916*Math.sin(M*rad)+.020*Math.sin(2*M*rad)+282.634)%360+360)%360;
+ let RA=((Math.atan(.91764*Math.tan(L*rad))/rad)%360+360)%360;
+ RA=(RA+Math.floor(L/90)*90-Math.floor(RA/90)*90)/15;
+ const sinDec=.39782*Math.sin(L*rad),cosDec=Math.cos(Math.asin(sinDec));
+ const cosH=(Math.cos(90.833*rad)-sinDec*Math.sin(lat*rad))/(cosDec*Math.cos(lat*rad));
+ if(Math.abs(cosH)>1)return null;
+ const H=((rising?360-Math.acos(cosH)/rad:Math.acos(cosH)/rad)/15);
+ const T=H+RA-.06571*t-6.622;
+ const hours=((T-lngHour+9)%24+24)%24;
+ const mins=Math.round(hours*60)%1440;
+ return `${fmt(Math.floor(mins/60))}:${fmt(mins%60)}`;
+}
+const sunrise=solarClock(d,36.3504,127.3845,true),sunset=solarClock(d,36.3504,127.3845,false);
+$('taSun').textContent=sunrise&&sunset?`일출 ${sunrise} · 일몰 ${sunset}`:'일출·일몰 계산 불가';
+$('taSunNote').textContent='대전 기준 · 천문 근삿값 (실제와 차이 가능)';
 const holidays={'01-01':'새해 첫날','03-01':'삼일절','05-05':'어린이날','06-06':'현충일','08-15':'광복절','10-03':'개천절','10-09':'한글날','12-25':'성탄절'};$('taHoliday').textContent=holidays[`${fmt(m)}-${fmt(day)}`]||'오늘의 기념일';
 const questions=['오늘 가장 마음에 남은 순간은 무엇인가요?','오늘 나를 웃게 한 작은 일은 무엇인가요?','오늘 고마웠던 사람은 누구인가요?','오늘의 하늘은 어떤 모습이었나요?','오늘 나에게 해주고 싶은 말은?'];$('taQuestion').textContent=questions[(ordinal-1)%questions.length];
 function tick(){const now=new Date(),secs=now.getHours()*3600+now.getMinutes()*60+now.getSeconds();$('taTime').textContent=`오늘의 ${(secs/86400*100).toFixed(1)}%가 지났어요`;$('taTimeBar').style.width=(secs/86400*100)+'%';const left=86400-secs;$('taTimeRemain').textContent=`남은 시간 ${Math.floor(left/3600)}시간 ${Math.floor(left%3600/60)}분`;}tick();setInterval(tick,60000);
@@ -762,7 +792,7 @@ const descriptions=[
 ['달은 햇빛을 반사해서 밝게 보여요. 달의 나이(월령)는 직전 삭(신월)부터 얼마나 지났는지를 뜻해요.','🌕 쉽게 알아보기: 달이 둥글게 보이는 보름 무렵은 약 15일, 가느다란 초승달은 그보다 이른 시기예요. 달이 스스로 빛을 내는 것은 아니에요.','월령과 밝기는 천문 근삿값이며 실제 관측과 차이가 있을 수 있어요.'],
 ['24절기는 태양의 위치를 기준으로 한 해의 계절 변화를 24부분으로 나눈 것이에요.','🍁 쉽게 알아보기: 소설은 작은 눈이 내리기 시작한다는 뜻이에요. 날씨가 꼭 그날 눈이 온다는 뜻은 아니에요.','절기 날짜는 현재 앱에 저장된 달력 자료의 근삿값이에요.'],
 ['태양 별자리는 오늘 태양이 하늘의 어느 별자리 방향에 있는지 전통적인 날짜 구간으로 표현한 것이에요.','✨ 쉽게 알아보기: 생일로 말하는 별자리와 같은 방식의 날짜 구분이에요. 실제 밤하늘에 보이는 별자리와는 달라요.','실제 별자리 경계와 천문학적 위치는 다를 수 있어요.'],
-['일출과 일몰은 태양이 지평선 위로 나타나고 사라지는 시각이에요.','🌅 쉽게 알아보기: 낮의 길이는 계절에 따라 달라져요. 겨울에는 해가 늦게 뜨고 일찍 지는 날이 많아요.','현재 위치별 일출·일몰 데이터는 연결 전이에요.'],
+['일출과 일몰은 태양이 지평선 위로 나타나고 사라지는 시각이에요.','🌅 쉽게 알아보기: 낮의 길이는 계절에 따라 달라져요. 겨울에는 해가 늦게 뜨고 일찍 지는 날이 많아요.','대전광역시를 기준으로 날짜별 계산한 근삿값이에요. 실제 일출·일몰 시각과 차이가 있을 수 있어요.'],
 ['날씨는 기온, 비·눈, 바람, 체감온도 등을 함께 살펴보면 좋아요.','⛅ 쉽게 알아보기: 같은 기온이라도 바람이 강하면 더 춥게 느껴질 수 있어요.','현재 실시간 날씨 연동 준비 중이며 임의의 날씨를 표시하지 않아요.'],
 ['탄생화는 날짜마다 상징적인 꽃을 연결해 소개하는 문화예요. 꽃말은 꽃에 담긴 상징적인 의미를 뜻해요.','🌸 쉽게 알아보기: 오늘을 꽃 한 송이로 표현한다면 어떤 꽃이 떠오르나요?','날짜별 탄생화는 자료마다 달라 검증된 출처 연결 전이에요.'],
 ['기념일은 역사적 사건이나 중요한 가치를 기억하기 위해 정한 날이에요.','🎉 쉽게 알아보기: 공휴일, 국가기념일, 국제기념일은 서로 다를 수 있어요.','현재 일부 고정 날짜의 기념일만 제공해요.'],
