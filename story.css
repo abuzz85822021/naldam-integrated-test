@@ -269,3 +269,60 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp #todayAtlas .ta-card{box-sizing:border-box}
 #storyApp #todayAtlas .ta-record{cursor:pointer}
 @media(max-width:480px){#storyApp[data-page="home"] .st-content{padding:10px 10px 95px}#storyApp #todayAtlas .ta-hero{height:285px}#storyApp #todayAtlas .ta-grid{gap:8px}#storyApp #todayAtlas .ta-card{padding:12px 10px}}
+
+
+/* v30.3 — unified midnight-and-lantern visual system.
+   Presentation only: existing DOM, storage, event handlers and Supabase untouched. */
+#storyApp[data-page="diary"],#storyApp[data-page="calendar"],#storyApp[data-page="discover"],#storyApp[data-page="sheep"]{
+ color:#f9edd6!important;background:radial-gradient(circle at 13% 14%,#ffe3a52b 0 1px,transparent 3px),radial-gradient(circle at 79% 26%,#ffe6b830 0 2px,transparent 4px),linear-gradient(180deg,#07152d 0%,#122b50 42%,#102440 100%)!important;
+ background-attachment:local!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .st-top{
+ background:linear-gradient(90deg,#07152dd9 0%,#07152d6a 55%,#07152d1a 100%),url('./assets/today-dreamscape.jpg') 63% 45%/cover no-repeat!important;
+ min-height:235px!important;border-radius:0 0 24px 24px!important;border-bottom:1px solid #e9bf7955!important;
+ box-shadow:0 12px 28px #0005!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .st-top:before{display:none!important}
+#storyApp[data-page]:not([data-page="home"]) .st-top h1{color:#ffe7aa!important;text-shadow:0 2px 9px #050d20!important}
+#storyApp[data-page]:not([data-page="home"]) .st-top p,#storyApp[data-page]:not([data-page="home"]) .st-top .st-date{color:#f6e8cb!important}
+#storyApp[data-page]:not([data-page="home"]) .st-content{color:#f6e8cf!important}
+#storyApp[data-page]:not([data-page="home"]) .st-card,
+#storyApp[data-page]:not([data-page="home"]) .st-discovery,
+#storyApp[data-page]:not([data-page="home"]) .st-month-card,
+#storyApp[data-page]:not([data-page="home"]) .st-calendar-card,
+#storyApp[data-page]:not([data-page="home"]) .st-diary-card{
+ background:linear-gradient(155deg,#213655f5,#0d1f3af8)!important;color:#f8e9cb!important;
+ border:1px solid #d6aa7199!important;border-radius:19px!important;
+ box-shadow:0 0 0 1px #ffe0a012,0 8px 25px #0005,inset 0 1px #fff2c51c!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .st-card h2,
+#storyApp[data-page]:not([data-page="home"]) .st-card h3,
+#storyApp[data-page]:not([data-page="home"]) .st-month-words strong,
+#storyApp[data-page]:not([data-page="home"]) .st-month-nav h2{color:#ffe3a0!important}
+#storyApp[data-page]:not([data-page="home"]) .st-card p,
+#storyApp[data-page]:not([data-page="home"]) .st-card small,
+#storyApp[data-page]:not([data-page="home"]) .st-month-words p,
+#storyApp[data-page]:not([data-page="home"]) .st-month-excerpt{color:#d8dff0!important}
+#storyApp[data-page]:not([data-page="home"]) .st-grid button,
+#storyApp[data-page]:not([data-page="home"]) .st-month-nav,
+#storyApp[data-page]:not([data-page="home"]) .st-soft{
+ background:linear-gradient(140deg,#293e5e,#142945)!important;color:#f7e5c4!important;border:1px solid #bc966c99!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .st-month-nav button{background:#172a46!important;color:#ffe3a0!important;border:1px solid #c8a16d!important}
+#storyApp[data-page="calendar"] .st-calendar button{background:#142743!important;color:#f5e8d0!important;border:1px solid #354c6b!important}
+#storyApp[data-page="calendar"] .st-calendar button.marked{background:#304264!important;border-color:#c29c64!important}
+#storyApp[data-page="calendar"] .st-calendar button.selected{background:#52462f!important;outline:2px solid #ffda8a!important;color:#fff2ce!important;box-shadow:0 0 15px #ffc66d55!important}
+#storyApp[data-page="calendar"] .st-week{color:#e8d9b8!important}
+#storyApp[data-page="calendar"] .st-month-photo{border-color:#f7dfb5!important}
+#storyApp[data-page="discover"] .st-discovery{border-left:4px solid #f2cb80!important}
+#storyApp[data-page]:not([data-page="home"]) .st-primary{background:linear-gradient(130deg,#dca960,#f4d99c)!important;color:#162640!important;border:1px solid #ffe3a9!important;font-weight:800!important}
+#storyApp .st-tabs{background:#0b1b35f5!important;border-top:1px solid #bb9967!important;box-shadow:0 -6px 24px #02091388!important}
+#storyApp .st-tabs button{color:#b9c8df!important}
+#storyApp .st-tabs button.active{color:#ffe2a2!important;text-shadow:0 0 12px #f5b94a80!important}
+/* Keep journal writing and photos readable; use a paper insert inside the night-themed frame. */
+#storyApp[data-page="diary"] .st-one-page{background:linear-gradient(155deg,#fff9ed,#f8ebd7)!important;color:#27354b!important;border:1px solid #f5d59c!important}
+#storyApp[data-page="diary"] .st-one-page h3,#storyApp[data-page="diary"] .st-one-page h4{color:#283751!important}
+#storyApp[data-page="diary"] .st-one-page p{color:#46516a!important}
+#storyApp[data-page="diary"] .st-page-meal,#storyApp[data-page="diary"] .st-page-writing{background:#fffaf1!important;color:#283751!important}
+#storyApp[data-page]:not([data-page="home"]) input,#storyApp[data-page]:not([data-page="home"]) textarea{max-width:100%;color:#23344b}
+@media(max-width:480px){#storyApp[data-page]:not([data-page="home"]) .st-top{min-height:205px!important}#storyApp[data-page]:not([data-page="home"]) .st-content{padding-bottom:98px}}
