@@ -316,6 +316,31 @@ body.v24-from-mission #missionJourneyV23{display:none!important}
 @media(min-width:620px){
  #storyApp[data-page="home"] #todayAtlas .ta-hero{height:390px!important;background-size:100% 100%,cover!important;background-position:center,center 48%!important}
 }
+</style><style id="v312-approved-home-header">
+/* Approved home layout: same illustrated scene as the diary, with a separate compact year summary. */
+#storyApp[data-page="home"] #todayAtlas .ta-hero{
+ height:clamp(275px,76vw,340px)!important;
+ background:#111d3c url('./assets/storybook-home.webp') center center/cover no-repeat!important;
+ border:1px solid #d6b073!important;border-radius:23px!important;
+}
+#storyApp[data-page="home"] #todayAtlas .ta-hero:after{
+ background:linear-gradient(90deg,rgba(8,17,39,.87) 0%,rgba(8,17,39,.70) 37%,rgba(8,17,39,.06) 85%)!important;
+}
+#storyApp[data-page="home"] #todayAtlas .ta-hero-content{
+ top:21px!important;left:19px!important;right:auto!important;max-width:76%!important;width:76%;
+}
+#storyApp[data-page="home"] #todayAtlas .ta-kicker{font-size:clamp(22px,6vw,28px)!important;font-weight:850!important;letter-spacing:-.04em!important;color:#fff0d1!important}
+#storyApp[data-page="home"] #todayAtlas .ta-english{display:none!important}
+#storyApp[data-page="home"] #todayAtlas .ta-home-date{font-size:clamp(12px,3.3vw,16px);color:#fff5df;margin-top:17px;white-space:nowrap}
+#storyApp[data-page="home"] #todayAtlas .ta-hero h1{font-size:clamp(29px,8vw,43px)!important;line-height:1.16!important;letter-spacing:-.055em!important;margin:15px 0 12px!important;max-width:245px;color:#ffe1a0!important}
+#storyApp[data-page="home"] #todayAtlas .ta-motto{border:0!important;box-shadow:none!important;background:none!important;text-align:left!important;padding:0!important;margin:0!important;max-width:310px!important}
+#storyApp[data-page="home"] #todayAtlas .ta-motto strong{font-size:clamp(12px,3.5vw,16px)!important;font-weight:600!important;line-height:1.45!important;color:#fff1d6!important}
+#storyApp[data-page="home"] #todayAtlas .ta-motto span{font-size:clamp(9px,2.45vw,11px)!important;line-height:1.4!important;color:#fff1d6!important;margin-top:9px!important;white-space:normal}
+#storyApp[data-page="home"] #todayAtlas .ta-year-summary{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 12px;margin:9px 2px 4px;color:#f7dfac;font-size:11px}
+#storyApp[data-page="home"] #todayAtlas .ta-year-summary .ta-daycount{font-size:11px!important}
+#storyApp[data-page="home"] #todayAtlas .ta-year-summary .ta-progress{flex-basis:100%;max-width:none!important;height:5px!important;margin:2px 0 0!important}
+@media(max-width:390px){#storyApp[data-page="home"] #todayAtlas .ta-hero{height:285px!important}#storyApp[data-page="home"] #todayAtlas .ta-hero-content{top:16px!important;left:15px!important;max-width:78%!important;width:78%}#storyApp[data-page="home"] #todayAtlas .ta-hero h1{margin:10px 0!important;font-size:30px!important}#storyApp[data-page="home"] #todayAtlas .ta-home-date{margin-top:11px!important}#storyApp[data-page="home"] #todayAtlas .ta-motto span{margin-top:5px!important}}
+@media(min-width:620px){#storyApp[data-page="home"] #todayAtlas .ta-hero{height:340px!important}}
 </style></head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
 <section id="avatarHome" aria-label="날담 아바타 홈"><div class="premium-shell">
 <header class="premium-head"><div class="premium-brand"><span class="brand-crescent">☾</span><div><strong>날담</strong><small>NALDAM · 나의 하루</small></div></div><div class="head-actions"><button type="button" id="premiumTheme" aria-label="날담 모드로 전환">☾ 날담 모드</button><button type="button" data-go="avatar" aria-label="아바타 상세">✦</button></div></header>
@@ -339,7 +364,7 @@ body.v24-from-mission #missionJourneyV23{display:none!important}
 <footer class="premium-footer">☾ 날담 · 오늘이라는 날에 담긴 이야기</footer></div></section>
 <section id="naldamBoard" aria-label="날담보드 홈"><div class="board-shell">
 <section id="todayAtlas" class="today-atlas" aria-label="오늘이라는 날의 모든 이야기">
-<div class="ta-hero"><div class="ta-hero-content"><div class="ta-kicker">날담 ☾ · 오늘이라는 날을 담다</div><div id="taEnglish" class="ta-english"></div><h1 id="taDate"></h1><div id="taDayCount" class="ta-daycount"></div><div class="ta-progress"><span id="taYearBar"></span></div><small id="taYearRemain"></small><div class="ta-motto"><strong>하루의 기록이 모여<br>나만의 역사가 됩니다.</strong><span>평범한 오늘이, 언젠가 소중한 추억이 되도록.</span></div></div></div>
+<div class="ta-hero"><div class="ta-hero-content"><div class="ta-kicker">날담 🌙</div><div id="taEnglish" class="ta-english" aria-hidden="true"></div><div id="taDate" class="ta-home-date"></div><h1>오늘이라는<br>날을 담다</h1><div class="ta-motto"><strong>하루의 기록이 모여<br>나만의 역사가 됩니다.</strong><span>평범한 오늘이, 언젠가 소중한 추억이 되도록.</span></div></div></div><div class="ta-year-summary"><span id="taDayCount" class="ta-daycount"></span><span id="taYearRemain"></span><div class="ta-progress"><span id="taYearBar"></span></div></div>
 <div class="ta-grid">
 <article class="ta-card"><h3>🗓️ 오늘의 음력</h3><strong id="taLunar">날짜 확인 중</strong><p id="taLunarDetail">양력과 음력의 만남</p></article>
 <article class="ta-card"><h3>🌙 오늘의 달</h3><strong id="taMoon">달의 나이</strong><p id="taMoonDetail">달의 변화</p></article>
@@ -783,7 +808,7 @@ const r={id,date,category:$('meal25Category').value,memo,createdAt:Date.now(),ph
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v12-log]');if(!b)return;const cat=b.getAttribute('data-v12-log');if(!['breakfast','lunch','dinner','snack'].includes(cat))return;e.preventDefault();e.stopImmediatePropagation();show(cat)},true);
 })();</script><link rel="stylesheet" href="./story.css?v=308"><script defer src="./story.js?v=306"></script><script id="v30-1-today-atlas-script">
 (()=>{'use strict';const $=id=>document.getElementById(id);const fmt=(n)=>String(n).padStart(2,'0');const d=new Date();const y=d.getFullYear(),m=d.getMonth()+1,day=d.getDate();const key=`${y}-${fmt(m)}-${fmt(day)}`;const weekday=['일','월','화','수','목','금','토'][d.getDay()];const start=new Date(y,0,1),ordinal=Math.floor((new Date(y,m-1,day)-start)/86400000)+1;const days=(new Date(y,1,29).getMonth()===1)?366:365;
-$('taEnglish').textContent=`${y} · ${d.toLocaleString('en-US',{month:'long'}).toUpperCase()} · ${d.toLocaleString('en-US',{weekday:'long'}).toUpperCase()}`;$('taDate').textContent=`${m}월 ${day}일 (${weekday})`;$('taDayCount').textContent=`${days}일 중 ${ordinal}번째 날`;$('taYearBar').style.width=(ordinal/days*100)+'%';$('taYearRemain').textContent=`올해 남은 ${days-ordinal}일`;
+$('taEnglish').textContent=`${y} · ${d.toLocaleString('en-US',{month:'long'}).toUpperCase()} · ${d.toLocaleString('en-US',{weekday:'long'}).toUpperCase()}`;$('taDate').textContent=`${y}년 ${m}월 ${day}일 · ${['일요일','월요일','화요일','수요일','목요일','금요일','토요일'][d.getDay()]}`;$('taDayCount').textContent=`${days}일 중 ${ordinal}번째 날`;$('taYearBar').style.width=(ordinal/days*100)+'%';$('taYearRemain').textContent=`올해 남은 ${days-ordinal}일`;
 const zodiac=[['염소자리',120],['물병자리',219],['물고기자리',321],['양자리',420],['황소자리',521],['쌍둥이자리',621],['게자리',723],['사자자리',823],['처녀자리',923],['천칭자리',1023],['전갈자리',1122],['사수자리',1222],['염소자리',1232]];const md=m*100+day;$('taZodiac').textContent=zodiac.find(z=>md<z[1])?.[0]||'염소자리';
 // Offline NOAA-style solar calculation: approximate sunrise/sunset for Daejeon, KST.
 function solarClock(date,lat,lon,rising){
