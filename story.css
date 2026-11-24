@@ -258,3 +258,14 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp .st-page-writing{background:#fffaf5;border-radius:11px;padding:14px;margin-top:14px;border:1px solid #eee1d3}
 #storyApp .st-page-footer{text-align:center;font-size:11px;color:#a48f9f;margin-top:18px}
 @media(max-width:380px){#storyApp .st-one-page{padding:15px 10px}#storyApp .st-page-meals{gap:7px}#storyApp .st-page-meal{padding:8px}#storyApp .st-page-meal-item img{height:100px}}
+
+/* v30.2: Today Atlas belongs to the new Story Home, not legacy mode. */
+#storyApp[data-page="home"] #todayAtlas{display:block!important;max-width:1080px;margin:0 auto;padding:0 0 20px;color:#fff1d5}
+#storyApp #todayAtlas .ta-hero{background-image:url('./assets/today-dreamscape.jpg');}
+#storyApp[data-page="home"] #storyHomeCards,#storyApp[data-page="home"] .st-home-foot{display:none!important}
+#storyApp[data-page="home"] .st-top{display:none!important}
+#storyApp[data-page="home"] .st-content{padding-top:12px}
+#storyApp[data-page="home"] .st-view[data-view="home"]{background:transparent}
+#storyApp #todayAtlas .ta-card{box-sizing:border-box}
+#storyApp #todayAtlas .ta-record{cursor:pointer}
+@media(max-width:480px){#storyApp[data-page="home"] .st-content{padding:10px 10px 95px}#storyApp #todayAtlas .ta-hero{height:285px}#storyApp #todayAtlas .ta-grid{gap:8px}#storyApp #todayAtlas .ta-card{padding:12px 10px}}
