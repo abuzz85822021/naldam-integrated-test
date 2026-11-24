@@ -237,3 +237,24 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyContentBody .st-story-explain-part strong{display:block;margin-bottom:3px}
 #storyContentBody .st-story-explain-part p{margin:0;white-space:pre-line;overflow-wrap:anywhere}
 #storyContentBody .st-story-explain-panel small{display:block;margin-top:12px;color:#777}
+
+/* v30 — 하루 기록을 한 장의 일기로 엮는 화면 */
+#storyApp .st-one-page{background:linear-gradient(150deg,#fffdfa,#fff5e9);border:1px solid #e8d8c5;border-radius:20px;padding:19px 15px 16px;color:#35415b;box-shadow:0 6px 22px #77624b13;overflow:hidden}
+#storyApp .st-page-kicker{font-size:10px;letter-spacing:2px;color:#9b8c9c;font-weight:800;display:flex;justify-content:space-between}
+#storyApp .st-page-kicker span{color:#e6ae63;font-size:22px}
+#storyApp .st-one-page h3{font-size:19px;margin:2px 0 3px;line-height:1.45}
+#storyApp .st-page-subtitle{font-size:12px;color:#978c89;margin:0 0 17px}
+#storyApp .st-page-divider{text-align:center;color:#a88cba;font-size:12px;margin:17px 0 14px;letter-spacing:2px}
+#storyApp .st-page-meals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#storyApp .st-page-meal{border-radius:13px;background:#fff;border:1px solid #f0e5db;min-height:92px;padding:10px;overflow:hidden}
+#storyApp .st-page-meal-title{font-size:13px;font-weight:800;margin-bottom:7px}
+#storyApp .st-page-meal-item img{width:100%;height:125px;object-fit:cover;border-radius:9px;display:block;margin:0 0 6px}
+#storyApp .st-page-meal-item img[hidden]{display:none}
+#storyApp .st-page-meal-item p{font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;margin:3px 0 8px;line-height:1.55}
+#storyApp .st-page-blank{font-size:12px;color:#aaa0a0}
+#storyApp .st-page-section{margin-top:13px;border-top:1px dashed #e6d9cd;padding:13px 3px 1px}
+#storyApp .st-page-section h4{font-size:14px;margin:0 0 7px}
+#storyApp .st-page-section p{font-size:13px;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 7px}
+#storyApp .st-page-writing{background:#fffaf5;border-radius:11px;padding:14px;margin-top:14px;border:1px solid #eee1d3}
+#storyApp .st-page-footer{text-align:center;font-size:11px;color:#a48f9f;margin-top:18px}
+@media(max-width:380px){#storyApp .st-one-page{padding:15px 10px}#storyApp .st-page-meals{gap:7px}#storyApp .st-page-meal{padding:8px}#storyApp .st-page-meal-item img{height:100px}}
