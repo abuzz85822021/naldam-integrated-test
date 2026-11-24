@@ -1,0 +1,1466 @@
+{
+  "01-01": {
+    "name": "스노드롭",
+    "meaning": "희망"
+  },
+  "01-02": {
+    "name": "노랑수선화",
+    "meaning": "사랑에 답하여"
+  },
+  "01-03": {
+    "name": "사프란",
+    "meaning": "후회 없는 청춘"
+  },
+  "01-04": {
+    "name": "히아신스",
+    "meaning": "차분한 사랑"
+  },
+  "01-05": {
+    "name": "노루귀",
+    "meaning": "인내"
+  },
+  "01-06": {
+    "name": "흰제비꽃",
+    "meaning": "순진무구한 사랑"
+  },
+  "01-07": {
+    "name": "튤립",
+    "meaning": "실연"
+  },
+  "01-08": {
+    "name": "보랏빛 제비꽃",
+    "meaning": "사랑"
+  },
+  "01-09": {
+    "name": "노랑제비꽃",
+    "meaning": "수줍은 사랑"
+  },
+  "01-10": {
+    "name": "회양목",
+    "meaning": "참고 견뎌냄"
+  },
+  "01-11": {
+    "name": "측백나무",
+    "meaning": "견고한 우정"
+  },
+  "01-12": {
+    "name": "향기 알리섬",
+    "meaning": "빼어난 미모"
+  },
+  "01-13": {
+    "name": "수선화",
+    "meaning": "신비"
+  },
+  "01-14": {
+    "name": "시클라멘",
+    "meaning": "내성적 성격"
+  },
+  "01-15": {
+    "name": "가시",
+    "meaning": "엄격"
+  },
+  "01-16": {
+    "name": "노랑 히아신스",
+    "meaning": "승부"
+  },
+  "01-17": {
+    "name": "수영",
+    "meaning": "친근한 정"
+  },
+  "01-18": {
+    "name": "어저귀",
+    "meaning": "억측"
+  },
+  "01-19": {
+    "name": "소나무",
+    "meaning": "불로장수"
+  },
+  "01-20": {
+    "name": "미나리아재비",
+    "meaning": "천진난만"
+  },
+  "01-21": {
+    "name": "담쟁이덩굴",
+    "meaning": "우정"
+  },
+  "01-22": {
+    "name": "이끼",
+    "meaning": "모성애"
+  },
+  "01-23": {
+    "name": "부들",
+    "meaning": "순종"
+  },
+  "01-24": {
+    "name": "가을에 피는 사프란",
+    "meaning": "절도의 미"
+  },
+  "01-25": {
+    "name": "점나도나물",
+    "meaning": "순진"
+  },
+  "01-26": {
+    "name": "미모사",
+    "meaning": "예민한 마음"
+  },
+  "01-27": {
+    "name": "마가목",
+    "meaning": "게으름을 모르는 마음"
+  },
+  "01-28": {
+    "name": "검은 포플라",
+    "meaning": "용기"
+  },
+  "01-29": {
+    "name": "이끼",
+    "meaning": "모성애"
+  },
+  "01-30": {
+    "name": "매쉬 메리골드",
+    "meaning": "반드시 오고야 말 행복"
+  },
+  "01-31": {
+    "name": "노란 사프란",
+    "meaning": "청춘의 환희"
+  },
+  "02-01": {
+    "name": "앵초",
+    "meaning": "젊은 시절과 고뇌"
+  },
+  "02-02": {
+    "name": "모과",
+    "meaning": "평범"
+  },
+  "02-03": {
+    "name": "황새냉이",
+    "meaning": "그대에게 바친다"
+  },
+  "02-04": {
+    "name": "빨간앵초",
+    "meaning": "돌보지 않는 아름다움"
+  },
+  "02-05": {
+    "name": "양치",
+    "meaning": "사랑스러움"
+  },
+  "02-06": {
+    "name": "바위솔",
+    "meaning": "가사에 근면함"
+  },
+  "02-07": {
+    "name": "물망초",
+    "meaning": "날 잊지 말아요"
+  },
+  "02-08": {
+    "name": "범의귀",
+    "meaning": "절실한 애정"
+  },
+  "02-09": {
+    "name": "은매화",
+    "meaning": "사랑의 속삭임"
+  },
+  "02-10": {
+    "name": "서향",
+    "meaning": "영광"
+  },
+  "02-11": {
+    "name": "멜리사",
+    "meaning": "동정"
+  },
+  "02-12": {
+    "name": "쥐꼬리망초",
+    "meaning": "가련미의 극치"
+  },
+  "02-13": {
+    "name": "갈풀",
+    "meaning": "끈기"
+  },
+  "02-14": {
+    "name": "카모밀레",
+    "meaning": "역경에 굴하지 않는 강인함"
+  },
+  "02-15": {
+    "name": "삼나무",
+    "meaning": "그대를 위해 살다"
+  },
+  "02-16": {
+    "name": "월계수",
+    "meaning": "명예"
+  },
+  "02-17": {
+    "name": "야생화",
+    "meaning": "친숙한 자연"
+  },
+  "02-18": {
+    "name": "미나리아재비",
+    "meaning": "천진난만"
+  },
+  "02-19": {
+    "name": "떡갈나무",
+    "meaning": "붙임성이 좋음"
+  },
+  "02-20": {
+    "name": "칼미아",
+    "meaning": "커다란 희망"
+  },
+  "02-21": {
+    "name": "네모필라",
+    "meaning": "애국심"
+  },
+  "02-22": {
+    "name": "무궁화",
+    "meaning": "미묘한 아름다움"
+  },
+  "02-23": {
+    "name": "살구꽃",
+    "meaning": "아가씨의 수줍음"
+  },
+  "02-24": {
+    "name": "빙카",
+    "meaning": "즐거운 추억"
+  },
+  "02-25": {
+    "name": "사향장미",
+    "meaning": "변덕스런 사랑"
+  },
+  "02-26": {
+    "name": "아도니스",
+    "meaning": "추억"
+  },
+  "02-27": {
+    "name": "아라비아의 별",
+    "meaning": "순수"
+  },
+  "02-28": {
+    "name": "보리",
+    "meaning": "일치단결"
+  },
+  "02-29": {
+    "name": "아르메리아",
+    "meaning": "배려"
+  },
+  "03-01": {
+    "name": "수선화",
+    "meaning": null
+  },
+  "03-02": {
+    "name": "미나리아재비",
+    "meaning": null
+  },
+  "03-03": {
+    "name": "자운영",
+    "meaning": null
+  },
+  "03-04": {
+    "name": "나무딸기",
+    "meaning": null
+  },
+  "03-05": {
+    "name": "수레국화",
+    "meaning": null
+  },
+  "03-06": {
+    "name": "데이지",
+    "meaning": null
+  },
+  "03-07": {
+    "name": "황새냉이",
+    "meaning": null
+  },
+  "03-08": {
+    "name": "밤꽃",
+    "meaning": null
+  },
+  "03-09": {
+    "name": "낙엽송",
+    "meaning": null
+  },
+  "03-10": {
+    "name": "느릅나무",
+    "meaning": null
+  },
+  "03-11": {
+    "name": "씀바귀",
+    "meaning": null
+  },
+  "03-12": {
+    "name": "수양버들",
+    "meaning": null
+  },
+  "03-13": {
+    "name": "산옥잠화",
+    "meaning": null
+  },
+  "03-14": {
+    "name": "아몬드",
+    "meaning": null
+  },
+  "03-15": {
+    "name": "독당근",
+    "meaning": null
+  },
+  "03-16": {
+    "name": "박하",
+    "meaning": null
+  },
+  "03-17": {
+    "name": "콩꽃",
+    "meaning": null
+  },
+  "03-18": {
+    "name": "아스파라거스",
+    "meaning": null
+  },
+  "03-19": {
+    "name": "치자나무",
+    "meaning": null
+  },
+  "03-20": {
+    "name": "보라색 튤립",
+    "meaning": null
+  },
+  "03-21": {
+    "name": "벚꽃난",
+    "meaning": null
+  },
+  "03-22": {
+    "name": "당아욱",
+    "meaning": null
+  },
+  "03-23": {
+    "name": "글라디올러스",
+    "meaning": null
+  },
+  "03-24": {
+    "name": "금영화",
+    "meaning": null
+  },
+  "03-25": {
+    "name": "덩굴성 식물",
+    "meaning": null
+  },
+  "03-26": {
+    "name": "흰앵초",
+    "meaning": null
+  },
+  "03-27": {
+    "name": "칼세올라리아",
+    "meaning": null
+  },
+  "03-28": {
+    "name": "꽃아카시아나무",
+    "meaning": null
+  },
+  "03-29": {
+    "name": "우엉",
+    "meaning": null
+  },
+  "03-30": {
+    "name": "금작화",
+    "meaning": null
+  },
+  "03-31": {
+    "name": "흑종초",
+    "meaning": null
+  },
+  "04-01": {
+    "name": "아몬드",
+    "meaning": null
+  },
+  "04-02": {
+    "name": "아네모네",
+    "meaning": null
+  },
+  "04-03": {
+    "name": "나팔수선화",
+    "meaning": null
+  },
+  "04-04": {
+    "name": "빨강 아네모네",
+    "meaning": null
+  },
+  "04-05": {
+    "name": "무화과",
+    "meaning": null
+  },
+  "04-06": {
+    "name": "아도니스",
+    "meaning": null
+  },
+  "04-07": {
+    "name": "공작고사리",
+    "meaning": null
+  },
+  "04-08": {
+    "name": "금작화",
+    "meaning": null
+  },
+  "04-09": {
+    "name": "벚나무",
+    "meaning": null
+  },
+  "04-10": {
+    "name": "빙카",
+    "meaning": null
+  },
+  "04-11": {
+    "name": "꽃고비",
+    "meaning": null
+  },
+  "04-12": {
+    "name": "복사꽃",
+    "meaning": null
+  },
+  "04-13": {
+    "name": "페르시아 국화",
+    "meaning": null
+  },
+  "04-14": {
+    "name": "흰나팔꽃",
+    "meaning": null
+  },
+  "04-15": {
+    "name": "펜 오키드",
+    "meaning": null
+  },
+  "04-16": {
+    "name": "튤립",
+    "meaning": null
+  },
+  "04-17": {
+    "name": "독일 창포",
+    "meaning": null
+  },
+  "04-18": {
+    "name": "자운영",
+    "meaning": null
+  },
+  "04-19": {
+    "name": "참제비고깔",
+    "meaning": null
+  },
+  "04-20": {
+    "name": "배나무",
+    "meaning": null
+  },
+  "04-21": {
+    "name": "수양버들",
+    "meaning": null
+  },
+  "04-22": {
+    "name": "과꽃",
+    "meaning": null
+  },
+  "04-23": {
+    "name": "도라지",
+    "meaning": null
+  },
+  "04-24": {
+    "name": "제라늄",
+    "meaning": null
+  },
+  "04-25": {
+    "name": "중국 패모",
+    "meaning": null
+  },
+  "04-26": {
+    "name": "논냉이",
+    "meaning": null
+  },
+  "04-27": {
+    "name": "수련",
+    "meaning": null
+  },
+  "04-28": {
+    "name": "빨간 앵초",
+    "meaning": null
+  },
+  "04-29": {
+    "name": "동백나무",
+    "meaning": null
+  },
+  "04-30": {
+    "name": "금사슬나무",
+    "meaning": null
+  },
+  "05-01": {
+    "name": "카우슬립 앵초",
+    "meaning": null
+  },
+  "05-02": {
+    "name": "미나리아재비",
+    "meaning": null
+  },
+  "05-03": {
+    "name": "민들레",
+    "meaning": null
+  },
+  "05-04": {
+    "name": "딸기",
+    "meaning": null
+  },
+  "05-05": {
+    "name": "은방울꽃",
+    "meaning": null
+  },
+  "05-06": {
+    "name": "비단향나무꽃",
+    "meaning": null
+  },
+  "05-07": {
+    "name": "딸기",
+    "meaning": null
+  },
+  "05-08": {
+    "name": "수련",
+    "meaning": null
+  },
+  "05-09": {
+    "name": "겹벚꽃",
+    "meaning": null
+  },
+  "05-10": {
+    "name": "꽃창포",
+    "meaning": null
+  },
+  "05-11": {
+    "name": "사과",
+    "meaning": null
+  },
+  "05-12": {
+    "name": "라일락",
+    "meaning": null
+  },
+  "05-13": {
+    "name": "산사나무",
+    "meaning": null
+  },
+  "05-14": {
+    "name": "매발톱꽃",
+    "meaning": null
+  },
+  "05-15": {
+    "name": "물망초",
+    "meaning": null
+  },
+  "05-16": {
+    "name": "조팝나물",
+    "meaning": null
+  },
+  "05-17": {
+    "name": "노란 튤립",
+    "meaning": null
+  },
+  "05-18": {
+    "name": "옥슬립 앵초",
+    "meaning": null
+  },
+  "05-19": {
+    "name": "아리스타타",
+    "meaning": null
+  },
+  "05-20": {
+    "name": "괭이밥",
+    "meaning": null
+  },
+  "05-21": {
+    "name": "담홍색 참제비고깔",
+    "meaning": null
+  },
+  "05-22": {
+    "name": "귀고리꽃",
+    "meaning": null
+  },
+  "05-23": {
+    "name": "풀의 싹",
+    "meaning": null
+  },
+  "05-24": {
+    "name": "헬리오토로프",
+    "meaning": null
+  },
+  "05-25": {
+    "name": "삼색제비꽃",
+    "meaning": null
+  },
+  "05-26": {
+    "name": "올리브",
+    "meaning": null
+  },
+  "05-27": {
+    "name": "데이지",
+    "meaning": null
+  },
+  "05-28": {
+    "name": "박하",
+    "meaning": null
+  },
+  "05-29": {
+    "name": "붉은 토끼풀",
+    "meaning": null
+  },
+  "05-30": {
+    "name": "보라색 라일락",
+    "meaning": null
+  },
+  "05-31": {
+    "name": "무릇꽃",
+    "meaning": null
+  },
+  "06-01": {
+    "name": "연분홍 장미",
+    "meaning": null
+  },
+  "06-02": {
+    "name": "빨강 매발톱꽃",
+    "meaning": null
+  },
+  "06-03": {
+    "name": "아마",
+    "meaning": null
+  },
+  "06-04": {
+    "name": "다마스크 장미",
+    "meaning": null
+  },
+  "06-05": {
+    "name": "메리골드",
+    "meaning": null
+  },
+  "06-06": {
+    "name": "노랑 붓꽃",
+    "meaning": null
+  },
+  "06-07": {
+    "name": "슈미트티아나",
+    "meaning": null
+  },
+  "06-08": {
+    "name": "재스민",
+    "meaning": null
+  },
+  "06-09": {
+    "name": "스위트피",
+    "meaning": null
+  },
+  "06-10": {
+    "name": "수염패랭이꽃",
+    "meaning": null
+  },
+  "06-11": {
+    "name": "중국패모",
+    "meaning": null
+  },
+  "06-12": {
+    "name": "레제다 오도라타",
+    "meaning": null
+  },
+  "06-13": {
+    "name": "디기탈리스",
+    "meaning": null
+  },
+  "06-14": {
+    "name": "뚜껑별꽃",
+    "meaning": null
+  },
+  "06-15": {
+    "name": "카네이션",
+    "meaning": null
+  },
+  "06-16": {
+    "name": "튜베 로즈",
+    "meaning": null
+  },
+  "06-17": {
+    "name": "토끼풀",
+    "meaning": null
+  },
+  "06-18": {
+    "name": "백리향",
+    "meaning": null
+  },
+  "06-19": {
+    "name": "장미",
+    "meaning": null
+  },
+  "06-20": {
+    "name": "꼬리풀",
+    "meaning": null
+  },
+  "06-21": {
+    "name": "달맞이꽃",
+    "meaning": null
+  },
+  "06-22": {
+    "name": "가막살나무",
+    "meaning": null
+  },
+  "06-23": {
+    "name": "접시꽃",
+    "meaning": null
+  },
+  "06-24": {
+    "name": "버베나",
+    "meaning": null
+  },
+  "06-25": {
+    "name": "나팔꽃",
+    "meaning": null
+  },
+  "06-26": {
+    "name": "흰 라일락",
+    "meaning": null
+  },
+  "06-27": {
+    "name": "시계꽃",
+    "meaning": null
+  },
+  "06-28": {
+    "name": "제라늄",
+    "meaning": null
+  },
+  "06-29": {
+    "name": "빨강 제라늄",
+    "meaning": null
+  },
+  "06-30": {
+    "name": "인동",
+    "meaning": null
+  },
+  "07-01": {
+    "name": "단양쑥부쟁이",
+    "meaning": null
+  },
+  "07-02": {
+    "name": "금어초",
+    "meaning": null
+  },
+  "07-03": {
+    "name": "흰색 양귀비",
+    "meaning": null
+  },
+  "07-04": {
+    "name": "자목련",
+    "meaning": null
+  },
+  "07-05": {
+    "name": "라벤더",
+    "meaning": null
+  },
+  "07-06": {
+    "name": "해바라기",
+    "meaning": null
+  },
+  "07-07": {
+    "name": "서양까치밥나무",
+    "meaning": null
+  },
+  "07-08": {
+    "name": "버드푸트",
+    "meaning": null
+  },
+  "07-09": {
+    "name": "아이비 제라늄",
+    "meaning": null
+  },
+  "07-10": {
+    "name": "초롱꽃",
+    "meaning": null
+  },
+  "07-11": {
+    "name": "아스포델",
+    "meaning": null
+  },
+  "07-12": {
+    "name": "좁은잎배풍등",
+    "meaning": null
+  },
+  "07-13": {
+    "name": "잡초의 꽃",
+    "meaning": null
+  },
+  "07-14": {
+    "name": "플록스",
+    "meaning": null
+  },
+  "07-15": {
+    "name": "들장미",
+    "meaning": null
+  },
+  "07-16": {
+    "name": "비단향꽃무",
+    "meaning": null
+  },
+  "07-17": {
+    "name": "흰색장미",
+    "meaning": null
+  },
+  "07-18": {
+    "name": "이끼 장미",
+    "meaning": null
+  },
+  "07-19": {
+    "name": "백부자",
+    "meaning": null
+  },
+  "07-20": {
+    "name": "가지",
+    "meaning": null
+  },
+  "07-21": {
+    "name": "노랑장미",
+    "meaning": null
+  },
+  "07-22": {
+    "name": "패랭이꽃",
+    "meaning": null
+  },
+  "07-23": {
+    "name": "장미",
+    "meaning": null
+  },
+  "07-24": {
+    "name": "연령초",
+    "meaning": null
+  },
+  "07-25": {
+    "name": "말오줌나무",
+    "meaning": null
+  },
+  "07-26": {
+    "name": "향쑥",
+    "meaning": null
+  },
+  "07-27": {
+    "name": "제라늄",
+    "meaning": null
+  },
+  "07-28": {
+    "name": "패랭이꽃",
+    "meaning": null
+  },
+  "07-29": {
+    "name": "선인장",
+    "meaning": null
+  },
+  "07-30": {
+    "name": "서양종 보리수",
+    "meaning": null
+  },
+  "07-31": {
+    "name": "호박",
+    "meaning": null
+  },
+  "08-01": {
+    "name": "빨강 양귀비",
+    "meaning": null
+  },
+  "08-02": {
+    "name": "수레국화",
+    "meaning": null
+  },
+  "08-03": {
+    "name": "수박풀",
+    "meaning": null
+  },
+  "08-04": {
+    "name": "옥수수",
+    "meaning": null
+  },
+  "08-05": {
+    "name": "에리카",
+    "meaning": null
+  },
+  "08-06": {
+    "name": "능소화",
+    "meaning": null
+  },
+  "08-07": {
+    "name": "석류",
+    "meaning": null
+  },
+  "08-08": {
+    "name": "진달래",
+    "meaning": null
+  },
+  "08-09": {
+    "name": "시스터스",
+    "meaning": null
+  },
+  "08-10": {
+    "name": "이끼",
+    "meaning": null
+  },
+  "08-11": {
+    "name": "빨강무늬제라늄",
+    "meaning": null
+  },
+  "08-12": {
+    "name": "협죽도",
+    "meaning": null
+  },
+  "08-13": {
+    "name": "골든 로드",
+    "meaning": null
+  },
+  "08-14": {
+    "name": "저먼더",
+    "meaning": null
+  },
+  "08-15": {
+    "name": "해바라기",
+    "meaning": null
+  },
+  "08-16": {
+    "name": "타마린드",
+    "meaning": null
+  },
+  "08-17": {
+    "name": "튤립나무",
+    "meaning": null
+  },
+  "08-18": {
+    "name": "접시꽃",
+    "meaning": null
+  },
+  "08-19": {
+    "name": "로사 캠피온",
+    "meaning": null
+  },
+  "08-20": {
+    "name": "프리지아",
+    "meaning": null
+  },
+  "08-21": {
+    "name": "짚신나물",
+    "meaning": null
+  },
+  "08-22": {
+    "name": "스피리아",
+    "meaning": null
+  },
+  "08-23": {
+    "name": "서양종 보리수",
+    "meaning": null
+  },
+  "08-24": {
+    "name": "금잔화",
+    "meaning": null
+  },
+  "08-25": {
+    "name": "안스륨",
+    "meaning": null
+  },
+  "08-26": {
+    "name": "하이포시스 오리어",
+    "meaning": null
+  },
+  "08-27": {
+    "name": "고비",
+    "meaning": null
+  },
+  "08-28": {
+    "name": "에린지움",
+    "meaning": null
+  },
+  "08-29": {
+    "name": "꽃담배",
+    "meaning": null
+  },
+  "08-30": {
+    "name": "저먼더",
+    "meaning": null
+  },
+  "08-31": {
+    "name": "토끼풀",
+    "meaning": null
+  },
+  "09-01": {
+    "name": "호랑이꽃",
+    "meaning": null
+  },
+  "09-02": {
+    "name": "멕시칸 아이비",
+    "meaning": null
+  },
+  "09-03": {
+    "name": "마거리트",
+    "meaning": null
+  },
+  "09-04": {
+    "name": "뱀무",
+    "meaning": null
+  },
+  "09-05": {
+    "name": "느릅나무",
+    "meaning": null
+  },
+  "09-06": {
+    "name": "한련",
+    "meaning": null
+  },
+  "09-07": {
+    "name": "오렌지",
+    "meaning": null
+  },
+  "09-08": {
+    "name": "갓",
+    "meaning": null
+  },
+  "09-09": {
+    "name": "갓개미취",
+    "meaning": null
+  },
+  "09-10": {
+    "name": "흰색 과꽃",
+    "meaning": null
+  },
+  "09-11": {
+    "name": "알로에",
+    "meaning": null
+  },
+  "09-12": {
+    "name": "클레마티스",
+    "meaning": null
+  },
+  "09-13": {
+    "name": "버드나무",
+    "meaning": null
+  },
+  "09-14": {
+    "name": "마르멜로",
+    "meaning": null
+  },
+  "09-15": {
+    "name": "다알리아",
+    "meaning": null
+  },
+  "09-16": {
+    "name": "용담",
+    "meaning": null
+  },
+  "09-17": {
+    "name": "에리카",
+    "meaning": null
+  },
+  "09-18": {
+    "name": "엉겅퀴",
+    "meaning": null
+  },
+  "09-19": {
+    "name": "사초",
+    "meaning": null
+  },
+  "09-20": {
+    "name": "로즈메리",
+    "meaning": null
+  },
+  "09-21": {
+    "name": "사프란",
+    "meaning": null
+  },
+  "09-22": {
+    "name": "퀘이킹 그라스",
+    "meaning": null
+  },
+  "09-23": {
+    "name": "주목",
+    "meaning": null
+  },
+  "09-24": {
+    "name": "오렌지",
+    "meaning": null
+  },
+  "09-25": {
+    "name": "메귀리",
+    "meaning": null
+  },
+  "09-26": {
+    "name": "감",
+    "meaning": null
+  },
+  "09-27": {
+    "name": "떡갈나무",
+    "meaning": null
+  },
+  "09-28": {
+    "name": "색비름",
+    "meaning": null
+  },
+  "09-29": {
+    "name": "사과",
+    "meaning": null
+  },
+  "09-30": {
+    "name": "삼나무",
+    "meaning": null
+  },
+  "10-01": {
+    "name": "빨강 국화",
+    "meaning": null
+  },
+  "10-02": {
+    "name": "살구",
+    "meaning": null
+  },
+  "10-03": {
+    "name": "단풍나무",
+    "meaning": null
+  },
+  "10-04": {
+    "name": "홉",
+    "meaning": null
+  },
+  "10-05": {
+    "name": "종려나무",
+    "meaning": null
+  },
+  "10-06": {
+    "name": "개암나무",
+    "meaning": null
+  },
+  "10-07": {
+    "name": "전나무",
+    "meaning": null
+  },
+  "10-08": {
+    "name": "파슬리",
+    "meaning": null
+  },
+  "10-09": {
+    "name": "회향",
+    "meaning": null
+  },
+  "10-10": {
+    "name": "멜론",
+    "meaning": null
+  },
+  "10-11": {
+    "name": "부처꽃",
+    "meaning": null
+  },
+  "10-12": {
+    "name": "월귤",
+    "meaning": null
+  },
+  "10-13": {
+    "name": "조팝나무",
+    "meaning": null
+  },
+  "10-14": {
+    "name": "흰색 국화",
+    "meaning": null
+  },
+  "10-15": {
+    "name": "스위트 바질",
+    "meaning": null
+  },
+  "10-16": {
+    "name": "이끼장미",
+    "meaning": null
+  },
+  "10-17": {
+    "name": "포도",
+    "meaning": null
+  },
+  "10-18": {
+    "name": "넌출월귤",
+    "meaning": null
+  },
+  "10-19": {
+    "name": "빨강 봉선화",
+    "meaning": null
+  },
+  "10-20": {
+    "name": "마",
+    "meaning": null
+  },
+  "10-21": {
+    "name": "엉겅퀴",
+    "meaning": null
+  },
+  "10-22": {
+    "name": "벗풀",
+    "meaning": null
+  },
+  "10-23": {
+    "name": "흰독말풀",
+    "meaning": null
+  },
+  "10-24": {
+    "name": "매화",
+    "meaning": null
+  },
+  "10-25": {
+    "name": "단풍나무",
+    "meaning": null
+  },
+  "10-26": {
+    "name": "수영",
+    "meaning": null
+  },
+  "10-27": {
+    "name": "들장미",
+    "meaning": null
+  },
+  "10-28": {
+    "name": "무궁화",
+    "meaning": null
+  },
+  "10-29": {
+    "name": "해당화",
+    "meaning": null
+  },
+  "10-30": {
+    "name": "로벨리아",
+    "meaning": null
+  },
+  "10-31": {
+    "name": "칼라",
+    "meaning": null
+  },
+  "11-01": {
+    "name": "서양모과",
+    "meaning": "유일한 사랑"
+  },
+  "11-02": {
+    "name": "루피너스",
+    "meaning": "모성애"
+  },
+  "11-03": {
+    "name": "브리오니아",
+    "meaning": "거절"
+  },
+  "11-04": {
+    "name": "골고사리",
+    "meaning": "진실의 위안"
+  },
+  "11-05": {
+    "name": "단양쑥부쟁이",
+    "meaning": "공훈"
+  },
+  "11-06": {
+    "name": "등골나물",
+    "meaning": "주저"
+  },
+  "11-07": {
+    "name": "메리골드",
+    "meaning": "이별의 슬픔"
+  },
+  "11-08": {
+    "name": "가는동자꽃",
+    "meaning": "기지"
+  },
+  "11-09": {
+    "name": "몰약의 꽃",
+    "meaning": "진실"
+  },
+  "11-10": {
+    "name": "부용",
+    "meaning": "섬세한 아름다움"
+  },
+  "11-11": {
+    "name": "흰동백",
+    "meaning": "비밀스런 사랑"
+  },
+  "11-12": {
+    "name": "레몬",
+    "meaning": "진심으로 사모함"
+  },
+  "11-13": {
+    "name": "레몬 버베나",
+    "meaning": "인내"
+  },
+  "11-14": {
+    "name": "소나무",
+    "meaning": "불로장생"
+  },
+  "11-15": {
+    "name": "황금싸리",
+    "meaning": "겸손"
+  },
+  "11-16": {
+    "name": "크리스마스 로즈",
+    "meaning": "추억"
+  },
+  "11-17": {
+    "name": "머위",
+    "meaning": "공평"
+  },
+  "11-18": {
+    "name": "산나리",
+    "meaning": "장엄"
+  },
+  "11-19": {
+    "name": "범의귀",
+    "meaning": "비밀"
+  },
+  "11-20": {
+    "name": "뷰글라스",
+    "meaning": "진실"
+  },
+  "11-21": {
+    "name": "초롱꽃",
+    "meaning": "성실"
+  },
+  "11-22": {
+    "name": "매자나무",
+    "meaning": "까다로움"
+  },
+  "11-23": {
+    "name": "양치",
+    "meaning": "성실"
+  },
+  "11-24": {
+    "name": "가막살나무",
+    "meaning": "사랑은 죽음보다 강하다"
+  },
+  "11-25": {
+    "name": "개옻나무",
+    "meaning": "현명"
+  },
+  "11-26": {
+    "name": "서양톱풀",
+    "meaning": "지도"
+  },
+  "11-27": {
+    "name": "붉나무",
+    "meaning": "신앙"
+  },
+  "11-28": {
+    "name": "과꽃",
+    "meaning": "추상"
+  },
+  "11-29": {
+    "name": "바카리스",
+    "meaning": "개척"
+  },
+  "11-30": {
+    "name": "낙엽 마른 풀",
+    "meaning": "새봄을 기다림"
+  },
+  "12-01": {
+    "name": "쑥국화",
+    "meaning": "평화"
+  },
+  "12-02": {
+    "name": "이끼",
+    "meaning": "모성애"
+  },
+  "12-03": {
+    "name": "라벤더",
+    "meaning": "기대"
+  },
+  "12-04": {
+    "name": "수영",
+    "meaning": "애정"
+  },
+  "12-05": {
+    "name": "앰브로시아",
+    "meaning": "행복한 연애"
+  },
+  "12-06": {
+    "name": "바위취",
+    "meaning": "절실한 사랑"
+  },
+  "12-07": {
+    "name": "양치",
+    "meaning": "신뢰"
+  },
+  "12-08": {
+    "name": "갈대",
+    "meaning": "깊은 애정"
+  },
+  "12-09": {
+    "name": "국화",
+    "meaning": "고결"
+  },
+  "12-10": {
+    "name": "빨강 동백",
+    "meaning": "고결한 이성"
+  },
+  "12-11": {
+    "name": "단양쑥부쟁이",
+    "meaning": "애국심"
+  },
+  "12-12": {
+    "name": "목화",
+    "meaning": "우수"
+  },
+  "12-13": {
+    "name": "자홍색 국화",
+    "meaning": "사랑"
+  },
+  "12-14": {
+    "name": "소나무",
+    "meaning": "용감"
+  },
+  "12-15": {
+    "name": "서향",
+    "meaning": "불멸"
+  },
+  "12-16": {
+    "name": "오리나무",
+    "meaning": "장엄"
+  },
+  "12-17": {
+    "name": "벚꽃난",
+    "meaning": "동감"
+  },
+  "12-18": {
+    "name": "세이지",
+    "meaning": "가정의 덕"
+  },
+  "12-19": {
+    "name": "스노 플레이크",
+    "meaning": "아름다움"
+  },
+  "12-20": {
+    "name": "파인애플",
+    "meaning": "완전무결"
+  },
+  "12-21": {
+    "name": "박하",
+    "meaning": "덕"
+  },
+  "12-22": {
+    "name": "백일홍",
+    "meaning": "행복"
+  },
+  "12-23": {
+    "name": "플라타너스",
+    "meaning": "천재"
+  },
+  "12-24": {
+    "name": "겨우살이",
+    "meaning": "강한 인내심"
+  },
+  "12-25": {
+    "name": "서양호랑가시나무",
+    "meaning": "선견지명"
+  },
+  "12-26": {
+    "name": "크리스마스 로즈",
+    "meaning": "추억"
+  },
+  "12-27": {
+    "name": "매화",
+    "meaning": "맑은 마음"
+  },
+  "12-28": {
+    "name": "석류",
+    "meaning": "원숙미"
+  },
+  "12-29": {
+    "name": "꽈리",
+    "meaning": "자연미"
+  },
+  "12-30": {
+    "name": "납매",
+    "meaning": "자애"
+  },
+  "12-31": {
+    "name": "노송나무",
+    "meaning": "불멸"
+  }
+}

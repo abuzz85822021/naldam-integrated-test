@@ -372,7 +372,7 @@ body.v24-from-mission #missionJourneyV23{display:none!important}
 <article class="ta-card"><h3>✨ 오늘의 별자리</h3><strong id="taZodiac">별자리</strong><p>생일 별자리가 아닌 오늘의 태양 별자리예요</p></article>
 <article class="ta-card"><h3>🌅 해와 하늘</h3><strong id="taSun">일출·일몰 계산 중</strong><p id="taSunNote">대전 기준 · 날짜별 계산</p></article>
 <article class="ta-card"><h3>⛅ 오늘의 날씨</h3><strong>날씨 연동 준비 중</strong><p>기온 · 강수 · 미세먼지 · 체감온도</p></article>
-<article class="ta-card"><h3>🌸 오늘의 꽃</h3><strong id="taFlower">오늘의 탄생화</strong><p>꽃과 꽃말은 검증된 자료를 연결할 예정이에요</p></article>
+<article class="ta-card"><h3>🌸 오늘의 꽃</h3><strong id="taFlower">꽃 이름 불러오는 중</strong><p id="taFlowerMeaning">날짜별 탄생화</p></article>
 <article class="ta-card"><h3>🎉 오늘의 기념일</h3><strong id="taHoliday">기념일 살펴보기</strong><p>공휴일 · 국가기념일 · 세계 기념일</p></article>
 </div>
 <div class="ta-wide-grid">
@@ -854,13 +854,31 @@ const descriptions=[
 ['태양 별자리는 오늘 태양이 하늘의 어느 별자리 방향에 있는지 전통적인 날짜 구간으로 표현한 것이에요.','✨ 쉽게 알아보기: 생일로 말하는 별자리와 같은 방식의 날짜 구분이에요. 실제 밤하늘에 보이는 별자리와는 달라요.','실제 별자리 경계와 천문학적 위치는 다를 수 있어요.'],
 ['일출과 일몰은 태양이 지평선 위로 나타나고 사라지는 시각이에요.','🌅 쉽게 알아보기: 낮의 길이는 계절에 따라 달라져요. 겨울에는 해가 늦게 뜨고 일찍 지는 날이 많아요.','대전광역시를 기준으로 날짜별 계산한 근삿값이에요. 실제 일출·일몰 시각과 차이가 있을 수 있어요.'],
 ['날씨는 기온, 비·눈, 바람, 체감온도 등을 함께 살펴보면 좋아요.','⛅ 쉽게 알아보기: 같은 기온이라도 바람이 강하면 더 춥게 느껴질 수 있어요.','현재 실시간 날씨 연동 준비 중이며 임의의 날씨를 표시하지 않아요.'],
-['탄생화는 날짜마다 상징적인 꽃을 연결해 소개하는 문화예요. 꽃말은 꽃에 담긴 상징적인 의미를 뜻해요.','🌸 쉽게 알아보기: 오늘을 꽃 한 송이로 표현한다면 어떤 꽃이 떠오르나요?','날짜별 탄생화는 자료마다 달라 검증된 출처 연결 전이에요.'],
+['탄생화는 날짜마다 상징적인 꽃을 연결해 소개하는 문화예요. 꽃말은 꽃에 담긴 상징적인 의미를 뜻해요.','🌸 쉽게 알아보기: 오늘을 꽃 한 송이로 표현한다면 어떤 꽃이 떠오르나요?','자료 기준: 한국화훼유통협회 로얄플라워의 365일 탄생화 목록. 꽃말은 문화적 상징이며 자료마다 다를 수 있어요.'],
 ['기념일은 역사적 사건이나 중요한 가치를 기억하기 위해 정한 날이에요.','🎉 쉽게 알아보기: 공휴일, 국가기념일, 국제기념일은 서로 다를 수 있어요.','현재 일부 고정 날짜의 기념일만 제공해요.'],
 ['같은 날짜에 남긴 기록을 다시 펼쳐 보는 공간이에요.','📸 쉽게 알아보기: 지난해 오늘의 사진과 글을 보며 그때의 기분을 떠올려 보세요.','지난 기록은 추억 달력에서 확인할 수 있어요.'],
 ['오늘의 작은 질문은 하루의 한 장면을 기억하도록 도와줘요.','💛 쉽게 알아보기: 거창한 일기가 아니어도 괜찮아요. 오늘 웃었던 순간 한 줄이면 충분해요.','일기장에 답을 기록할 수 있어요.'],
 ['하루 24시간 중 지금까지 얼마나 지났는지 보여줘요.','⏳ 쉽게 알아보기: 오늘이 얼마나 흘렀는지 확인하고, 남은 시간에 하고 싶은 일을 떠올려 보세요.','시간은 현재 기기의 시각을 기준으로 표시해요.'],
 ['오늘의 식사, 활동, 기분, 일기를 남기는 공간이에요.','📖 쉽게 알아보기: 하루를 기록하면 나중에 추억 달력에서 다시 만날 수 있어요.','일기장 메뉴에서 기록을 작성하거나 수정해요.']
 ];
+// Birthflower card: static date-keyed data; no personal data or login changes.
+const flowerCard=document.getElementById('taFlower')?.closest('.ta-card');
+const flowerMeaning=document.getElementById('taFlowerMeaning');
+if(flowerCard){
+ const sourceLink=document.createElement('a');sourceLink.href='https://www.xn--oi2bpqy92ashbd12b.kr/bbs/content.php?co_id=flower_02';sourceLink.target='_blank';sourceLink.rel='noopener noreferrer';sourceLink.textContent='탄생화 자료 출처 확인';sourceLink.style.cssText='display:block;margin-top:12px;color:#ffe0a4;text-decoration:underline;font-size:13px';
+ const sourceNote=document.createElement('span');sourceNote.style.cssText='display:block;margin-top:6px;color:#d3dbee;font-size:12px';sourceNote.textContent='탄생화와 꽃말은 자료에 따라 다를 수 있어요.';
+ fetch('./birthflowers.json').then(r=>{if(!r.ok)throw Error('탄생화 자료를 읽지 못했어요');return r.json()}).then(flowers=>{
+   const now=new Date(),todayKey=String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+   const flower=flowers[todayKey];document.getElementById('taFlower').textContent=flower?.name||'자료 확인 중';
+   flowerMeaning.textContent=flower?.meaning?'꽃말 · '+flower.meaning:'꽃말 · 자료 확인 중';
+   const originalOpen=flowerCard.querySelector('h3');if(originalOpen)originalOpen.setAttribute('title',todayKey+' 날짜별 탄생화');
+   flowerCard.addEventListener('click',()=>{queueMicrotask(()=>{const modal=document.getElementById('taDetailOverlay');if(!modal)return;
+     const desc=modal.querySelector('#taDetailDescription');const note=modal.querySelector('#taDetailNote');
+     if(desc)desc.textContent=(flower?.name||'')+'\n'+(flower?.meaning?'꽃말 · '+flower.meaning:'꽃말은 확인 중입니다.')+'\n\n날짜별 탄생화는 문화적으로 정해진 상징이며 실제 개화 시기와는 달라요.';
+     if(note){note.textContent='';note.append(sourceNote.cloneNode(true),sourceLink.cloneNode(true));}
+   });});
+ }).catch(()=>{document.getElementById('taFlower').textContent='자료를 불러오지 못했어요';flowerMeaning.textContent='인터넷 연결을 확인해 주세요';});
+}
 const cards=[...grid.querySelectorAll('.ta-card')];cards.forEach((card,i)=>{card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-label',card.querySelector('h3')?.textContent+' 자세히 보기');const open=()=>{const title=card.querySelector('h3')?.textContent||'오늘의 정보';const value=card.querySelector('strong')?.textContent||'';const extra=card.querySelector('p')?.textContent||'';const [desc,easy,note]=descriptions[i]||['오늘의 이야기를 알아보세요.','',''];overlay.querySelector('#taDetailTitle').textContent=title;overlay.querySelector('#taDetailValue').textContent=value;overlay.querySelector('#taDetailDescription').textContent=desc+(extra?'\n\n'+extra:'');overlay.querySelector('#taDetailEasy').textContent=easy;overlay.querySelector('#taDetailNote').textContent=note;overlay.classList.add('ta-open');document.body.style.overflow='hidden';overlay.querySelector('.ta-close').focus()};card.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();open()});card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
 })();
 </script></body></html>
