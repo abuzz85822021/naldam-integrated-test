@@ -402,3 +402,20 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp .st-manage-actions{display:flex;gap:7px;flex-shrink:0}
 #storyApp .st-manage-actions button{border:1px solid #d5b477;border-radius:10px;background:#23385b;color:#ffe7b2;padding:8px 11px;cursor:pointer}
 @media(max-width:380px){#storyApp .st-manage-entry{align-items:flex-start;flex-direction:column}}
+
+/* v31.4: history calendar as a separate view inside the existing memory calendar */
+.st-history-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 16px;padding:4px;border:1px solid #b99a69;border-radius:22px;background:#10213b}
+.st-history-tabs button{border:0;border-radius:18px;background:transparent;color:#f5ddb2;padding:13px 5px;font:inherit;font-weight:750;cursor:pointer}
+.st-history-tabs button.active{background:#f5d89e;color:#17243b}
+#storyHistoryCalendar[hidden],#storyMemoryCalendar[hidden]{display:none!important}
+.st-history-grid button{min-height:60px}
+.st-history-grid button small{font-size:13px;white-space:nowrap}
+.st-history-section{border:1px solid #9e835f;border-radius:15px;padding:13px;margin:12px 0;background:#172a46;color:#f5e5cb}
+.st-history-section h3{color:#ffdfa4;margin:0 0 10px;font-size:17px}
+.st-history-event{padding:11px 0;border-top:1px solid #ffffff28}
+.st-history-event summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.st-history-event summary strong{font-size:14px;color:#ffe5b5}
+.st-history-event summary span{font-size:11px;color:#d9c3a0;white-space:nowrap}
+.st-history-event p{font-size:13px;line-height:1.75;margin:10px 0;color:#f1e4d1}
+.st-history-why{background:#253955;border-radius:10px;padding:10px}
+.st-history-event small,.st-history-source{font-size:11px;color:#c9bbad;line-height:1.7}
