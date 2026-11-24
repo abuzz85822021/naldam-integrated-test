@@ -395,3 +395,10 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 /* v30.7: hide legacy-view entry on diary, calendar and discover pages.
    Keep the underlying button for avatar weight editing compatibility. */
 #storyApp:is([data-page="diary"],[data-page="calendar"],[data-page="discover"]) #storyLegacy{display:none!important}
+
+/* v31.0: saved diary entries */
+#storyApp .st-manage-entry{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 2px;border-bottom:1px solid #d9bb8155}
+#storyApp .st-manage-entry p{margin:6px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+#storyApp .st-manage-actions{display:flex;gap:7px;flex-shrink:0}
+#storyApp .st-manage-actions button{border:1px solid #d5b477;border-radius:10px;background:#23385b;color:#ffe7b2;padding:8px 11px;cursor:pointer}
+@media(max-width:380px){#storyApp .st-manage-entry{align-items:flex-start;flex-direction:column}}
