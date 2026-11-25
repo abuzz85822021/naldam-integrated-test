@@ -419,3 +419,9 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 .st-history-event p{font-size:13px;line-height:1.75;margin:10px 0;color:#f1e4d1}
 .st-history-why{background:#253955;border-radius:10px;padding:10px}
 .st-history-event small,.st-history-source{font-size:11px;color:#c9bbad;line-height:1.7}
+
+/* Hide only the four section subtitles; retain original titles and layout. */
+#storyApp[data-page="diary"] .st-top h1::after,
+#storyApp[data-page="calendar"] .st-top h1::after,
+#storyApp[data-page="discover"] .st-top h1::after,
+#storyApp[data-page="sheep"] .st-top h1::after{content:none!important;display:none!important}
