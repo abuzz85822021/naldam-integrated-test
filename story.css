@@ -440,3 +440,31 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-image:linear-gradient(90deg,color-mix(in srgb,var(--season-bg) 82%,transparent),transparent 78%),var(--season-landscape)!important;border-color:var(--season-edge)!important}
 #storyApp[data-character][data-page="home"] #todayAtlas .ta-card{background:linear-gradient(145deg,var(--season-card),var(--season-bg))!important;border-color:var(--season-edge)!important;color:var(--season-ink)!important}
 #storyApp[data-character][data-page="home"] #todayAtlas .ta-record{background:linear-gradient(110deg,#fff0c8,var(--season-edge))!important}
+
+
+/* Seasonal art v2: independent home/inner artwork; all existing records and workflows retained. */
+#storyApp[data-character="sheep"]{--s-base:#130f31;--s-mid:#30204b;--s-card:#161b39;--s-line:#d39ac6;--s-text:#ffe5ca;--s-glow:#eea1cc;--s-button:#f3a4d1;--s-home:url('./assets/season-sheep-home.webp');--s-inner:url('./assets/season-sheep-inner.webp')}
+#storyApp[data-character="dragon"]{--s-base:#06172f;--s-mid:#093d70;--s-card:#0a2245;--s-line:#55b9e7;--s-text:#fff0cf;--s-glow:#49c9f7;--s-button:#78d4f6;--s-home:url('./assets/season-dragon-home.webp');--s-inner:url('./assets/season-dragon-inner.webp')}
+#storyApp[data-character="cat"]{--s-base:#211424;--s-mid:#4c281f;--s-card:#261c2c;--s-line:#d8a36a;--s-text:#ffe6b7;--s-glow:#f5a452;--s-button:#eec17e;--s-home:url('./assets/season-cat-home.webp');--s-inner:url('./assets/season-cat-inner.webp')}
+#storyApp[data-character="penguin"]{--s-base:#061a36;--s-mid:#0a4678;--s-card:#092646;--s-line:#8bcff7;--s-text:#eaf8ff;--s-glow:#8adfff;--s-button:#a0e6ff;--s-home:url('./assets/season-penguin-home.webp');--s-inner:url('./assets/season-penguin-inner.webp')}
+#storyApp[data-character]{background:radial-gradient(ellipse at 85% 5%,color-mix(in srgb,var(--s-glow) 18%,transparent),transparent 46%),linear-gradient(180deg,var(--s-base),var(--s-mid) 55%,var(--s-base))!important;color:var(--s-text)!important}
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-image:linear-gradient(90deg,rgba(4,10,27,.83),rgba(4,10,27,.38) 49%,transparent 85%),var(--s-home)!important;background-size:cover!important;background-position:center!important;border:1px solid var(--s-line)!important;box-shadow:0 10px 28px #0009!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top{background-image:linear-gradient(90deg,rgba(4,10,27,.86),rgba(4,10,27,.36) 53%,transparent 100%),var(--s-inner)!important;background-size:cover!important;background-position:center!important;border:1px solid var(--s-line)!important;box-shadow:0 10px 28px #0009!important}
+#storyApp[data-character] .st-card,#storyApp[data-character] #todayAtlas .ta-card{background:linear-gradient(145deg,color-mix(in srgb,var(--s-card) 94%,white),var(--s-base))!important;color:var(--s-text)!important;border:1px solid color-mix(in srgb,var(--s-line) 82%,transparent)!important;box-shadow:0 8px 20px #0006,inset 0 1px #ffffff21!important}
+#storyApp[data-character] .st-card h2,#storyApp[data-character] .st-card h3{color:var(--s-text)!important}
+#storyApp[data-character] .st-muted,#storyApp[data-character] .st-note{color:color-mix(in srgb,var(--s-text) 77%,#aab3ca)!important}
+#storyApp[data-character] .st-tabs{background:linear-gradient(180deg,var(--s-card),var(--s-base))!important;border-top:1px solid var(--s-line)!important;box-shadow:0 -6px 20px #0008!important}
+#storyApp[data-character] .st-tabs button{color:#d4d5e2!important}
+#storyApp[data-character] .st-tabs button.active{color:var(--s-text)!important;text-shadow:0 0 10px var(--s-glow)}
+#storyApp[data-character] .st-primary,#storyApp[data-character] .st-history-tabs button.active,#storyApp[data-character] #todayAtlas .ta-record{background:linear-gradient(120deg,#ffe6b3,var(--s-button))!important;color:#14213a!important;border:1px solid #fff3d2!important;box-shadow:0 2px 14px color-mix(in srgb,var(--s-glow) 40%,transparent)!important}
+#storyApp[data-character] .st-soft,#storyApp[data-character] .st-grid button,#storyApp[data-character] .st-month-nav,#storyApp[data-character] .st-history-tabs button,#storyApp[data-character] .st-discovery{background:linear-gradient(135deg,var(--s-card),var(--s-base))!important;color:var(--s-text)!important;border:1px solid var(--s-line)!important}
+#storyApp[data-character] .st-calendar button{background:color-mix(in srgb,var(--s-card) 90%,black)!important;border:1px solid color-mix(in srgb,var(--s-line) 36%,transparent)!important;color:var(--s-text)!important}
+#storyApp[data-character] .st-calendar button.selected{outline:2px solid var(--s-glow)!important;background:color-mix(in srgb,var(--s-glow) 30%,var(--s-card))!important;box-shadow:0 0 15px color-mix(in srgb,var(--s-glow) 60%,transparent)!important}
+#storyApp[data-character] .st-calendar button.marked{border-color:var(--s-line)!important}
+#storyApp[data-character] .st-week{color:var(--s-text)!important}
+#storyApp[data-character] .st-month-nav h2{color:var(--s-text)!important}
+#storyApp[data-character] .st-storybook,#storyApp[data-character] .st-highlight{background:var(--s-card)!important;color:var(--s-text)!important}
+#storyApp[data-character] .st-dialog{border:2px solid var(--s-line)!important}
+#storyApp[data-character] .st-story-item{box-shadow:inset 0 1px #ffffff22!important}
+#storyApp[data-character] .st-card textarea{color:#17243a!important;background:#fffdfa!important}
+@media(max-width:480px){#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-position:57% center!important}}
