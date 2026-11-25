@@ -419,16 +419,3 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 .st-history-event p{font-size:13px;line-height:1.75;margin:10px 0;color:#f1e4d1}
 .st-history-why{background:#253955;border-radius:10px;padding:10px}
 .st-history-event small,.st-history-source{font-size:11px;color:#c9bbad;line-height:1.7}
-
-/* v31.4: compact subpage titles and illustrated companion page */
-#storyApp:not([data-page="home"]) .st-top>h1,#storyApp:not([data-page="home"]) .st-top>p{display:none!important}
-#storyApp[data-page="diary"] .st-top .st-date,#storyApp[data-page="calendar"] .st-top .st-date,#storyApp[data-page="discover"] .st-top .st-date,#storyApp[data-page="sheep"] .st-top .st-date{display:none!important}
-#storyApp[data-page="sheep"] .st-dream-hero{position:relative;min-height:440px;overflow:hidden;border-radius:24px;background:linear-gradient(180deg,rgba(3,15,46,.1),#071b42 96%),url('./assets/v305-sheep-sky.webp') center 35%/cover no-repeat;border:1px solid rgba(255,216,149,.5);box-shadow:inset 0 0 30px rgba(250,190,110,.16)}
-#storyApp .st-dream-art{height:315px}
-#storyApp .st-dream-name{margin:0 16px 20px;padding:15px 12px;border-radius:19px;text-align:center;color:#fff1ba;background:rgba(7,25,60,.76);border:1px solid #e4bd81;box-shadow:0 0 17px rgba(250,186,103,.35)}
-#storyApp .st-dream-name h2{margin:0;font-size:24px;color:#ffe6a0}
-#storyApp .st-dream-name p{margin:5px 0 0;color:#f4e3c5;font-size:13px}
-#storyApp .st-dream-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 4px}
-#storyApp .st-dream-actions button{border:1px solid #dfb77d;border-radius:17px;padding:15px 5px;background:linear-gradient(145deg,#0b2852,#12213e);box-shadow:0 0 12px rgba(249,194,117,.24);color:#ffe8b3;font-size:17px;cursor:pointer}
-#storyApp .st-dream-actions b{font-size:14px}
-#storyApp .st-dream-details{text-align:center;margin-top:24px}
