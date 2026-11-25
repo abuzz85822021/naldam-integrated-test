@@ -419,3 +419,24 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 .st-history-event p{font-size:13px;line-height:1.75;margin:10px 0;color:#f1e4d1}
 .st-history-why{background:#253955;border-radius:10px;padding:10px}
 .st-history-event small,.st-history-source{font-size:11px;color:#c9bbad;line-height:1.7}
+
+/* v31.5 — seasonal character themes. Character selection already persists via
+   naldam_character_v29; all five views inherit the selected theme. */
+#storyApp[data-character="sheep"]{--season-bg:#11172e;--season-mid:#392449;--season-card:#1d2445;--season-edge:#e9a4d0;--season-ink:#ffe6bd;--season-glow:#f4a3d5;--season-landscape:url('./assets/story-home-sheep.webp')}
+#storyApp[data-character="dragon"]{--season-bg:#061d3d;--season-mid:#064b76;--season-card:#102c54;--season-edge:#60d6ef;--season-ink:#fff0bf;--season-glow:#44bfe9;--season-landscape:url('./assets/story-home-dragon.webp')}
+#storyApp[data-character="cat"]{--season-bg:#1d1420;--season-mid:#5b3027;--season-card:#2c2130;--season-edge:#e6a55f;--season-ink:#ffe8b5;--season-glow:#efac62;--season-landscape:url('./assets/story-home-cat.webp')}
+#storyApp[data-character="penguin"]{--season-bg:#061b39;--season-mid:#124b77;--season-card:#10294c;--season-edge:#9adfff;--season-ink:#eaf7ff;--season-glow:#7bdcff;--season-landscape:url('./assets/story-home-penguin.webp')}
+#storyApp[data-character][data-page]:not([data-page="home"]){background:radial-gradient(ellipse at 80% 5%,color-mix(in srgb,var(--season-glow) 17%,transparent),transparent 46%),linear-gradient(180deg,var(--season-bg),var(--season-mid) 53%,var(--season-bg))!important;color:var(--season-ink)!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top{background-image:linear-gradient(90deg,color-mix(in srgb,var(--season-bg) 88%,transparent) 0%,color-mix(in srgb,var(--season-bg) 38%,transparent) 55%,transparent 100%),var(--season-landscape)!important;background-position:center,center 48%!important;background-size:cover!important;border-color:var(--season-edge)!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-card{background:linear-gradient(145deg,color-mix(in srgb,var(--season-card) 96%,transparent),var(--season-bg))!important;border-color:var(--season-edge)!important;box-shadow:0 7px 22px #0006,inset 0 1px #ffffff20!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-card h2{color:var(--season-ink)!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-grid button,#storyApp[data-character][data-page]:not([data-page="home"]) .st-soft,#storyApp[data-character][data-page]:not([data-page="home"]) .st-month-nav{background:linear-gradient(145deg,var(--season-card),var(--season-bg))!important;border-color:var(--season-edge)!important;color:var(--season-ink)!important;box-shadow:inset 0 1px #ffffff24!important}
+#storyApp[data-character] .st-tabs{background:linear-gradient(180deg,var(--season-card),var(--season-bg))!important;border-top-color:var(--season-edge)!important}
+#storyApp[data-character] .st-tabs button.active{color:var(--season-ink)!important}
+#storyApp[data-character] .st-primary,#storyApp[data-character] .st-history-tabs button.active{background:linear-gradient(115deg,var(--season-edge),#ffe5a8)!important;color:#14243a!important}
+#storyApp[data-character][data-page="sheep"] #storySheepInfo{border-color:var(--season-edge)!important;background:var(--season-card)!important;color:var(--season-ink)!important}
+#storyApp[data-character][data-page="sheep"] #storySheepImage{filter:drop-shadow(0 0 22px var(--season-glow))!important}
+#storyApp[data-character][data-page="home"]{background:linear-gradient(180deg,var(--season-bg),var(--season-mid) 50%,var(--season-bg))!important}
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-image:linear-gradient(90deg,color-mix(in srgb,var(--season-bg) 82%,transparent),transparent 78%),var(--season-landscape)!important;border-color:var(--season-edge)!important}
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-card{background:linear-gradient(145deg,var(--season-card),var(--season-bg))!important;border-color:var(--season-edge)!important;color:var(--season-ink)!important}
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-record{background:linear-gradient(110deg,#fff0c8,var(--season-edge))!important}
