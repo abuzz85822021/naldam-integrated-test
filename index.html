@@ -697,7 +697,7 @@ $('meal25Save').onclick=async()=>{const list=names.map(s=>s.trim()).filter(Boole
  if(editingId&&!old){setStatus('기존 기록을 찾지 못했어요. 다시 열어 주세요.');return}
  const r={...(old||{}),id,date,category:$('meal25Category').value,memo,createdAt:old?.createdAt||Date.now(),photoLocalId:photoBlob?id:(existingPhotoId||null),foodNames:list};
  if(old)Object.assign(old,r);else s.records.push(r);
- localStorage.setItem(key,JSON.stringify(s));window.dispatchEvent(new Event('naldam-avatar-refresh'));window.dispatchEvent(new Event('storage'));window.dispatchEvent(new CustomEvent('naldam-meal-saved',{detail:{date}}));setStatus('선택한 날짜에 식사 기록을 저장했어요!');setTimeout(()=>dlg.close(),550)
+ localStorage.setItem(key,JSON.stringify(s));window.dispatchEvent(new Event('naldam-avatar-refresh'));window.dispatchEvent(new CustomEvent('naldam-meal-saved',{detail:{date}}));setStatus('선택한 날짜에 식사 기록을 저장했어요!');setTimeout(()=>dlg.close(),550)
  }catch(e){setStatus('저장하지 못했어요. 브라우저 저장 공간을 확인해 주세요.')}finally{btn.disabled=false}};
 // Reuse existing food log buttons, while leaving exercise and diary forms intact.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v12-log]');if(!b)return;const cat=b.getAttribute('data-v12-log');if(!['breakfast','lunch','dinner','snack'].includes(cat))return;e.preventDefault();e.stopImmediatePropagation();show(cat)},true);
