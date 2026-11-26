@@ -1,0 +1,1 @@
+V34: Four landscape inner-page scene assets, one shared compact header across diary, calendar, stories and character. Home preserved. No functional JavaScript changed. On short devices content may scroll.

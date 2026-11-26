@@ -582,3 +582,26 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
  #storyApp[data-character][data-page="calendar"] > .st-top {height:23dvh!important}
  #storyApp[data-character][data-page="calendar"] .st-calendar button {height:4.55dvh!important;min-height:27px!important}
 }
+
+/* V34: landscape illustrations for ALL non-home pages, with matching compact layout. */
+#storyApp[data-character="sheep"]{--s-banner:url('./assets/season-sheep-banner.webp')}
+#storyApp[data-character="dragon"]{--s-banner:url('./assets/season-dragon-banner.webp')}
+#storyApp[data-character="cat"]{--s-banner:url('./assets/season-cat-banner.webp')}
+#storyApp[data-character="penguin"]{--s-banner:url('./assets/season-penguin-banner.webp')}
+#storyApp[data-character][data-page]:not([data-page="home"])>.st-top,
+#storyApp[data-character][data-page="sheep"]>.st-top{
+ height:clamp(150px,25dvh,235px)!important;
+ background-image:linear-gradient(90deg,rgba(2,9,28,.64),rgba(2,9,28,.06) 68%),var(--s-banner)!important;
+ background-size:100% 100%,100% 100%!important;
+ background-position:center!important;
+ background-repeat:no-repeat!important;
+ margin-bottom:5px!important;
+}
+#storyApp[data-character][data-page]:not([data-page="home"]) .season-header-copy{
+ top:clamp(20px,3dvh,32px)!important;left:14px!important;max-width:57%!important;
+}
+#storyApp[data-character][data-page]:not([data-page="home"]) .season-logo{margin-bottom:8px!important;font-size:clamp(15px,4vw,20px)!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) #seasonPageHeading{font-size:clamp(20px,5.6vw,28px)!important;line-height:1.13!important;margin:0 0 5px!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) #seasonPageSubtitle{font-size:clamp(10px,2.7vw,13px)!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-content{padding-left:10px!important;padding-right:10px!important}
+@media(max-height:720px){#storyApp[data-character][data-page]:not([data-page="home"])>.st-top{height:clamp(130px,22dvh,170px)!important}}
