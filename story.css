@@ -506,3 +506,79 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-page="discover"] #storyDiscoverCards>*,#storyApp[data-page="sheep"] .st-primary{border-radius:18px!important}
 #storyApp[data-page="sheep"]>.st-top{background-image:linear-gradient(90deg,rgba(2,10,27,.7),rgba(2,10,27,.15)),var(--s-home)!important}
 @media(max-height:720px){#storyApp[data-page="home"] #todayAtlas .ta-hero{height:38dvh!important}#storyApp[data-page]:not([data-page="home"])>.st-top{height:37dvh!important}#storyApp[data-page="home"] #todayAtlas .ta-grid .ta-card{min-height:69px!important}}
+
+/* V33 compact calendar: fit scenic character banner + complete month on one phone screen.
+   Preserve all other pages and their existing interactive behavior. */
+#storyApp[data-character][data-page="calendar"] > .st-top {
+  height:clamp(145px,26dvh,235px)!important;
+  min-height:0!important;
+  margin-bottom:3px!important;
+  background-position:center 55%!important;
+}
+/* The old hidden heading's pseudo-elements caused a duplicate, vertically stacked title. */
+#storyApp[data-character][data-page="calendar"] > .st-top > h1,
+#storyApp[data-character][data-page="calendar"] > .st-top > h1::before,
+#storyApp[data-character][data-page="calendar"] > .st-top > h1::after {display:none!important;content:none!important}
+#storyApp[data-character][data-page="calendar"] .season-header-copy {
+  top:clamp(22px,4dvh,40px)!important;
+  left:14px!important;
+  max-width:53%!important;
+}
+#storyApp[data-character][data-page="calendar"] .season-logo {
+  margin-bottom:7px!important;font-size:clamp(16px,4vw,20px)!important;
+}
+#storyApp[data-character][data-page="calendar"] #seasonPageHeading {
+  font-size:clamp(21px,5.7vw,29px)!important;
+  margin:0 0 5px!important;line-height:1.2!important;
+}
+#storyApp[data-character][data-page="calendar"] #seasonPageSubtitle {
+  font-size:clamp(10px,2.8vw,13px)!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-content {
+  padding:0 10px calc(75px + env(safe-area-inset-bottom))!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-history-tabs {
+  margin:3px 0 5px!important;padding:3px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-history-tabs button {
+  min-height:36px!important;padding:6px 7px!important;font-size:clamp(11px,3vw,14px)!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar-card {
+  margin:4px 0 8px!important;padding:9px 9px 7px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-month-nav {
+  min-height:40px!important;margin-bottom:6px!important;padding:3px 6px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-month-nav h2 {
+  font-size:clamp(17px,5vw,23px)!important;margin:0!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-month-nav button {
+  height:31px!important;width:31px!important;min-height:31px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-week {
+  margin:3px 0 5px!important;font-size:11px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar {
+  gap:3px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar button {
+  height:clamp(31px,5.05dvh,43px)!important;
+  min-height:0!important;padding:2px 1px!important;
+  gap:0!important;border-radius:9px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar button b {
+  font-size:clamp(10px,2.6vw,12px)!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar button .st-day-photo:not([hidden]) {
+  height:19px!important;width:80%!important;object-fit:cover!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar button small {
+  font-size:11px!important;line-height:13px!important;
+}
+#storyApp[data-character][data-page="calendar"] .st-calendar-card .st-note {
+  font-size:10px!important;margin:5px 0 0!important;
+}
+@media(max-height:740px) {
+ #storyApp[data-character][data-page="calendar"] > .st-top {height:23dvh!important}
+ #storyApp[data-character][data-page="calendar"] .st-calendar button {height:4.55dvh!important;min-height:27px!important}
+}
