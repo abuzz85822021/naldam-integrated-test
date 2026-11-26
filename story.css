@@ -605,3 +605,26 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character][data-page]:not([data-page="home"]) #seasonPageSubtitle{font-size:clamp(10px,2.7vw,13px)!important}
 #storyApp[data-character][data-page]:not([data-page="home"]) .st-content{padding-left:10px!important;padding-right:10px!important}
 @media(max-height:720px){#storyApp[data-character][data-page]:not([data-page="home"])>.st-top{height:clamp(130px,22dvh,170px)!important}}
+
+/* V35: Remove legacy generated duplicate headings on all inner screens.
+   Keep the existing seasonal artwork, layouts, and page functionality. */
+#storyApp[data-page]:not([data-page="home"]) #seasonPageHeading::before,
+#storyApp[data-page]:not([data-page="home"]) #seasonPageHeading::after {
+  content:none!important;display:none!important;
+}
+#storyApp[data-page]:not([data-page="home"]) #seasonPageHeading {
+  font-size:clamp(23px,6vw,32px)!important;
+  line-height:1.16!important;
+  margin:0 0 6px!important;
+  max-width:100%!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .season-header-copy {
+  top:clamp(14px,3dvh,28px)!important;
+  left:14px!important;
+  max-width:58%!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .season-logo {
+  margin-bottom:10px!important;
+}
+#storyApp[data-page="calendar"] .season-header-copy {top:clamp(12px,2dvh,20px)!important}
+#storyApp[data-page="calendar"] .season-logo {margin-bottom:6px!important}
