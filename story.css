@@ -473,3 +473,43 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-image:linear-gradient(90deg,rgba(3,10,28,.89) 0%,rgba(3,10,28,.67) 39%,rgba(3,10,28,.08) 78%),var(--s-home)!important;background-position:center 47%!important;background-size:cover!important}
 #storyApp[data-character][data-page]:not([data-page="home"]) .st-top{background-image:linear-gradient(90deg,rgba(3,10,28,.91),rgba(3,10,28,.61) 45%,rgba(3,10,28,.07)),var(--s-inner)!important;background-position:center 45%!important;background-size:cover!important}
 #storyApp[data-character] .st-top,#storyApp[data-character] #todayAtlas .ta-hero{outline:1px solid color-mix(in srgb,var(--s-line) 72%,transparent);outline-offset:-3px}
+
+/* V3 — immersive vertical seasonal canvas (approved portrait direction). */
+#storyApp[data-character]{
+  position:relative!important; isolation:isolate;
+  background-color:var(--s-base)!important;
+  background-image:linear-gradient(180deg,rgba(3,8,25,.06) 0%,rgba(3,8,25,.16) 48%,rgba(3,8,25,.30) 100%),var(--s-inner)!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%,100% auto!important;
+  background-position:center top!important;
+  background-attachment:scroll!important;
+  min-height:100dvh;
+}
+#storyApp[data-character][data-page="home"]{
+  background-image:linear-gradient(180deg,rgba(3,8,25,.07),rgba(3,8,25,.23)),var(--s-home)!important;
+}
+/* Keep art visible throughout long journal/calendar screens without stretching the character. */
+#storyApp[data-character]::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,color-mix(in srgb,var(--s-base) 45%,transparent) 52%,var(--s-base) 100%);
+}
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero,
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top{
+  background-image:linear-gradient(90deg,rgba(4,10,28,.64),rgba(4,10,28,.13) 74%,transparent)!important;
+  background-color:transparent!important;
+  background-size:cover!important;
+  box-shadow:none!important;
+}
+#storyApp[data-character] .st-card,
+#storyApp[data-character] #todayAtlas .ta-card,
+#storyApp[data-character] .st-grid button,
+#storyApp[data-character] .st-soft,
+#storyApp[data-character] .st-month-nav,
+#storyApp[data-character] .st-discovery,
+#storyApp[data-character] .st-history-tabs button{
+  background:linear-gradient(145deg,color-mix(in srgb,var(--s-card) 87%,transparent),color-mix(in srgb,var(--s-base) 90%,transparent))!important;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+#storyApp[data-character] .st-tabs{background:color-mix(in srgb,var(--s-base) 90%,transparent)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+@media(min-width:700px){#storyApp[data-character]{background-size:100% 100%,auto 1150px!important;background-position:center top!important}}
+@media(max-width:480px){#storyApp[data-character]{background-size:100% 100%,100% auto!important}}
