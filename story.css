@@ -475,107 +475,144 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character] .st-top,#storyApp[data-character] #todayAtlas .ta-hero{outline:1px solid color-mix(in srgb,var(--s-line) 72%,transparent);outline-offset:-3px}
 
 
-/* Portrait seasons: preserve the uploaded four-seasons-art app, adjust presentation only.
-   Art is 362x543 (2:3); NEVER crop it using background-size:cover. */
+/* v32 — screenshot-matched seasonal layout, built on the user's approved four-seasons-art version */
 #storyApp[data-character] {
-  --portrait-width:min(100vw,520px);
-  background-color:var(--s-base)!important;
+ --scene-width:min(100vw,480px);
+ background-color:var(--s-base)!important;
+ color:#fff1d9!important;
+ padding:0 0 78px!important;
 }
-#storyApp[data-character][data-page="home"] {
-  background-image:linear-gradient(180deg,rgba(5,9,30,.12),rgba(5,9,30,.05) 58%,var(--s-base) 97%),var(--s-home)!important;
-  background-size:100% 100%,min(100%,520px) auto!important;
-  background-position:center top,center top!important;
-  background-repeat:no-repeat!important;
+#storyApp[data-character]::before,#storyApp[data-character]::after{display:none!important}
+#storyApp[data-character][data-page="home"]{
+ background-image:linear-gradient(180deg,transparent 0%,transparent 53%,color-mix(in srgb,var(--s-base) 25%,transparent) 73%,var(--s-base) 100%),var(--s-home)!important;
+ background-size:100% 100%,var(--scene-width) auto!important;
+ background-repeat:no-repeat!important;background-position:center top!important;
 }
-#storyApp[data-character][data-page]:not([data-page="home"]) {
-  background-image:linear-gradient(180deg,rgba(5,9,30,.04),rgba(5,9,30,.06) 55%,var(--s-base) 96%),var(--s-inner)!important;
-  background-size:100% 100%,min(100%,520px) auto!important;
-  background-position:center top,center top!important;
-  background-repeat:no-repeat!important;
+#storyApp[data-character][data-page]:not([data-page="home"]){
+ background-image:linear-gradient(180deg,transparent 0%,transparent 55%,var(--s-base) 100%),var(--s-inner)!important;
+ background-size:100% 100%,var(--scene-width) auto!important;
+ background-repeat:no-repeat!important;background-position:center top!important;
 }
-/* Remove duplicate artwork from the banner: keep its text and behavior. */
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero {
-  background:none!important;
-  border:0!important;outline:0!important;box-shadow:none!important;
-  border-radius:0!important;
-  height:clamp(300px,72vw,435px)!important;
+#storyApp[data-character] .st-content{max-width:480px!important;margin:0 auto!important}
+#storyApp[data-page="home"]>.st-top{display:none!important}
+#storyApp[data-page="home"] .st-content{padding:0 9px 78px!important}
+#storyApp[data-page="home"] #todayAtlas{
+ display:flex!important;flex-direction:column!important;
+ min-height:calc(100dvh - 80px)!important;padding:0!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero::after {display:none!important}
-#storyApp[data-character][data-page="home"] .st-content {
-  padding:0 10px 90px!important;
-  max-width:520px!important;
-  margin:0 auto!important;
+#storyApp[data-page="home"] #todayAtlas .ta-hero{
+ height:clamp(270px,43dvh,425px)!important;
+ min-height:0!important;flex:0 0 auto!important;
+ background:none!important;border:0!important;outline:0!important;
+ border-radius:0!important;box-shadow:none!important;overflow:visible!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas {
-  max-width:520px!important;
-  padding:0!important;
+#storyApp[data-page="home"] #todayAtlas .ta-hero::after{display:none!important}
+#storyApp[data-page="home"] #todayAtlas .ta-hero-content{
+ top:clamp(50px,10dvh,100px)!important;left:10px!important;
+ max-width:60%!important;width:60%!important;
+ text-shadow:0 2px 8px #03071b!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero-content {
-  top:clamp(35px,8vw,62px)!important;
-  left:clamp(10px,3vw,18px)!important;
-  max-width:59%!important;
+#storyApp[data-page="home"] #todayAtlas .ta-kicker{
+ font-size:clamp(17px,4.7vw,22px)!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero h1 {
-  font-size:clamp(24px,7vw,36px)!important;
-  line-height:1.13!important;
+#storyApp[data-page="home"] #todayAtlas .ta-home-date{
+ margin-top:13px!important;font-size:clamp(10px,2.7vw,13px)!important;
+ white-space:nowrap!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-grid {
-  grid-template-columns:repeat(4,minmax(0,1fr))!important;
-  gap:5px!important;
-  margin-top:8px!important;
+#storyApp[data-page="home"] #todayAtlas .ta-hero h1{
+ font-size:clamp(25px,7vw,36px)!important;
+ line-height:1.13!important;margin:9px 0 8px!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-card {
-  padding:8px 4px!important;
-  border-radius:12px!important;
-  min-height:80px!important;
-  background:rgba(5,15,39,.91)!important;
+#storyApp[data-page="home"] #todayAtlas .ta-motto strong{
+ font-size:clamp(10px,2.7vw,13px)!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-card h3 {
-  font-size:clamp(9px,2.4vw,12px)!important;
-  margin:0 0 5px!important;line-height:1.25!important;
-  overflow-wrap:anywhere;
+#storyApp[data-page="home"] #todayAtlas .ta-motto span{display:none!important}
+#storyApp[data-page="home"] #todayAtlas .ta-year-summary{
+ margin:0 4px 9px!important;font-size:clamp(10px,2.5vw,12px)!important;
+ order:1!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-card strong {
-  font-size:clamp(9px,2.5vw,12px)!important;line-height:1.3!important;
+#storyApp[data-page="home"] #todayAtlas .ta-grid{
+ order:2!important;display:grid!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:5px!important;margin:0 0 10px!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-card p {display:none!important}
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-record {
-  border-radius:999px!important;
-  margin:11px 4px 7px!important;
-  padding:12px!important;
+#storyApp[data-page="home"] #todayAtlas .ta-card{
+ min-width:0!important;min-height:clamp(74px,11dvh,104px)!important;
+ padding:7px 3px!important;border-radius:13px!important;
+ background:linear-gradient(165deg,rgba(6,17,44,.95),rgba(14,13,43,.94))!important;
+ border:1px solid var(--s-line)!important;
+ box-shadow:0 0 8px #0008,inset 0 1px #ffffff24!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ text-align:center!important;gap:3px!important;
 }
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-wide-grid {
-  display:none!important;
+#storyApp[data-page="home"] #todayAtlas .ta-card::after{display:none!important}
+#storyApp[data-page="home"] #todayAtlas .ta-card h3{
+ font-size:clamp(9px,2.5vw,12px)!important;line-height:1.22!important;
+ text-align:center!important;margin:0!important;
+ word-break:keep-all!important;
 }
-/* Inner screens use the rear-facing scene as the page's background, not a zoomed hero. */
-#storyApp[data-character][data-page]:not([data-page="home"]) .st-top {
-  background:none!important;
-  box-shadow:none!important;
-  border:0!important;
-  outline:0!important;
-  border-radius:0!important;
-  min-height:clamp(340px,102vw,530px)!important;
-  padding:34px 18px 15px!important;
+#storyApp[data-page="home"] #todayAtlas .ta-card strong{
+ font-size:clamp(9px,2.45vw,12px)!important;line-height:1.25!important;
+ text-align:center!important;color:#ffdf87!important;
 }
-#storyApp[data-character][data-page]:not([data-page="home"]) .st-top::before,
-#storyApp[data-character][data-page]:not([data-page="home"]) .st-top::after {display:none!important}
-#storyApp[data-character][data-page]:not([data-page="home"]) .st-content {
-  padding:0 13px 95px!important;
-  max-width:520px!important;margin:0 auto!important;
+#storyApp[data-page="home"] #todayAtlas .ta-card p,
+#storyApp[data-page="home"] #todayAtlas .ta-wide-grid{display:none!important}
+#storyApp[data-page="home"] #todayAtlas .ta-record{
+ order:3!important;border-radius:999px!important;
+ background:linear-gradient(#fff3c1,#ffd366 55%,#e9a938)!important;
+ color:#0d2340!important;
+ padding:11px 8px!important;margin:0 6px 5px!important;
+ font-size:clamp(13px,3.8vw,17px)!important;
+ box-shadow:0 2px 13px #0008,0 0 10px #f5c97c66!important;
 }
-#storyApp[data-character][data-page]:not([data-page="home"]) .st-card {
-  background:rgba(6,15,39,.93)!important;
+/* Inner screens: one scenic portrait, text above, content below. */
+#storyApp[data-page]:not([data-page="home"])>.st-top{
+ height:clamp(330px,57dvh,580px)!important;
+ min-height:0!important;max-width:480px!important;
+ padding:35px 20px 0!important;
+ background:none!important;border:0!important;outline:0!important;
+ box-shadow:none!important;border-radius:0!important;
 }
-#storyApp[data-character] .st-tabs {
-  background:rgba(5,12,34,.95)!important;
-  border:1px solid var(--s-line)!important;
-  border-radius:20px 20px 0 0!important;
-  width:min(100%,520px)!important;
-  left:50%!important;right:auto!important;
-  transform:translateX(-50%)!important;
+#storyApp[data-page]:not([data-page="home"])>.st-top::after,
+#storyApp[data-page]:not([data-page="home"])>.st-top::before{display:none!important}
+#storyApp[data-page]:not([data-page="home"])>.st-top .st-sheep{display:none!important}
+#storyApp[data-page]:not([data-page="home"])>.st-top .st-brand{font-size:18px!important}
+#storyApp[data-page]:not([data-page="home"])>.st-top .st-date{display:none!important}
+#storyApp[data-page]:not([data-page="home"])>.st-top h1{
+ margin:66px 0 5px!important;font-size:clamp(25px,7vw,36px)!important;
+ line-height:1.2!important;
 }
-@media(max-width:390px) {
- #storyApp[data-character][data-page="home"] #todayAtlas .ta-hero {height:78vw!important}
- #storyApp[data-character][data-page="home"] #todayAtlas .ta-card {padding:6px 3px!important;min-height:72px!important}
- #storyApp[data-character][data-page]:not([data-page="home"]) .st-top {min-height:105vw!important}
+#storyApp[data-page]:not([data-page="home"])>.st-top h1::before,
+#storyApp[data-page]:not([data-page="home"])>.st-top h1::after{display:none!important}
+#storyApp[data-page]:not([data-page="home"])>.st-top p{
+ font-size:clamp(11px,3vw,14px)!important;color:#fff1dd!important;
+}
+#storyApp[data-page]:not([data-page="home"]) .st-content{
+ padding:0 15px 95px!important;
+}
+#storyApp[data-page="discover"] .st-card,
+#storyApp[data-page="discover"] .st-discovery{
+ background:rgba(7,14,38,.94)!important;border:1px solid var(--s-line)!important;
+ border-radius:22px!important;
+}
+#storyApp[data-character] .st-tabs{
+ width:min(100%,480px)!important;left:50%!important;right:auto!important;
+ transform:translateX(-50%)!important;
+ background:rgba(6,13,37,.97)!important;
+ border:1px solid var(--s-line)!important;border-radius:19px 19px 0 0!important;
+ padding:0 2px!important;
+}
+#storyApp[data-character] .st-tabs button{
+ flex:1!important;width:20%!important;min-width:0!important;
+ font-size:clamp(9px,2.5vw,12px)!important;padding:7px 0 10px!important;
+}
+#storyApp[data-character] .st-tabs button span{
+ font-size:20px!important;margin-bottom:2px!important;
+}
+#storyApp[data-character] #storyLegacy{display:none!important}
+@media(max-height:700px){
+ #storyApp[data-page="home"] #todayAtlas .ta-hero{height:39dvh!important}
+ #storyApp[data-page="home"] #todayAtlas .ta-card{min-height:69px!important}
+ #storyApp[data-page]:not([data-page="home"])>.st-top{height:52dvh!important}
 }
