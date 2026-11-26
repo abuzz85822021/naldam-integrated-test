@@ -341,23 +341,7 @@ body.v24-from-mission #missionJourneyV23{display:none!important}
 #storyApp[data-page="home"] #todayAtlas .ta-year-summary .ta-progress{flex-basis:100%;max-width:none!important;height:5px!important;margin:2px 0 0!important}
 @media(max-width:390px){#storyApp[data-page="home"] #todayAtlas .ta-hero{height:285px!important}#storyApp[data-page="home"] #todayAtlas .ta-hero-content{top:16px!important;left:15px!important;max-width:78%!important;width:78%}#storyApp[data-page="home"] #todayAtlas .ta-hero h1{margin:10px 0!important;font-size:30px!important}#storyApp[data-page="home"] #todayAtlas .ta-home-date{margin-top:11px!important}#storyApp[data-page="home"] #todayAtlas .ta-motto span{margin-top:5px!important}}
 @media(min-width:620px){#storyApp[data-page="home"] #todayAtlas .ta-hero{height:340px!important}}
-</style>
-<style id="naldam-v3-remove-duplicate-home">
-/* Keep legacy DOM and its event handlers for diary, calendar and records,
-   but never render the obsolete home alongside the seasonal home. */
-body.v24-home > main, body.home-avatar:not(.board-detail) > main,
-body.home-naldam.v24-home > main {display:none!important}
-body.v24-home #avatarHome,body.v24-home .naldam-switch,
-body.v24-home .mode-picker {display:none!important}
-body.v24-home #naldamBoard {display:block!important}
-body.v24-home #todayAtlas {display:block!important}
-body.v24-home #naldamBoard .board-shell > :not(#todayAtlas) {display:none!important}
-/* Avoid showing the old board hero above the seasonal hero during startup. */
-body:not(.avatar-mode):not(.board-detail):not(.v24-mission):not(.v24-discover) #naldamBoard .board-shell > .board-header,
-body:not(.avatar-mode):not(.board-detail):not(.v24-mission):not(.v24-discover) #naldamBoard .board-shell > .board-scenery,
-body:not(.avatar-mode):not(.board-detail):not(.v24-mission):not(.v24-discover) #naldamBoard .board-shell > .v11-board-mini {display:none!important}
-</style>
-</head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
+</style></head><body class="home-avatar"><nav class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
 <section id="avatarHome" aria-label="날담 아바타 홈"><div class="premium-shell">
 <header class="premium-head"><div class="premium-brand"><span class="brand-crescent">☾</span><div><strong>날담</strong><small>NALDAM · 나의 하루</small></div></div><div class="head-actions"><button type="button" id="premiumTheme" aria-label="날담 모드로 전환">☾ 날담 모드</button><button type="button" data-go="avatar" aria-label="아바타 상세">✦</button></div></header>
 <div class="premium-date" id="avTodayDate">오늘의 날담</div>
@@ -851,7 +835,7 @@ $('meal25Save').onclick=async()=>{const list=names.map(s=>s.trim()).filter(Boole
  }catch(e){setStatus('저장하지 못했어요. 브라우저 저장 공간을 확인해 주세요.')}finally{btn.disabled=false}};
 // Reuse existing food log buttons, while leaving exercise and diary forms intact.
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v12-log]');if(!b)return;const cat=b.getAttribute('data-v12-log');if(!['breakfast','lunch','dinner','snack'].includes(cat))return;e.preventDefault();e.stopImmediatePropagation();show(cat)},true);
-})();</script><link rel="stylesheet" href="./story.css?v=400-portrait-approval"><script defer src="./story.js?v=400-portrait-approval"></script><script id="v30-1-today-atlas-script">
+})();</script><link rel="stylesheet" href="./story.css?v=portrait-base-20261126"><script defer src="./story.js?v=317-approved-scenes"></script><script id="v30-1-today-atlas-script">
 (()=>{'use strict';const $=id=>document.getElementById(id);const fmt=(n)=>String(n).padStart(2,'0');const d=new Date();const y=d.getFullYear(),m=d.getMonth()+1,day=d.getDate();const key=`${y}-${fmt(m)}-${fmt(day)}`;const weekday=['일','월','화','수','목','금','토'][d.getDay()];const start=new Date(y,0,1),ordinal=Math.floor((new Date(y,m-1,day)-start)/86400000)+1;const days=(new Date(y,1,29).getMonth()===1)?366:365;
 $('taEnglish').textContent=`${y} · ${d.toLocaleString('en-US',{month:'long'}).toUpperCase()} · ${d.toLocaleString('en-US',{weekday:'long'}).toUpperCase()}`;$('taDate').textContent=`${y}년 ${m}월 ${day}일 · ${['일요일','월요일','화요일','수요일','목요일','금요일','토요일'][d.getDay()]}`;$('taDayCount').textContent=`${days}일 중 ${ordinal}번째 날`;$('taYearBar').style.width=(ordinal/days*100)+'%';$('taYearRemain').textContent=`올해 남은 ${days-ordinal}일`;
 const zodiac=[['염소자리',120],['물병자리',219],['물고기자리',321],['양자리',420],['황소자리',521],['쌍둥이자리',621],['게자리',723],['사자자리',823],['처녀자리',923],['천칭자리',1023],['전갈자리',1122],['사수자리',1222],['염소자리',1232]];const md=m*100+day;$('taZodiac').textContent=zodiac.find(z=>md<z[1])?.[0]||'염소자리';

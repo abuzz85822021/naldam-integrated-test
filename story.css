@@ -474,161 +474,108 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character][data-page]:not([data-page="home"]) .st-top{background-image:linear-gradient(90deg,rgba(3,10,28,.91),rgba(3,10,28,.61) 45%,rgba(3,10,28,.07)),var(--s-inner)!important;background-position:center 45%!important;background-size:cover!important}
 #storyApp[data-character] .st-top,#storyApp[data-character] #todayAtlas .ta-hero{outline:1px solid color-mix(in srgb,var(--s-line) 72%,transparent);outline-offset:-3px}
 
-/* V3 — immersive vertical seasonal canvas (approved portrait direction). */
-#storyApp[data-character]{
-  position:relative!important; isolation:isolate;
-  background-color:var(--s-base)!important;
-  background-image:linear-gradient(180deg,rgba(3,8,25,.06) 0%,rgba(3,8,25,.16) 48%,rgba(3,8,25,.30) 100%),var(--s-inner)!important;
-  background-repeat:no-repeat!important;
-  background-size:100% 100%,100% auto!important;
-  background-position:center top!important;
-  background-attachment:scroll!important;
-  min-height:100dvh;
-}
-#storyApp[data-character][data-page="home"]{
-  background-image:linear-gradient(180deg,rgba(3,8,25,.07),rgba(3,8,25,.23)),var(--s-home)!important;
-}
-/* Keep art visible throughout long journal/calendar screens without stretching the character. */
-#storyApp[data-character]::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg,transparent 0%,color-mix(in srgb,var(--s-base) 45%,transparent) 52%,var(--s-base) 100%);
-}
-#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero,
-#storyApp[data-character][data-page]:not([data-page="home"]) .st-top{
-  background-image:linear-gradient(90deg,rgba(4,10,28,.64),rgba(4,10,28,.13) 74%,transparent)!important;
-  background-color:transparent!important;
-  background-size:cover!important;
-  box-shadow:none!important;
-}
-#storyApp[data-character] .st-card,
-#storyApp[data-character] #todayAtlas .ta-card,
-#storyApp[data-character] .st-grid button,
-#storyApp[data-character] .st-soft,
-#storyApp[data-character] .st-month-nav,
-#storyApp[data-character] .st-discovery,
-#storyApp[data-character] .st-history-tabs button{
-  background:linear-gradient(145deg,color-mix(in srgb,var(--s-card) 87%,transparent),color-mix(in srgb,var(--s-base) 90%,transparent))!important;
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-}
-#storyApp[data-character] .st-tabs{background:color-mix(in srgb,var(--s-base) 90%,transparent)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-@media(min-width:700px){#storyApp[data-character]{background-size:100% 100%,auto 1150px!important;background-position:center top!important}}
-@media(max-width:480px){#storyApp[data-character]{background-size:100% 100%,100% auto!important}}
 
-
-/* NALDAM APPROVED PORTRAIT UI — final override.
-   One immersive screen, no duplicated legacy home. */
+/* Portrait seasons: preserve the uploaded four-seasons-art app, adjust presentation only.
+   Art is 362x543 (2:3); NEVER crop it using background-size:cover. */
 #storyApp[data-character] {
-  --art-home:var(--s-home);
-  --art-inner:var(--s-inner);
-  background:var(--s-base)!important;
-  padding:0 0 76px!important;
+  --portrait-width:min(100vw,520px);
+  background-color:var(--s-base)!important;
 }
 #storyApp[data-character][data-page="home"] {
-  background-image:linear-gradient(180deg,transparent 0%,rgba(5,9,27,.12) 65%,rgba(5,9,27,.20)),var(--art-home)!important;
-  background-size:100% 100%,100% 100dvh!important;
-  background-position:center top!important;
+  background-image:linear-gradient(180deg,rgba(5,9,30,.12),rgba(5,9,30,.05) 58%,var(--s-base) 97%),var(--s-home)!important;
+  background-size:100% 100%,min(100%,520px) auto!important;
+  background-position:center top,center top!important;
   background-repeat:no-repeat!important;
 }
 #storyApp[data-character][data-page]:not([data-page="home"]) {
-  background-image:linear-gradient(180deg,transparent 0%,rgba(5,9,27,.12) 70%,var(--s-base) 100%),var(--art-inner)!important;
-  background-size:100% 100%,100% 100dvh!important;
-  background-position:center top!important;
+  background-image:linear-gradient(180deg,rgba(5,9,30,.04),rgba(5,9,30,.06) 55%,var(--s-base) 96%),var(--s-inner)!important;
+  background-size:100% 100%,min(100%,520px) auto!important;
+  background-position:center top,center top!important;
   background-repeat:no-repeat!important;
 }
-#storyApp[data-character]::before {display:none!important}
-#storyApp[data-page="home"] > .st-top {display:none!important}
-#storyApp[data-page="home"] .st-content {padding:0 10px!important;max-width:520px!important}
-#storyApp[data-page="home"] #todayAtlas {
-  padding:0 0 14px!important;
-  min-height:calc(100dvh - 86px);
-  display:flex!important;flex-direction:column;
+/* Remove duplicate artwork from the banner: keep its text and behavior. */
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero {
+  background:none!important;
+  border:0!important;outline:0!important;box-shadow:none!important;
+  border-radius:0!important;
+  height:clamp(300px,72vw,435px)!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-hero {
-  flex:none;height:clamp(260px,43dvh,390px)!important;
-  border:0!important;outline:0!important;border-radius:0!important;
-  background:none!important;box-shadow:none!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero::after {display:none!important}
+#storyApp[data-character][data-page="home"] .st-content {
+  padding:0 10px 90px!important;
+  max-width:520px!important;
+  margin:0 auto!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-hero:after {display:none!important}
-#storyApp[data-page="home"] #todayAtlas .ta-hero-content {
-  top:clamp(40px,9dvh,90px)!important;left:15px!important;
-  max-width:64%!important;width:64%!important;
-  text-shadow:0 2px 7px #050c2d!important;
+#storyApp[data-character][data-page="home"] #todayAtlas {
+  max-width:520px!important;
+  padding:0!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-hero h1 {
-  font-size:clamp(25px,7.5vw,38px)!important;
-  margin:7px 0 8px!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero-content {
+  top:clamp(35px,8vw,62px)!important;
+  left:clamp(10px,3vw,18px)!important;
+  max-width:59%!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-home-date {
-  margin-top:10px!important;font-size:clamp(10px,2.7vw,13px)!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero h1 {
+  font-size:clamp(24px,7vw,36px)!important;
+  line-height:1.13!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-year-summary {
-  order:0;margin:0 4px 8px!important;font-size:clamp(9px,2.4vw,12px)!important;
-}
-#storyApp[data-page="home"] #todayAtlas .ta-grid {
-  order:1;display:grid!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-grid {
   grid-template-columns:repeat(4,minmax(0,1fr))!important;
-  gap:5px!important;margin:0 0 10px!important;
+  gap:5px!important;
+  margin-top:8px!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-grid .ta-card {
-  padding:8px 4px!important;min-height:78px!important;
-  border-radius:13px!important;
-  background:linear-gradient(160deg,rgba(7,18,44,.91),rgba(17,17,47,.91))!important;
-  border:1px solid var(--s-line)!important;
-  box-shadow:0 2px 8px #0007!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-card {
+  padding:8px 4px!important;
+  border-radius:12px!important;
+  min-height:80px!important;
+  background:rgba(5,15,39,.91)!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-grid .ta-card:nth-child(n+9) {display:none!important}
-#storyApp[data-page="home"] #todayAtlas .ta-card h3 {
-  font-size:clamp(9px,2.45vw,12px)!important;
-  line-height:1.25!important;margin:0 0 5px!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-card h3 {
+  font-size:clamp(9px,2.4vw,12px)!important;
+  margin:0 0 5px!important;line-height:1.25!important;
   overflow-wrap:anywhere;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-card strong {
-  font-size:clamp(9px,2.4vw,12px)!important;line-height:1.35!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-card strong {
+  font-size:clamp(9px,2.5vw,12px)!important;line-height:1.3!important;
 }
-#storyApp[data-page="home"] #todayAtlas .ta-card p,
-#storyApp[data-page="home"] #todayAtlas .ta-wide-grid {display:none!important}
-#storyApp[data-page="home"] #todayAtlas .ta-record {
-  order:2;margin:0 6px 6px!important;padding:11px 8px!important;
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-card p {display:none!important}
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-record {
   border-radius:999px!important;
-  background:linear-gradient(180deg,#fff4c8,#f8c455 75%,#dc922f)!important;
-  color:#13233b!important;font-weight:900!important;
-  box-shadow:0 3px 14px #0008,0 0 10px #ffe5a988!important;
+  margin:11px 4px 7px!important;
+  padding:12px!important;
 }
-#storyApp[data-page="home"] .st-tabs,
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-wide-grid {
+  display:none!important;
+}
+/* Inner screens use the rear-facing scene as the page's background, not a zoomed hero. */
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top {
+  background:none!important;
+  box-shadow:none!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:0!important;
+  min-height:clamp(340px,102vw,530px)!important;
+  padding:34px 18px 15px!important;
+}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top::before,
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top::after {display:none!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-content {
+  padding:0 13px 95px!important;
+  max-width:520px!important;margin:0 auto!important;
+}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-card {
+  background:rgba(6,15,39,.93)!important;
+}
 #storyApp[data-character] .st-tabs {
-  border:1px solid var(--s-line)!important;border-radius:18px 18px 0 0!important;
-  width:min(100%,520px)!important;left:50%!important;right:auto!important;
+  background:rgba(5,12,34,.95)!important;
+  border:1px solid var(--s-line)!important;
+  border-radius:20px 20px 0 0!important;
+  width:min(100%,520px)!important;
+  left:50%!important;right:auto!important;
   transform:translateX(-50%)!important;
-  background:rgba(5,13,35,.94)!important;
 }
-#storyApp[data-character] .st-tabs button {
-  flex:1!important;width:20%!important;min-width:0!important;
-  font-size:clamp(9px,2.4vw,12px)!important;padding:7px 1px 9px!important;
-}
-#storyApp[data-character] .st-tabs button span {font-size:20px!important;margin-bottom:2px!important}
-#storyApp[data-page]:not([data-page="home"]) > .st-top {
-  height:clamp(390px,59dvh,650px)!important;min-height:0!important;
-  max-width:520px!important;padding:42px 20px 0!important;
-  border:0!important;border-radius:0!important;outline:0!important;
-  background:none!important;box-shadow:none!important;
-}
-#storyApp[data-page]:not([data-page="home"]) > .st-top::before,
-#storyApp[data-page]:not([data-page="home"]) > .st-top::after {display:none!important}
-#storyApp[data-page]:not([data-page="home"]) > .st-top h1 {
-  max-width:100%!important;font-size:clamp(25px,7vw,35px)!important;
-  margin-top:70px!important;
-}
-#storyApp[data-page]:not([data-page="home"]) > .st-top .st-sheep {display:none!important}
-#storyApp[data-page]:not([data-page="home"]) .st-content {
-  max-width:520px!important;padding:0 15px!important;
-}
-#storyApp[data-page="discover"] .st-discovery,
-#storyApp[data-page="discover"] .st-card {
-  background:rgba(7,15,39,.94)!important;border:1px solid var(--s-line)!important;
-  border-radius:22px!important;
-}
-@media(max-height:700px) {
-  #storyApp[data-page="home"] #todayAtlas .ta-hero {height:37dvh!important}
-  #storyApp[data-page="home"] #todayAtlas .ta-grid .ta-card {min-height:67px!important;padding:6px 3px!important}
-  #storyApp[data-page]:not([data-page="home"]) > .st-top {height:53dvh!important}
+@media(max-width:390px) {
+ #storyApp[data-character][data-page="home"] #todayAtlas .ta-hero {height:78vw!important}
+ #storyApp[data-character][data-page="home"] #todayAtlas .ta-card {padding:6px 3px!important;min-height:72px!important}
+ #storyApp[data-character][data-page]:not([data-page="home"]) .st-top {min-height:105vw!important}
 }
