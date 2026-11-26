@@ -628,3 +628,15 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 }
 #storyApp[data-page="calendar"] .season-header-copy {top:clamp(12px,2dvh,20px)!important}
 #storyApp[data-page="calendar"] .season-logo {margin-bottom:6px!important}
+
+/* V36: Keep the diary and memory-calendar hero descriptions on one line.
+   No changes to layout, artwork, or functional elements. */
+#storyApp[data-page="diary"] #seasonPageSubtitle,
+#storyApp[data-page="calendar"] #seasonPageSubtitle {
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  width:max-content!important;
+  max-width:none!important;
+  display:block!important;
+}
