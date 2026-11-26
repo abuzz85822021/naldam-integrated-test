@@ -468,3 +468,8 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
 #storyApp[data-character] .st-story-item{box-shadow:inset 0 1px #ffffff22!important}
 #storyApp[data-character] .st-card textarea{color:#17243a!important;background:#fffdfa!important}
 @media(max-width:480px){#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-position:57% center!important}}
+
+/* Approved four-season cinematic artwork: home and inner page are distinct. */
+#storyApp[data-character][data-page="home"] #todayAtlas .ta-hero{background-image:linear-gradient(90deg,rgba(3,10,28,.89) 0%,rgba(3,10,28,.67) 39%,rgba(3,10,28,.08) 78%),var(--s-home)!important;background-position:center 47%!important;background-size:cover!important}
+#storyApp[data-character][data-page]:not([data-page="home"]) .st-top{background-image:linear-gradient(90deg,rgba(3,10,28,.91),rgba(3,10,28,.61) 45%,rgba(3,10,28,.07)),var(--s-inner)!important;background-position:center 45%!important;background-size:cover!important}
+#storyApp[data-character] .st-top,#storyApp[data-character] #todayAtlas .ta-hero{outline:1px solid color-mix(in srgb,var(--s-line) 72%,transparent);outline-offset:-3px}
