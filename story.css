@@ -640,3 +640,7 @@ body:has(#storyApp:not([hidden])) #v24BottomNav{display:none!important}
   max-width:none!important;
   display:block!important;
 }
+
+/* V38: Use the currently selected original character art in the bottom tab. */
+#storyApp .st-tabs .st-character-nav-wrap{display:flex;align-items:center;justify-content:center;height:27px;line-height:1;}
+#storyApp .st-tabs .st-character-nav-icon{display:block;width:30px;height:27px;object-fit:contain;max-width:100%;filter:drop-shadow(0 0 3px #fff6);}
