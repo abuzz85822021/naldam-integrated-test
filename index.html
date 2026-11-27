@@ -359,7 +359,41 @@ html.naldam-auth-allowed #v47Logout:not([hidden]){display:block!important}
 #v46AuthGate .v49-panel{overflow:hidden}
 @media(max-width:380px){#v46AuthGate .v49-friends img{height:105px}#v46AuthGate .v49-hero{min-height:315px}}
 @media(max-height:680px){#v46AuthGate .v49-hero{min-height:275px}#v46AuthGate .v49-friends img{height:100px}}
-</style></head><body class="home-naldam"><button id="v47Logout" type="button" hidden>로그아웃</button><section id="v46AuthGate" aria-label="날담 카카오 로그인"><div class="v46-panel v49-panel" data-season="autumn"><div class="v49-hero"><div class="v49-eyebrow">나의 하루를 담다</div><h1>날담 <span aria-hidden="true">✦</span></h1><p class="v49-lead">오늘의 기록이<br>내일의 추억이 됩니다.</p><div class="v49-friends" aria-label="날담 사계절 친구들"><img data-friend="spring" src="assets/home-compact-sheep.webp" alt="봄 양 캐릭터"><img data-friend="summer" src="assets/character-dragon.webp" alt="여름 용 캐릭터"><img data-friend="autumn" src="assets/character-cat.webp" alt="가을 고양이 캐릭터"><img data-friend="winter" src="assets/character-penguin.webp" alt="겨울 펭귄 캐릭터"></div><div class="v49-season-label" id="v49SeasonLabel">🍁 가을의 날담</div></div><div class="v49-bottom"><p class="v49-pick-title">오늘은 어떤 친구와 함께할까요?</p><div class="v49-choices" role="group" aria-label="로그인 화면 계절 선택"><button type="button" class="v49-choice" data-season="spring" aria-pressed="false"><span>🌸</span>봄</button><button type="button" class="v49-choice" data-season="summer" aria-pressed="false"><span>🌿</span>여름</button><button type="button" class="v49-choice" data-season="autumn" aria-pressed="true"><span>🍁</span>가을</button><button type="button" class="v49-choice" data-season="winter" aria-pressed="false"><span>❄️</span>겨울</button></div><button id="v46KakaoLogin" type="button" disabled><span class="v49-talk-icon" aria-hidden="true">TALK</span><span>로그인 확인 중…</span></button><p id="v46GateStatus" class="v46-message" role="status">카카오 로그인 상태를 확인하고 있어요.</p></div></div></section><nav hidden class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div hidden class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
+</style><style id="v50-approved-neutral-login">
+#v46AuthGate{padding:14px 12px!important;background:linear-gradient(160deg,#f3f7ee 0%,#fff8ee 52%,#e8f1ed 100%)!important}
+#v46AuthGate .v46-panel.v49-panel{width:min(100%,440px)!important;max-width:440px!important;padding:0!important;overflow:hidden!important;background:#fffefa!important;border-radius:28px!important;box-shadow:0 16px 44px #59472a20!important}
+#v46AuthGate .v50-hero-art{display:block;width:100%;height:auto;object-fit:contain}
+#v46AuthGate .v50-controls{padding:8px 19px 20px;background:#fffefa}
+#v46AuthGate .v50-pick-title{font-size:15px;font-weight:750;color:#544638;margin:4px 0 13px}
+#v46AuthGate .v49-choices{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin:0 0 17px!important}
+#v46AuthGate .v49-choice{min-height:74px!important;background:#f9f6f2!important;border:1px solid #e8e1d9!important;border-radius:15px!important;color:#443c35!important;font-size:13px!important;font-weight:750!important;padding:9px 2px!important;box-shadow:0 2px 5px #0000000a}
+#v46AuthGate .v49-choice span{font-size:25px!important;display:block!important;margin-bottom:2px}
+#v46AuthGate .v49-choice[data-season="spring"]{background:#fff0f4!important}
+#v46AuthGate .v49-choice[data-season="summer"]{background:#f0f9e9!important}
+#v46AuthGate .v49-choice[data-season="autumn"]{background:#fff4df!important}
+#v46AuthGate .v49-choice[data-season="winter"]{background:#eaf4ff!important}
+#v46AuthGate .v49-choice[aria-pressed="true"]{outline:3px solid var(--accent,#e68c29)!important;outline-offset:-3px!important;box-shadow:0 2px 12px #7c552f33!important}
+#v46AuthGate #v46KakaoLogin{background:#fee500!important;color:#1a150a!important;border:0!important;border-radius:18px!important;padding:15px 10px!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:12px!important;font-size:17px!important;font-weight:800!important;min-height:60px!important}
+#v46AuthGate #v46GateStatus{font-size:11px!important;margin:12px 0 0!important;color:#756f67!important}
+#v46AuthGate .v50-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-height:730px){#v46AuthGate{align-items:flex-start!important}#v46AuthGate .v50-hero-art{max-height:48dvh;object-fit:contain}#v46AuthGate .v50-controls{padding-bottom:12px}#v46AuthGate .v49-choice{min-height:60px!important}}
+</style></head><body class="home-naldam"><button id="v47Logout" type="button" hidden>로그아웃</button><section id="v46AuthGate" aria-label="날담 카카오 로그인">
+  <div class="v46-panel v49-panel" data-season="autumn">
+    <img class="v50-hero-art" src="assets/login-four-friends.webp" alt="나의 하루를 담다, 날담. 양, 용, 고양이, 펭귄 네 친구가 함께하는 따뜻한 정원. 오늘의 기록이 내일의 추억이 됩니다.">
+    <div class="v50-controls">
+      <p class="v50-pick-title">어떤 계절의 날담과 함께할까요?</p>
+      <div class="v49-choices" role="group" aria-label="로그인 화면 계절 선택">
+        <button type="button" class="v49-choice" data-season="spring" aria-pressed="false"><span>🌸</span>봄</button>
+        <button type="button" class="v49-choice" data-season="summer" aria-pressed="false"><span>🌿</span>여름</button>
+        <button type="button" class="v49-choice" data-season="autumn" aria-pressed="true"><span>🍁</span>가을</button>
+        <button type="button" class="v49-choice" data-season="winter" aria-pressed="false"><span>❄️</span>겨울</button>
+      </div>
+      <span id="v49SeasonLabel" class="v50-sr-only" aria-live="polite">🍁 가을의 날담</span>
+      <button id="v46KakaoLogin" type="button" disabled><span class="v49-talk-icon" aria-hidden="true">TALK</span><span>로그인 확인 중…</span></button>
+      <p id="v46GateStatus" class="v46-message" role="status">카카오 로그인 상태를 확인하고 있어요.</p>
+    </div>
+  </div>
+</section><nav hidden class="naldam-switch" aria-label="통합 앱 메뉴"><button id="navNaldam" class="selected" type="button" aria-pressed="true">🌙 오늘의 날담</button><button id="navAvatar" type="button" aria-pressed="false">🎮 나의 아바타</button></nav><div hidden class="mode-picker" aria-label="홈 화면 모드 선택"><span></span><button type="button" id="pickAvatar" aria-pressed="true">🐑 아바타 모드</button><button type="button" id="pickNaldam" aria-pressed="false">🌙 날담 모드</button></div>
 
 <section id="naldamBoard" aria-label="날담보드 홈"><div class="board-shell">
 <section id="todayAtlas" class="today-atlas" aria-label="오늘이라는 날의 모든 이야기">

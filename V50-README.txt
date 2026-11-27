@@ -1,0 +1,1 @@
+V50: Approved neutral four-friends garden illustration on login screen; real accessible season selector with accent-only changes, existing Kakao login and logout logic preserved. Based on V49 with V48 legacy-screen fix. Backup V48 before upload.\n
