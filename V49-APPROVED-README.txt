@@ -1,0 +1,1 @@
+V49 approved four friends: four existing mascots appear together, current/selected season featured, four seasonal backgrounds preserved, existing Kakao auth and logout unchanged. Based on V48 and V49 seasonal selector. Back up V48 before deployment.

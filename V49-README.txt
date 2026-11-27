@@ -1,0 +1,1 @@
+V49 seasonal login: auto-select by month (Mar-May spring sheep, Jun-Aug summer dragon, Sep-Nov autumn cat, Dec-Feb winter penguin). Four manual selectors saved locally. Existing Kakao login and V48 home/logout untouched. Login UI only.
