@@ -465,7 +465,24 @@ const themes={spring:{label:'🌸 봄의 날담',image:'assets/home-compact-shee
 const month=new Date().getMonth()+1;const automatic=month>=3&&month<=5?'spring':month>=6&&month<=8?'summer':month>=9&&month<=11?'autumn':'winter';
 let selected=automatic;try{const stored=localStorage.getItem('naldam-login-season');if(themes[stored])selected=stored}catch(e){}
 function choose(key){const t=themes[key];if(!t)return;document.querySelector('#v46AuthGate .v49-panel').dataset.season=key;document.querySelectorAll('#v46AuthGate .v49-friends img').forEach(img=>img.classList.toggle('featured',img.dataset.friend===key));document.getElementById('v49SeasonLabel').textContent=t.label;document.querySelectorAll('#v46AuthGate .v49-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.season===key)));}
-document.querySelectorAll('#v46AuthGate .v49-choice').forEach(b=>b.addEventListener('click',()=>{choose(b.dataset.season);try{localStorage.setItem('naldam-login-season',b.dataset.season)}catch(e){}}));choose(selected);
+const seasonToCharacter={spring:'sheep',summer:'dragon',autumn:'cat',winter:'penguin'};
+function saveCharacterFromSeason(season){
+  const character=seasonToCharacter[season];if(!character)return;
+  try{
+    localStorage.setItem('naldam-login-season',season);
+    localStorage.setItem('naldam_character_v29',character);
+    // Preserve all existing records, XP, photos, and other state.
+    const key='myliferpg_v03', oldKey='myliferpg_v02';
+    const state=JSON.parse(localStorage.getItem(key)||localStorage.getItem(oldKey)||'{}')||{};
+    state.avatarCharacter=character;
+    localStorage.setItem(key,JSON.stringify(state));
+    window.dispatchEvent(new Event('naldam-character-selection-updated'));
+  }catch(error){console.warn('계절 캐릭터 선택 저장 실패',error)}
+}
+document.querySelectorAll('#v46AuthGate .v49-choice').forEach(b=>b.addEventListener('click',()=>{
+  choose(b.dataset.season);saveCharacterFromSeason(b.dataset.season);
+}));
+choose(selected);
 })();</script><script id="v46-auth-gate-script">
 (function(){
  const button=document.getElementById('v46KakaoLogin'),message=document.getElementById('v46GateStatus');
